@@ -6,7 +6,7 @@
 package ui.SocialWorkerRole;
 
 import Business.EcoSystem;
-import Business.Organization.LabOrganization;
+
 import Business.Organization.Organization;
 import Business.Organization.SocialWorkerOrganization;
 import Business.UserAccount.UserAccount;

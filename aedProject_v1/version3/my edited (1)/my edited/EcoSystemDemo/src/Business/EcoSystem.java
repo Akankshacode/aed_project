@@ -31,6 +31,10 @@ public class EcoSystem extends Organization{
     public CaseDirectory getCaseDir() {
         return caseDir;
     }
+     public CaseDirectory getCaseDirectory() {
+        return caseDir;
+    }
+    
 
     public void setCaseDir(CaseDirectory caseDir) {
         this.caseDir = caseDir;

@@ -31,12 +31,12 @@ public class EnterpriseDirectory {
     //Create enterprise
     public Enterprise createAndAddEnterprise(String name,Enterprise.EnterpriseType type){
         Enterprise enterprise=null;
-        if(type==Enterprise.EnterpriseType.Hospital){
-            enterprise=new HospitalEnterprise(name);
+        if(type==Enterprise.EnterpriseType.NGO){
+            enterprise=new NgoEnterprise(name);
             enterpriseList.add(enterprise);
         }
-        else if(type==Enterprise.EnterpriseType.NGO){
-            enterprise=new NgoEnterprise(name);
+        else if(type==Enterprise.EnterpriseType.Hospital){
+            enterprise=new HospitalEnterprise(name);
             enterpriseList.add(enterprise);
         }
         return enterprise;
