@@ -41,6 +41,14 @@ public class OrganizationDirectory {
             organization = new TherapistOrganization();
             organizationList.add(organization);
         }
+          else if(type.getValue().equals((Type.Lawyer.getValue()))){
+            organization = new LawyerOrganization();
+            organizationList.add(organization);
+        }
+          else if(type.getValue().equals((Type.Court.getValue()))){
+            organization = new CourtOrganization();
+            organizationList.add(organization);
+        }
         return organization;
     }
 }

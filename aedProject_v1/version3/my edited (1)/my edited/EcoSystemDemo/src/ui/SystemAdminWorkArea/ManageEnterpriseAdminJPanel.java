@@ -10,6 +10,7 @@ import Business.Enterprise.Enterprise;
 import Business.Network.Network;
 import Business.Role.AdminRole;
 import Business.Role.HAdminRole;
+import Business.Role.LAdminRole;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Component;
@@ -285,6 +286,11 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         else if(enterprise.getEnterpriseType().toString().equals("Hospital"))
         {
             account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, new HAdminRole());
+        System.out.println("Hospital ADMIN");
+        }
+        else if(enterprise.getEnterpriseType().toString().equals("Law"))
+        {
+            account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, new LAdminRole());
         System.out.println("Hospital ADMIN");
         }
         

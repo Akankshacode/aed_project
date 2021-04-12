@@ -22,7 +22,11 @@ public abstract class Role {
        Therapist("Therapist"),
         Victim("Victim"),
         SocialWorker("Social Worker"),
-        HAdmin("HAdmin");
+        HAdmin("HAdmin"),
+         Lawyer("Lawyer"),
+         LAdmin("LAdmin"),
+         Court("Court");
+         
         
         private String value;
         private RoleType(String value){
