@@ -49,7 +49,8 @@ public class ViewCasesJPanel extends javax.swing.JPanel {
      public void populateTable() {
          DefaultTableModel model = (DefaultTableModel) tabCase.getModel();
         model.setRowCount(0);
-        for (Case c : system.getCaseDirectory().getCaseList()) {
+        for (Case c : system.getHospitalCaseDirectory().getCaseList()) 
+        {
             if(c.getStatus().equals("Fresh"))
             {
             Object [] row = new Object[3];
@@ -294,7 +295,7 @@ public class ViewCasesJPanel extends javax.swing.JPanel {
             return;
         }
         Case c=(Case) tabCase.getValueAt(selectedRow, 0);
-        txtCaseNumber.setText("");//tc.getCaseID());
+        txtCaseNumber.setText( "" + c.getCaseID());//tc.getCaseID());
         txtName.setText(c.getVictimName());
         txtDetails.setText(c.getVictomDescription());
         txtStatus.setText(c.getStatus());

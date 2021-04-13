@@ -5,12 +5,15 @@
  */
 package ui.LawyerRole;
 
+import Business.Case.Case;
+import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.LawyerOrganization;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.LabTestWorkRequest;
 import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -27,17 +30,38 @@ public class LawyerWorkAreaJPanel extends javax.swing.JPanel {
     private LawyerOrganization organization;
     private Enterprise enterprise;
     private UserAccount userAccount;
-    public LawyerWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, LawyerOrganization organization, Enterprise enterprise) {
+    private EcoSystem system;
+    public LawyerWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, LawyerOrganization organization, Enterprise enterprise, EcoSystem system) {
         initComponents();
         
         this.userProcessContainer = userProcessContainer;
         this.organization = organization;
         this.enterprise = enterprise;
         this.userAccount = account;
+        this.system=system;
         valueLabel.setText(enterprise.getName());
-        populate();
+        populateTable();
     }
 
+    
+      public void populateTable() {
+         DefaultTableModel model = (DefaultTableModel) workRequestJTable.getModel();
+        model.setRowCount(0);
+        for (Case c : system.getLcaseDir().getCaseList()) {
+     //       if(c.getStatus().equals("AppointmentWIthDoctor")||c.getStatus().equals("Completed")||c.getStatus().equals("ReportSent"))
+       //     {
+            Object [] row = new Object[4];
+                row[0] = c;
+                row[1] = c.getVictimName();
+                 row[2] = c.getIssue();
+                 row[3] = c.getLawyerStatus();
+                
+                
+                model.addRow(row);
+         //   }
+        }
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -140,32 +164,26 @@ public class LawyerWorkAreaJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     
-    public void populate(){
-        DefaultTableModel model = (DefaultTableModel) workRequestJTable.getModel();
-        
-        model.setRowCount(0);
-        for (WorkRequest request : userAccount.getWorkQueue().getWorkRequestList()){
-            Object[] row = new Object[4];
-            row[0] = request.getMessage();
-            row[1] = request.getReceiver();
-            row[2] = request.getStatus();
-            String result = ((LabTestWorkRequest) request).getTestResult();
-            row[3] = result == null ? "Waiting" : result;
-            
-            model.addRow(row);
-        }
-    }
+   
     
     private void btnHandleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHandleActionPerformed
         // TODO add your handling code here:
+         
+        int selectedRow = workRequestJTable.getSelectedRow();
+          
+        if(selectedRow < 0) {
+            JOptionPane.showMessageDialog(null,"Please Select a case", "Warining", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        Case c=(Case) workRequestJTable.getValueAt(selectedRow, 0);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        userProcessContainer.add("LawyerReportJPanel", new LawyerReportJPanel(userProcessContainer, userAccount, enterprise));
+        userProcessContainer.add("LawyerReportJPanel", new LawyerReportJPanel(userProcessContainer, userAccount, enterprise,c));
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnHandleActionPerformed
 
     private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
         // TODO add your handling code here:
-        populate();
+       populateTable();
     }//GEN-LAST:event_btnRefreshActionPerformed
 
 

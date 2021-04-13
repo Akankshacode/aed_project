@@ -23,7 +23,7 @@ public class LawyerRole extends Role{
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-        return new LawyerWorkAreaJPanel(userProcessContainer, account, (LawyerOrganization)organization, enterprise);
+        return new LawyerWorkAreaJPanel(userProcessContainer, account, (LawyerOrganization)organization, enterprise,business);
     }
     
 }

@@ -6,6 +6,8 @@
 package ui.SocialWorkerRole;
 
 import Business.Case.Case;
+import Business.Case.HospitalCaseDirectory;
+import Business.Case.LawCaseDirectory;
 import Business.EcoSystem;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
@@ -26,12 +28,15 @@ public class SendReportJPanel extends javax.swing.JPanel {
     private JPanel userProcessContainer;
     private EcoSystem business;
     private UserAccount userAccount;
-
+private HospitalCaseDirectory hdir;
+private LawCaseDirectory ldir;
     public SendReportJPanel(JPanel userProcessContainer, EcoSystem business, UserAccount userAccount) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.business = business;
         this.userAccount = userAccount;
+        hdir=business.getHospitalCaseDirectory();
+        ldir=business.getLcaseDir();
         populateTable();
     }
 
@@ -40,13 +45,12 @@ public class SendReportJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
         for (Case c : business.getCaseDir().getCaseList()) {
             if (c.getStatus().equals("Case sent")) {
-                Object[] row = new Object[5];
+                Object[] row = new Object[4];
                 row[0] = c;
-//                row[1] = c.getVictimName();
+                  row[1] = c.getVictimName();
                 System.out.println(c.getSocialObservations());
                 row[2] = c.getSocialObservations();
-                row[3] = c.getDetails();
-                row[4] = c.getIssue();
+                row[3] = c.getIssue();
                 model.addRow(row);
             }
         }
@@ -73,13 +77,13 @@ public class SendReportJPanel extends javax.swing.JPanel {
 
         tblReport.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Case ID", "Report ID", "Observations", "Description", "Issue"
+                "Case ID", "Victim Name", "Observations", "Issue"
             }
         ));
         jScrollPane1.setViewportView(tblReport);
@@ -119,23 +123,23 @@ public class SendReportJPanel extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(backJButton)
-                                .addGap(70, 70, 70)
-                                .addComponent(lblHeading, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(71, 71, 71)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 167, Short.MAX_VALUE)
                         .addComponent(btnHospital)
                         .addGap(52, 52, 52)
                         .addComponent(btnLawfirm)
                         .addGap(60, 60, 60)
                         .addComponent(btnPolice)
-                        .addGap(192, 192, 192))))
+                        .addGap(192, 192, 192))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(backJButton)
+                        .addGap(70, 70, 70)
+                        .addComponent(lblHeading, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(101, 101, 101)
+                .addComponent(jScrollPane1)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -155,7 +159,7 @@ public class SendReportJPanel extends javax.swing.JPanel {
                     .addComponent(btnHospital, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnLawfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnPolice, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(89, Short.MAX_VALUE))
+                .addContainerGap(289, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -167,6 +171,14 @@ public class SendReportJPanel extends javax.swing.JPanel {
             return;
         }
         Case ca = (Case) tblReport.getValueAt(selectedRow, 0);
+        ca.setTstatus("Not Assigned");
+        ca.setTherapist("NA");
+          ca.setDoctor("");
+          ca.setDstatus("Not Assigned");
+          ca.setStatus("Fresh");
+          
+        hdir.AddCase(ca);
+        
         JOptionPane.showMessageDialog(null, "Report sent to Hospital");
     }//GEN-LAST:event_btnHospitalActionPerformed
 
@@ -177,8 +189,12 @@ public class SendReportJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please Select a case", "warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
+        
         Case ca = (Case) tblReport.getValueAt(selectedRow, 0);
-
+       
+          ca.setLawyerStatus("Fresh");
+          
+        ldir.AddCase(ca);
         JOptionPane.showMessageDialog(null, "Report sent to Law Firm");
     }//GEN-LAST:event_btnLawfirmActionPerformed
 

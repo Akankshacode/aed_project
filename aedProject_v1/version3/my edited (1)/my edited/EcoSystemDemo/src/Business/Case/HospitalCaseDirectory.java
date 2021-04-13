@@ -10,12 +10,12 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Akanksha
+ * @author markynsailamar
  */
-public class CaseDirectory {
-    private ArrayList<Case> caseList;
+public class HospitalCaseDirectory {
+     private ArrayList<Case> caseList;
     private Employee emp;
-    public CaseDirectory() {
+    public HospitalCaseDirectory() {
         caseList = new ArrayList();
     }
 
@@ -38,6 +38,10 @@ public class CaseDirectory {
         caseList.add(c);
         return c;
     }
+    public void AddCase( Case c)
+    {
+        caseList.add(c);
+    }
        public void deleteCase(Case c){
               caseList.remove(c);
     }
@@ -50,5 +54,4 @@ public class CaseDirectory {
             }
            return null;
        }
-               
 }

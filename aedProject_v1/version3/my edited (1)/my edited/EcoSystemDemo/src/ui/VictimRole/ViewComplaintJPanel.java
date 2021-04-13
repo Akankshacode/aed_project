@@ -46,6 +46,7 @@ public class ViewComplaintJPanel extends javax.swing.JPanel {
         lblDescr1.setText(ca.getDetails());
         lblIssue1.setText(ca.getIssue());
         lblCulprit1.setText(ca.getCulpritName());
+        lblStatus.setText(ca.getStatus());
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -66,6 +67,8 @@ public class ViewComplaintJPanel extends javax.swing.JPanel {
         lblCulprit1 = new javax.swing.JLabel();
         lblDescr1 = new javax.swing.JLabel();
         backJButton = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        lblStatus = new javax.swing.JLabel();
 
         jLabel1.setText("View Complaint");
 
@@ -84,6 +87,8 @@ public class ViewComplaintJPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel2.setText("Status");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -96,7 +101,8 @@ public class ViewComplaintJPanel extends javax.swing.JPanel {
                             .addComponent(lblIssue)
                             .addComponent(lblDate)
                             .addComponent(lblCulpritName)
-                            .addComponent(lblDescr)))
+                            .addComponent(lblDescr)
+                            .addComponent(jLabel2)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(26, 26, 26)
                         .addComponent(backJButton)))
@@ -110,7 +116,10 @@ public class ViewComplaintJPanel extends javax.swing.JPanel {
                             .addComponent(lblIssue1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblDescr1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblDate1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblCulprit1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(lblCulprit1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(lblStatus)))
                 .addContainerGap(47, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -134,9 +143,13 @@ public class ViewComplaintJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblDescr)
                     .addComponent(lblDescr1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(lblStatus))
+                .addGap(183, 183, 183)
                 .addComponent(backJButton)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -153,6 +166,7 @@ public class ViewComplaintJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backJButton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lblCulprit1;
     private javax.swing.JLabel lblCulpritName;
     private javax.swing.JLabel lblDate;
@@ -161,5 +175,6 @@ public class ViewComplaintJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblDescr1;
     private javax.swing.JLabel lblIssue;
     private javax.swing.JLabel lblIssue1;
+    private javax.swing.JLabel lblStatus;
     // End of variables declaration//GEN-END:variables
 }

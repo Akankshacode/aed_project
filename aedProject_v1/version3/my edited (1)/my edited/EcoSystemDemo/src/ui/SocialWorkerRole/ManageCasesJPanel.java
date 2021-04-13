@@ -40,11 +40,12 @@ public class ManageCasesJPanel extends javax.swing.JPanel {
         for (Case c : business.getCaseDir().getCaseList()) {
             if(c.getStatus().equals("Case sent"))
             {
-            Object [] row = new Object[4];
+            Object [] row = new Object[5];
                 row[0] = c;
                 row[1] = c.getVictimName();
                  row[2] = c.getIssue();
                  row[3] = c.getDetails(); 
+                 row[4]=c.getSocialStatus();
                 model.addRow(row);
             }
         }
@@ -67,13 +68,13 @@ public class ManageCasesJPanel extends javax.swing.JPanel {
 
         tblCases.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "CaseID", "VictimName", "Issue", "Description"
+                "CaseID", "VictimName", "Issue", "Status", "Social Worker"
             }
         ));
         jScrollPane1.setViewportView(tblCases);
@@ -97,18 +98,17 @@ public class ManageCasesJPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(79, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(68, 68, 68))
-            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(53, 53, 53)
                         .addComponent(backJButton))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(238, 238, 238)
-                        .addComponent(btnGenerateReport)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(btnGenerateReport))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 736, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(80, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -119,7 +119,7 @@ public class ManageCasesJPanel extends javax.swing.JPanel {
                 .addComponent(btnGenerateReport)
                 .addGap(12, 12, 12)
                 .addComponent(backJButton)
-                .addContainerGap(127, Short.MAX_VALUE))
+                .addContainerGap(271, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

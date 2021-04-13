@@ -13,6 +13,7 @@ import Business.Employee.Employee;
  */
 public class Case {
     private static int caseID=1;
+    private String caseIID;
     private String victimName;
     private String issue;
     private String details;
@@ -20,6 +21,9 @@ public class Case {
     private String culpritName;
     private String status;
     private String socialObservations;
+    private String SocialStatus;
+    private String SocialWorker;
+   private boolean assigned;
 
 
 //HOSPITAL PARAMETERS
@@ -38,6 +42,121 @@ private String Tstatus;
        private String TherapistSymptom;
        private String TherapistTherapy;
        private boolean flagTaken =false;
+     
+      
+       
+       
+       
+       //LAW PARAMENT
+
+        private String Lstatus;
+       private String Lawyer;
+       private String Court;
+       private String LawyerStatus;
+       private String Status;
+       private String LawInvoked;
+       private String ActionPlan;
+       private String LawEnforcedRequired;
+       private String PersonalComments;
+
+
+    public String getLstatus() {
+        return Lstatus;
+    }
+
+    public void setLstatus(String Lstatus) {
+        this.Lstatus = Lstatus;
+    }
+
+    public String getLawyer() {
+        return Lawyer;
+    }
+
+    public void setLawyer(String Lawyer) {
+        this.Lawyer = Lawyer;
+    }
+
+    public String getCourt() {
+        return Court;
+    }
+
+    public void setCourt(String Court) {
+        this.Court = Court;
+    }
+
+    public String getLawyerStatus() {
+        return LawyerStatus;
+    }
+
+    public void setLawyerStatus(String LawyerStatus) {
+        this.LawyerStatus = LawyerStatus;
+    }
+
+    public String getLawInvoked() {
+        return LawInvoked;
+    }
+
+    public void setLawInvoked(String LawInvoked) {
+        this.LawInvoked = LawInvoked;
+    }
+
+    public String getActionPlan() {
+        return ActionPlan;
+    }
+
+    public void setActionPlan(String ActionPlan) {
+        this.ActionPlan = ActionPlan;
+    }
+
+    public String getLawEnforcedRequired() {
+        return LawEnforcedRequired;
+    }
+
+    public void setLawEnforcedRequired(String LawEnforcedRequired) {
+        this.LawEnforcedRequired = LawEnforcedRequired;
+    }
+
+    public String getPersonalComments() {
+        return PersonalComments;
+    }
+
+    public void setPersonalComments(String PersonalComments) {
+        this.PersonalComments = PersonalComments;
+    }
+       
+       
+    public String getCaseIID() {
+        return caseIID;
+    }
+
+    public void setCaseIID(String caseIID) {
+        this.caseIID = caseIID;
+    }
+
+       
+    public String getSocialWorker() {
+        return SocialWorker;
+    }
+
+    public void setSocialWorker(String SocialWorker) {
+        this.SocialWorker = SocialWorker;
+    }
+
+    public boolean isAssigned() {
+        return assigned;
+    }
+
+    public void setAssigned(boolean assigned) {
+        this.assigned = assigned;
+    }
+
+    public String getSocialStatus() {
+        return SocialStatus;
+    }
+
+    public void setSocialStatus(String victimStatus) {
+        this.SocialStatus = victimStatus;
+    }
     
     
     

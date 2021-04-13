@@ -5,6 +5,7 @@
  */
 package ui.LawyerRole;
 
+import Business.Case.Case;
 import Business.Enterprise.Enterprise;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
@@ -23,20 +24,22 @@ public class LawyerReportJPanel extends javax.swing.JPanel {
     private JPanel userProcessContainer;
     private Enterprise enterprise;
     private UserAccount userAccount;
-    public LawyerReportJPanel(JPanel userProcessContainer, UserAccount account, Enterprise enterprise) {
+    private Case c;
+    public LawyerReportJPanel(JPanel userProcessContainer, UserAccount account, Enterprise enterprise,Case c) {
         initComponents();
         
         this.userProcessContainer = userProcessContainer;
         this.enterprise = enterprise;
         this.userAccount = account;
+        this.c=c;
         populate();
     }
     
     public void populate(){
-        lblCaseID.setText("123");
-        lblIssue.setText("Harrasment");
+        lblCaseID.setText(c.getCaseIID());
+        lblIssue.setText(c.getIssue());
        // lblLawyerName.setText("Saul Goodman");
-        lblIncidentReport.setText("Harrasment at the workplace");
+        lblIncidentReport.setText(c.getDetails());
     }
 
     /**
@@ -206,7 +209,10 @@ public class LawyerReportJPanel extends javax.swing.JPanel {
         String nextSteps = txtNextSteps.getText();
         String lawRequired = txtLawRequired.getText();
         String comments = txtComments.getText();
-        
+        c.setLawEnforcedRequired(lawRequired);
+        c.setLawInvoked(lawInvoked);
+        c.setActionPlan(nextSteps);
+        c.setPersonalComments(comments);
         JOptionPane.showMessageDialog(this, "Report filed!");
     }//GEN-LAST:event_btnGenerateReportActionPerformed
 

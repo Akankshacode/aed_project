@@ -154,11 +154,13 @@ public class CreateJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
+       
         String date =txtDate.getText();
         String issue = txtIssue.getText();
         String culpritName = txtCulprit.getText();
         String description = txtDescr.getText();
         String status ="Case sent";
+        
        String name =account.getEmployee().getName();
        cd.createCase(issue, culpritName, description, status,name,date);
         JOptionPane.showMessageDialog(null, "Case Has Been Registered");

@@ -10,12 +10,12 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Akanksha
+ * @author markynsailamar
  */
-public class CaseDirectory {
+public class LawCaseDirectory {
     private ArrayList<Case> caseList;
     private Employee emp;
-    public CaseDirectory() {
+    public LawCaseDirectory() {
         caseList = new ArrayList();
     }
 
@@ -32,11 +32,15 @@ public class CaseDirectory {
         c.setStatus(status);
         c.setVictimName(name);
         c.setDate(date);
-        c.setSocialStatus("Not Assigned");
+        c.setLawyer("Not Assigned");
         c.setAssigned(false);
-        c.setSocialWorker("Not Assigned");
+        c.setLawyerStatus("Not Assigned");
         caseList.add(c);
         return c;
+    }
+    public void AddCase( Case c)
+    {
+        caseList.add(c);
     }
        public void deleteCase(Case c){
               caseList.remove(c);
@@ -50,5 +54,4 @@ public class CaseDirectory {
             }
            return null;
        }
-               
 }
