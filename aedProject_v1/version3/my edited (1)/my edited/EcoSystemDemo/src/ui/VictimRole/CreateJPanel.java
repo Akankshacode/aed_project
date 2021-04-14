@@ -17,6 +17,7 @@ import Business.EcoSystem;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Component;
+import javamail.javamailUtil;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import ui.SystemAdminWorkArea.SystemAdminWorkAreaJPanel;
@@ -163,8 +164,9 @@ public class CreateJPanel extends javax.swing.JPanel {
         
        String name =account.getEmployee().getName();
        cd.createCase(issue, culpritName, description, status,name,date);
-        JOptionPane.showMessageDialog(null, "Case Has Been Registered");
-        
+        JOptionPane.showMessageDialog(null, "Case Has Been Registered and an Email has been sent to your mailID");
+        String email = account.getEmployee().getEmail();
+        javamailUtil.sendMail(email);
     }//GEN-LAST:event_btnSubmitActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
