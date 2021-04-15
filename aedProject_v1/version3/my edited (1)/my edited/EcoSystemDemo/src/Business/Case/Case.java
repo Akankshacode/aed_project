@@ -58,6 +58,11 @@ private String Tstatus;
        private String ActionPlan;
        private String LawEnforcedRequired;
        private String PersonalComments;
+       private String Decision;
+       private String Evidence_Present;
+       private String Judgement;
+       private String Sentence;
+       private String RestrainingOrder;
 
 
     public String getLstatus() {
