@@ -213,6 +213,7 @@ public class LawyerReportJPanel extends javax.swing.JPanel {
         c.setLawInvoked(lawInvoked);
         c.setActionPlan(nextSteps);
         c.setPersonalComments(comments);
+        c.setLawyer(userAccount.getEmployee().getName());
         JOptionPane.showMessageDialog(this, "Report filed!");
     }//GEN-LAST:event_btnGenerateReportActionPerformed
 

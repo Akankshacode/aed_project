@@ -25,7 +25,10 @@ public abstract class Role {
         HAdmin("HAdmin"),
          Lawyer("Lawyer"),
          LAdmin("LAdmin"),
-         Court("Court");
+         Court("Court"),
+         Police("Police"),
+         Prison("Prison"),
+         PAdmin("PAdmin");
          
         
         private String value;

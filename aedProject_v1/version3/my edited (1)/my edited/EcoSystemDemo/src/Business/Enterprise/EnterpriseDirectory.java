@@ -43,6 +43,10 @@ public class EnterpriseDirectory {
             enterprise=new LawEnterprise(name);
             enterpriseList.add(enterprise);
         }
+        else  if(type==Enterprise.EnterpriseType.Police){
+            enterprise=new PoliceEnterprise(name);
+            enterpriseList.add(enterprise);
+        }
         
         
     

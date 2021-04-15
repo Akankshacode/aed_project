@@ -5,11 +5,14 @@
  */
 package ui.CourtRole;
 
+import Business.Case.Case;
+import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.CourtOrganization;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -24,7 +27,8 @@ public class CourtWorkAreaJPanel extends javax.swing.JPanel {
     private CourtOrganization organization;
     private Enterprise enterprise;
     private UserAccount userAccount;
-    public CourtWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, CourtOrganization organization, Enterprise enterprise) {
+    private EcoSystem system;
+    public CourtWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, CourtOrganization organization, Enterprise enterprise,EcoSystem business) {
         initComponents();
         
         this.userProcessContainer = userProcessContainer;
@@ -32,7 +36,9 @@ public class CourtWorkAreaJPanel extends javax.swing.JPanel {
         this.enterprise = enterprise;
         this.userAccount = account;
         valueLabel.setText(enterprise.getName());
+        system=business;
         populate();
+        
     }
 
     /**
@@ -48,7 +54,7 @@ public class CourtWorkAreaJPanel extends javax.swing.JPanel {
         enterpriseLabel = new javax.swing.JLabel();
         valueLabel = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        workRequestJTable = new javax.swing.JTable();
+        caseTab = new javax.swing.JTable();
         btnRefresh = new javax.swing.JButton();
         btnHandle = new javax.swing.JButton();
 
@@ -57,22 +63,22 @@ public class CourtWorkAreaJPanel extends javax.swing.JPanel {
 
         valueLabel.setText("<value>");
 
-        workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
+        caseTab.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "CaseID", "Defendant", "Plaintiff", "Issue", "Decision"
+                "CaseID", "Defendant", "Lawyer", "Issue"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -83,7 +89,7 @@ public class CourtWorkAreaJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(workRequestJTable);
+        jScrollPane1.setViewportView(caseTab);
 
         btnRefresh.setText("Refresh");
         btnRefresh.addActionListener(new java.awt.event.ActionListener() {
@@ -171,17 +177,29 @@ public class CourtWorkAreaJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnHandleActionPerformed
 
     private void populate() {
-        
+          DefaultTableModel model = (DefaultTableModel) caseTab.getModel();
+        model.setRowCount(0);
+        for (Case c : system.getLcaseDir().getCaseList()) {
+     //       if(c.getStatus().equals("AppointmentWIthDoctor")||c.getStatus().equals("Completed")||c.getStatus().equals("ReportSent"))
+       //     {
+            Object [] row = new Object[4];
+                row[0] = c;
+                row[1] = c.getVictimName();
+                 row[2] = c.getLawyer();
+                 row[3] = c.getIssue(); 
+                model.addRow(row);
+         //   }
+        }
     }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnHandle;
     private javax.swing.JButton btnRefresh;
+    private javax.swing.JTable caseTab;
     private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel valueLabel;
-    private javax.swing.JTable workRequestJTable;
     // End of variables declaration//GEN-END:variables
 }

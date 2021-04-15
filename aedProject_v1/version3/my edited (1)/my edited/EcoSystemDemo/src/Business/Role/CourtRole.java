@@ -22,7 +22,7 @@ public class CourtRole extends Role{
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-        return new CourtWorkAreaJPanel(userProcessContainer, account, (CourtOrganization)organization, enterprise);
+        return new CourtWorkAreaJPanel(userProcessContainer, account, (CourtOrganization)organization, enterprise,business);
     }
     
 }
