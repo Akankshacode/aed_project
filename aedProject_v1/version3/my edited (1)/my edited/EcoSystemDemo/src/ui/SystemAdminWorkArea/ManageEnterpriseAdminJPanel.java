@@ -11,6 +11,7 @@ import Business.Network.Network;
 import Business.Role.AdminRole;
 import Business.Role.HAdminRole;
 import Business.Role.LAdminRole;
+import Business.Role.PAdminRole;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Component;
@@ -167,6 +168,11 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         jLabel6.setText("Type");
 
         typeComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        typeComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                typeComboBoxActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -291,8 +297,14 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         else if(enterprise.getEnterpriseType().toString().equals("Law"))
         {
             account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, new LAdminRole());
-        System.out.println("Hospital ADMIN");
+        System.out.println("Law ADMIN");
         }
+         else if(enterprise.getEnterpriseType().toString().equals("Police"))
+        {
+            account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, new PAdminRole());
+        System.out.println("Police ADMIN");
+        }
+        
         
         populateTable();
         
@@ -318,6 +330,10 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         }
         
     }//GEN-LAST:event_enterpriseJComboBoxActionPerformed
+
+    private void typeComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_typeComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_typeComboBoxActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backJButton;

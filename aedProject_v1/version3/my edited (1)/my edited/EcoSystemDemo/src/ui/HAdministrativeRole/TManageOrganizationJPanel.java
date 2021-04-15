@@ -38,7 +38,7 @@ public class TManageOrganizationJPanel extends javax.swing.JPanel {
         for (Type type : Organization.Type.values()){
             if (!type.getValue().equals(Type.Admin.getValue()) && !type.getValue().equals(Type.HAdmin.getValue()) && !type.getValue().equals(Type.LAdmin.getValue()) && 
            !type.getValue().equals(Type.Victim.getValue()) && !type.getValue().equals(Type.SocialWorker.getValue())&&
-                  !type.getValue().equals(Type.Lawyer.getValue()) && !type.getValue().equals(Type.Court.getValue()) )
+                  !type.getValue().equals(Type.Lawyer.getValue()) && !type.getValue().equals(Type.Court.getValue())&&!type.getValue().equals(Type.Police.getValue()) && !type.getValue().equals(Type.Prison.getValue()) && !type.getValue().equals(Type.PAdmin.getValue()) )
             {
                 System.out.println("Populating the box");
                 organizationJComboBox.addItem(type);

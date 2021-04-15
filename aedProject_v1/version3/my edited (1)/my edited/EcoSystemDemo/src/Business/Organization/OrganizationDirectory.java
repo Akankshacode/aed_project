@@ -49,6 +49,14 @@ public class OrganizationDirectory {
             organization = new CourtOrganization();
             organizationList.add(organization);
         }
+         else if(type.getValue().equals((Type.Police.getValue()))){
+            organization = new PoliceOrganization();
+            organizationList.add(organization);
+        }
+          else if(type.getValue().equals((Type.Prison.getValue()))){
+            organization = new PrisonOrganization();
+            organizationList.add(organization);
+        }
         return organization;
     }
 }
