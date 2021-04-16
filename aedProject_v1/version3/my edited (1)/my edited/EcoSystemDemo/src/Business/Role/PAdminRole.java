@@ -12,7 +12,7 @@ import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import PAdministrativeRole.PAdminstratorWorkAreaJPanel;
 import javax.swing.JPanel;
-import ui.PoliceRole.PoliceWorkAreaJPanel;
+import ui.PoliceRole.ManageCriminalJPanel;
 
 /**
  *

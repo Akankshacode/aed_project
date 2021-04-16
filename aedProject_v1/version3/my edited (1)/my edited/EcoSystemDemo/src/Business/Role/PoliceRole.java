@@ -13,6 +13,7 @@ import Business.Organization.PoliceOrganization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
 import ui.LawyerRole.LawyerWorkAreaJPanel;
+import ui.PoliceRole.ManageCriminalJPanel;
 import ui.PoliceRole.PoliceWorkAreaJPanel;
 
 /**

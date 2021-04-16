@@ -146,7 +146,7 @@ public class ReportJPanel extends javax.swing.JPanel {
         String Meds=txtMeds.getText();
         c.setDoctorNotes(Notes);
         c.setDoctorPrescribedMedication(Meds);
-        c.setStatus("ReportSent");
+        c.setDstatus("ReportSent");
         JOptionPane.showMessageDialog(null, "Report Has been Created");
         
     }//GEN-LAST:event_jButton1ActionPerformed

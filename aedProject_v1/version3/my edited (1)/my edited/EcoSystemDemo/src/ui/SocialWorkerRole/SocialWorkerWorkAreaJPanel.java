@@ -82,10 +82,10 @@ public class SocialWorkerWorkAreaJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnSendReports, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(49, 49, 49)
+                        .addComponent(btnSendReports)
+                        .addGap(76, 76, 76)
                         .addComponent(btnReportStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addContainerGap(213, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -97,7 +97,7 @@ public class SocialWorkerWorkAreaJPanel extends javax.swing.JPanel {
                     .addComponent(btnManageCases)
                     .addComponent(btnSendReports)
                     .addComponent(btnReportStatus))
-                .addContainerGap(189, Short.MAX_VALUE))
+                .addContainerGap(373, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

@@ -35,6 +35,10 @@ public class CaseDirectory {
         c.setSocialStatus("Not Assigned");
         c.setAssigned(false);
         c.setSocialWorker("Not Assigned");
+        c.setTherapist("NotAssigned");
+        c.setDoctor("NotAssigned");
+        c.setLawyer("NotAssigned");
+       
         caseList.add(c);
         return c;
     }

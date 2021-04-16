@@ -44,13 +44,12 @@ private LawCaseDirectory ldir;
         DefaultTableModel model = (DefaultTableModel) tblReport.getModel();
         model.setRowCount(0);
         for (Case c : business.getCaseDir().getCaseList()) {
-            if (c.getStatus().equals("Case sent")) {
+            if (!c.getSocialStatus().equals("Not Assigned")) {
                 Object[] row = new Object[4];
                 row[0] = c;
                   row[1] = c.getVictimName();
-                System.out.println(c.getSocialObservations());
                 row[2] = c.getSocialObservations();
-                row[3] = c.getIssue();
+                row[3] = c.getSocialStatus();
                 model.addRow(row);
             }
         }
@@ -83,7 +82,7 @@ private LawCaseDirectory ldir;
                 {null, null, null, null}
             },
             new String [] {
-                "Case ID", "Victim Name", "Observations", "Issue"
+                "Case ID", "Victim Name", "Observations", "Status"
             }
         ));
         jScrollPane1.setViewportView(tblReport);
@@ -120,26 +119,24 @@ private LawCaseDirectory ldir;
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 167, Short.MAX_VALUE)
-                        .addComponent(btnHospital)
-                        .addGap(52, 52, 52)
-                        .addComponent(btnLawfirm)
-                        .addGap(60, 60, 60)
-                        .addComponent(btnPolice)
-                        .addGap(192, 192, 192))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(backJButton)
-                        .addGap(70, 70, 70)
-                        .addComponent(lblHeading, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
-                .addGap(101, 101, 101)
-                .addComponent(jScrollPane1)
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(103, 103, 103)
+                        .addComponent(btnHospital)
+                        .addGap(183, 183, 183)
+                        .addComponent(btnLawfirm)
+                        .addGap(187, 187, 187)
+                        .addComponent(btnPolice))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 986, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(backJButton)
+                                .addGap(70, 70, 70)
+                                .addComponent(lblHeading, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(264, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -151,15 +148,15 @@ private LawCaseDirectory ldir;
                         .addGap(29, 29, 29))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(backJButton)
-                        .addGap(18, 18, 18)))
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65)
+                        .addComponent(backJButton)))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(63, 63, 63)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnHospital, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnLawfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnPolice, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(289, Short.MAX_VALUE))
+                .addContainerGap(345, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -171,15 +168,18 @@ private LawCaseDirectory ldir;
             return;
         }
         Case ca = (Case) tblReport.getValueAt(selectedRow, 0);
-        ca.setTstatus("Not Assigned");
-        ca.setTherapist("NA");
-          ca.setDoctor("");
-          ca.setDstatus("Not Assigned");
-          ca.setStatus("Fresh");
-          
+       
+      
+        ca.setTherapist("Not Assigned");
+          ca.setDoctor("Not Assigned");
+          ca.setDstatus("Fresh");
+        ca.setTstatus("Fresh");
+          ca.setHstatus("Fresh");
+          ca.setSocialStatus("Report Sent");
         hdir.AddCase(ca);
         
         JOptionPane.showMessageDialog(null, "Report sent to Hospital");
+         populateTable();
     }//GEN-LAST:event_btnHospitalActionPerformed
 
     private void btnLawfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLawfirmActionPerformed
@@ -192,10 +192,15 @@ private LawCaseDirectory ldir;
         
         Case ca = (Case) tblReport.getValueAt(selectedRow, 0);
        
-          ca.setLawyerStatus("Fresh");
+          ca.setLawyerStatus("Not Assigned");
+          ca.setLStatus("Fresh");
+          ca.setCstatus("Fresh");
+          
           
         ldir.AddCase(ca);
+        
         JOptionPane.showMessageDialog(null, "Report sent to Law Firm");
+         ca.setSocialStatus("Report Sent");
     }//GEN-LAST:event_btnLawfirmActionPerformed
 
     private void btnPoliceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPoliceActionPerformed
@@ -208,6 +213,7 @@ private LawCaseDirectory ldir;
         Case ca = (Case) tblReport.getValueAt(selectedRow, 0);
 
         JOptionPane.showMessageDialog(null, "Report sent to Police");
+         ca.setSocialStatus("Report Sent");
     }//GEN-LAST:event_btnPoliceActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed

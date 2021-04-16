@@ -6,6 +6,7 @@
 package ui.MedDoctorRole;
 
 import Business.Case.Case;
+import Business.Case.HospitalCaseDirectory;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 
@@ -33,6 +34,7 @@ public class ViewCasesJPanel extends javax.swing.JPanel {
     private DoctorOrganization organization;
     private Enterprise enterprise;
     private EcoSystem system;
+    private HospitalCaseDirectory hcd;
     
     public ViewCasesJPanel(JPanel userProcessContainer, UserAccount account, DoctorOrganization organization, Enterprise enterprise,EcoSystem system) {
         initComponents();
@@ -41,39 +43,43 @@ public class ViewCasesJPanel extends javax.swing.JPanel {
         this.enterprise = enterprise;
         this.userAccount = account;
         this.system= system;
+         hcd=system.getHospitalCaseDirectory();
         populateTable() ;
-         populateApptTable();
+         //populateApptTable();
     }
 
     
      public void populateTable() {
          DefaultTableModel model = (DefaultTableModel) tabCase.getModel();
         model.setRowCount(0);
-        for (Case c : system.getHospitalCaseDirectory().getCaseList()) 
+           if(hcd!=null)
+           {
+               for (Case c : hcd.getCaseList()) 
         {
-            if(c.getStatus().equals("Fresh"))
+            if(c.getDstatus().equals("Fresh"))
             {
             Object [] row = new Object[3];
                 row[0] = c;
                 row[1] = c.getVictimName();
-                 row[2] = c.getStatus();
+                 row[2] = c.getDstatus();
                 
                 
                 model.addRow(row);
             }
-        }
+        }}
     }
      
       public void populateApptTable() {
          DefaultTableModel model = (DefaultTableModel) tabAppointment.getModel();
         model.setRowCount(0);
-        for (Case c : system.getCaseDirectory().getCaseList()) {
-            if(c.getStatus().equals("AppointmentWIthDoctor"))
+      
+        for (Case c :hcd.getCaseList()) {
+            if(c.getDstatus().equals("AppointmentWIthDoctor"))
             {  Object [] row = new Object[4];
                 row[0] = c;
                 row[1] = c.getVictimName();
                  row[2] = c.getDocAppointment();
-                  row[3] = c.getStatus();
+                  row[3] = c.getDstatus();
                 
                 
                 model.addRow(row);
@@ -276,9 +282,10 @@ public class ViewCasesJPanel extends javax.swing.JPanel {
         Case c=(Case) tabCase.getValueAt(selectedRow, 0);
         String AppointmentDate=txtDate.getText();
         c.setDocAppointment(AppointmentDate);
-        c.setStatus("AppointmentWIthDoctor");
-        populateApptTable();
+        c.setDstatus("AppointmentWIthDoctor");
+  
         populateTable();
+              populateApptTable();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txtDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDateActionPerformed
@@ -297,8 +304,8 @@ public class ViewCasesJPanel extends javax.swing.JPanel {
         Case c=(Case) tabCase.getValueAt(selectedRow, 0);
         txtCaseNumber.setText( "" + c.getCaseID());//tc.getCaseID());
         txtName.setText(c.getVictimName());
-        txtDetails.setText(c.getVictomDescription());
-        txtStatus.setText(c.getStatus());
+        txtDetails.setText(c.getDetails());
+        txtStatus.setText(c.getDstatus());
         
         
          

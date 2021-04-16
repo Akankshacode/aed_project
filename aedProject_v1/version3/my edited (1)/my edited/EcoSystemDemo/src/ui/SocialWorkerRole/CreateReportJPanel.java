@@ -37,7 +37,7 @@ public class CreateReportJPanel extends javax.swing.JPanel {
     }
     public void populateDetails()
     {
-       lblCaseId.setText(c.getCaseIID());
+       lblCaseId.setText(c.getCaseID()+"");
        lblCulprit.setText(c.getCulpritName());
        lblDate.setText(c.getDate());
        lblDescription.setText(c.getDetails());
@@ -195,6 +195,7 @@ public class CreateReportJPanel extends javax.swing.JPanel {
         c.setSocialObservations(observation);
         c.setAssigned(true);
         c.setSocialStatus("Assigned");
+        c.setStatus("WithSocialWorker");
        c.setSocialWorker(userAccount.getEmployee().getName());
         
     }//GEN-LAST:event_btnSubmitActionPerformed

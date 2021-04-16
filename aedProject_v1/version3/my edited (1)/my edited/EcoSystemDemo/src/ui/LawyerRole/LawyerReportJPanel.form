@@ -22,27 +22,6 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="jLabel9" linkSize="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel8" linkSize="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel6" linkSize="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel7" linkSize="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="txtLawInvoked" linkSize="1" alignment="1" pref="190" max="32767" attributes="0"/>
-                                      <Component id="txtNextSteps" linkSize="1" alignment="1" max="32767" attributes="0"/>
-                                      <Component id="txtLawRequired" linkSize="1" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="txtComments" linkSize="1" alignment="0" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="198" max="-2" attributes="0"/>
-                                  <Component id="btnGenerateReport" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Component id="jLabel3" linkSize="3" min="-2" max="-2" attributes="0"/>
@@ -56,6 +35,28 @@
                                       <Component id="lblIssue" linkSize="1" max="32767" attributes="0"/>
                                   </Group>
                                   <Component id="lblIncidentReport" linkSize="1" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="jLabel9" linkSize="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel8" linkSize="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel6" linkSize="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel7" linkSize="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel4" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel10" alignment="1" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="btnGenerateReport" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="txtLawInvoked" linkSize="1" alignment="1" pref="190" max="32767" attributes="0"/>
+                                      <Component id="txtNextSteps" linkSize="1" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="txtLawRequired" linkSize="1" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="txtComments" linkSize="1" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="jTextField1" max="32767" attributes="0"/>
+                                      <Component id="jTextField2" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
                       </Group>
@@ -90,6 +91,16 @@
                   <Component id="jLabel5" linkSize="4" min="-2" max="-2" attributes="0"/>
                   <Component id="lblIncidentReport" min="-2" pref="58" max="-2" attributes="0"/>
               </Group>
+              <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel6" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -110,9 +121,9 @@
                   <Component id="jLabel9" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtComments" linkSize="2" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               <Component id="btnGenerateReport" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="39" max="32767" attributes="0"/>
+              <EmptySpace pref="63" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -200,6 +211,26 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBackActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel4">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="CULPRIT ADDRESS:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextField1">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel10">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="CULPRIT Phone No:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextField2">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField2ActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

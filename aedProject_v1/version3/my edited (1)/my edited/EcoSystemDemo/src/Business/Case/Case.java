@@ -12,8 +12,8 @@ import Business.Employee.Employee;
  * @author Akanksha
  */
 public class Case {
-    private static int caseID=1;
-    private String caseIID;
+    private static int caseID=1001;
+    
     private String victimName;
     private String issue;
     private String details;
@@ -31,7 +31,8 @@ public class Case {
     private String CaseStatusDoctor;
       private String CaseStatusTherapist;
 private String Dstatus;
-private String Tstatus; 
+private String Tstatus;
+private String Hstatus;
    private String Doctor;
      private String Therapist;
      private String DocAppointment;
@@ -50,10 +51,11 @@ private String Tstatus;
        //LAW PARAMENT
 
         private String Lstatus;
+            private String Cstatus;
        private String Lawyer;
        private String Court;
        private String LawyerStatus;
-       private String Status;
+       private String LStatus;
        private String LawInvoked;
        private String ActionPlan;
        private String LawEnforcedRequired;
@@ -63,6 +65,131 @@ private String Tstatus;
        private String Judgement;
        private String Sentence;
        private String RestrainingOrder;
+       private String Parole;
+
+       //Police Parameters
+       private String Pstatus;
+        private String CAddress;
+         private String CphoneNumber;
+         private String CCrimeComitted;
+          private String CDateOfCrime;
+
+    public String getCAddress() {
+        return CAddress;
+    }
+
+    public void setCAddress(String CAddress) {
+        this.CAddress = CAddress;
+    }
+
+    public String getCphoneNumber() {
+        return CphoneNumber;
+    }
+
+    public void setCphoneNumber(String CphoneNumber) {
+        this.CphoneNumber = CphoneNumber;
+    }
+
+    public String getCCrimeComitted() {
+        return CCrimeComitted;
+    }
+
+    public void setCCrimeComitted(String CCrimeComitted) {
+        this.CCrimeComitted = CCrimeComitted;
+    }
+
+    public String getCDateOfCrime() {
+        return CDateOfCrime;
+    }
+
+    public void setCDateOfCrime(String CDateOfCrime) {
+        this.CDateOfCrime = CDateOfCrime;
+    }
+
+          
+    public String getPstatus() {
+        return Pstatus;
+    }
+
+    public void setPstatus(String Pstatus) {
+        this.Pstatus = Pstatus;
+    }
+       
+       
+    public String getCstatus() {
+        return Cstatus;
+    }
+
+    public void setCstatus(String Cstatus) {
+        this.Cstatus = Cstatus;
+    }
+
+    public String getHstatus() {
+        return Hstatus;
+    }
+
+    public void setHstatus(String Hstatus) {
+        this.Hstatus = Hstatus;
+    }
+
+    public String getLStatus() {
+        return LStatus;
+    }
+
+    public void setLStatus(String LStatus) {
+        this.LStatus = LStatus;
+    }
+
+       
+       
+    public String getParole() {
+        return Parole;
+    }
+
+    public void setParole(String Parole) {
+        this.Parole = Parole;
+    }
+
+       
+    public String getDecision() {
+        return Decision;
+    }
+
+    public void setDecision(String Decision) {
+        this.Decision = Decision;
+    }
+
+    public String getEvidence_Present() {
+        return Evidence_Present;
+    }
+
+    public void setEvidence_Present(String Evidence_Present) {
+        this.Evidence_Present = Evidence_Present;
+    }
+
+    public String getJudgement() {
+        return Judgement;
+    }
+
+    public void setJudgement(String Judgement) {
+        this.Judgement = Judgement;
+    }
+
+    public String getSentence() {
+        return Sentence;
+    }
+
+    public void setSentence(String Sentence) {
+        this.Sentence = Sentence;
+    }
+
+    public String getRestrainingOrder() {
+        return RestrainingOrder;
+    }
+
+    public void setRestrainingOrder(String RestrainingOrder) {
+        this.RestrainingOrder = RestrainingOrder;
+    }
 
 
     public String getLstatus() {
@@ -128,17 +255,7 @@ private String Tstatus;
     public void setPersonalComments(String PersonalComments) {
         this.PersonalComments = PersonalComments;
     }
-       
-       
-    public String getCaseIID() {
-        return caseIID;
-    }
-
-    public void setCaseIID(String caseIID) {
-        this.caseIID = caseIID;
-    }
-
-       
+     
     public String getSocialWorker() {
         return SocialWorker;
     }
@@ -367,9 +484,9 @@ private String Tstatus;
         this.flagTaken = flagTaken;
     }
     
-//    @Override
-//    public String toString() {
-//        return caseID;
-//    }
+ @Override
+  public String toString() {
+      return caseID+"";
+   }
     
 }

@@ -45,14 +45,14 @@ public class TherapistReportJPanel extends javax.swing.JPanel {
      public void populateTable() {
          DefaultTableModel model = (DefaultTableModel) tabAppointment.getModel();
         model.setRowCount(0);
-        for (Case c : system.getCaseDirectory().getCaseList()) {
-            if(c.getStatus().equals("AppointmentWIthTherapist")||c.getStatus().equals("Completed")||c.getStatus().equals("ReportSent"))
+        for (Case c : system.getHospitalCaseDirectory().getCaseList()) {
+            if(c.getTstatus().equals("AppointmentWIthTherapist")||c.getTstatus().equals("Completed")||c.getTstatus().equals("ReportSent"))
             {
             Object [] row = new Object[4];
                 row[0] = c;
                 row[1] = c.getVictimName();
                  row[2] = c.getDocAppointment();
-                 row[3] = c.getStatus();
+                 row[3] = c.getTstatus();
                 
                 
                 model.addRow(row);
@@ -206,7 +206,7 @@ public class TherapistReportJPanel extends javax.swing.JPanel {
         Case casse=(Case) tabAppointment.getValueAt(selectedRow, 0);
         
      
-       if(! casse.getStatus().equals("Completed"))
+       if(! casse.getTstatus().equals("Completed"))
        {
            JOptionPane.showMessageDialog(null,"Appointment is not completed", "Warining", JOptionPane.WARNING_MESSAGE);
             return;
@@ -228,10 +228,14 @@ public class TherapistReportJPanel extends javax.swing.JPanel {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+     userProcessContainer.remove(this);
         Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+       CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
+        
+         
+    
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -246,7 +250,7 @@ public class TherapistReportJPanel extends javax.swing.JPanel {
         Case c=(Case) tabAppointment.getValueAt(selectedRow, 0);
         
      
-        c.setStatus("Completed");
+        c.setTstatus("Completed");
          populateTable();
        
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -263,7 +267,7 @@ public class TherapistReportJPanel extends javax.swing.JPanel {
         }
         Case c=(Case) tabAppointment.getValueAt(selectedRow, 0);
          
-       if(! c.getStatus().equals("ReportSent"))
+       if(! c.getTstatus().equals("ReportSent"))
        {
            JOptionPane.showMessageDialog(null,"Report Needs to be made", "Warining", JOptionPane.WARNING_MESSAGE);
             return;

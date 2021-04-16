@@ -5,12 +5,17 @@
  */
 package ui.PrisonRole;
 
+import Business.Case.Case;
+import Business.Case.PoliceCaseDirectory;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
 import Business.Organization.PrisonOrganization;
 import Business.UserAccount.UserAccount;
+import java.awt.CardLayout;
+import java.awt.Component;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -26,15 +31,41 @@ public class PrisonWorkAreaJPanel extends javax.swing.JPanel {
     private Enterprise enterprise;
     private UserAccount userAccount;
     private EcoSystem system;
+    PoliceCaseDirectory pcd;
     public PrisonWorkAreaJPanel(JPanel userProcessContainer,UserAccount account,PrisonOrganization organization,Enterprise enterprise,EcoSystem business) {
         
         initComponents();
           this.userProcessContainer=userProcessContainer;
         this.organization=organization;
         this.enterprise=enterprise;
-        this.system=system;
+        this.system=business;
+        populateTable();
+            pcd=system.getPoliceCaseDirectory();
     }
 
+    public void populateTable()
+    {
+       DefaultTableModel model = (DefaultTableModel) PrisonTab.getModel();
+        model.setRowCount(0);
+           if(pcd!=null)
+           {
+               for (Case c : pcd.getCaseList()) 
+        {
+            if(c.getPstatus().equals("In Prison"))
+            { Object [] row = new Object[5];
+                row[0] = c.getCulpritName();
+                row[1] = c.getCCrimeComitted();
+                 row[2] = c.getCDateOfCrime();
+                   row[3] = c.getSentence();
+                     row[4] = c.getParole();
+                 
+                
+                
+                model.addRow(row);
+            }
+        }}
+        
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -44,19 +75,180 @@ public class PrisonWorkAreaJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        PrisonTab = new javax.swing.JTable();
+        txtPrisoner = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        lblName = new javax.swing.JLabel();
+        lblCrimeComitted = new javax.swing.JLabel();
+        lblDateOfArrest = new javax.swing.JLabel();
+        lblSentence = new javax.swing.JLabel();
+        lblParole = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+
+        PrisonTab.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Prisoner", "Crime comitted", "Date of Arrest", "Sentence", "Parole"
+            }
+        ));
+        jScrollPane1.setViewportView(PrisonTab);
+
+        txtPrisoner.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPrisonerActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Search for Prisoner");
+
+        jButton1.setText("Search");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("Name:");
+
+        jLabel3.setText("Crime Comitted");
+
+        jLabel4.setText("Date of Arrest");
+
+        jLabel5.setText("Sentence");
+
+        jLabel6.setText("Parole");
+
+        lblName.setText("jLabel7");
+
+        lblCrimeComitted.setText("jLabel7");
+
+        lblDateOfArrest.setText("jLabel7");
+
+        lblSentence.setText("jLabel7");
+
+        lblParole.setText("jLabel7");
+
+        jLabel7.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel7.setText("Welcome to RedStone Prison DataBase");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(105, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1005, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(166, 166, 166)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6))
+                        .addGap(30, 30, 30)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblParole)
+                            .addComponent(lblSentence)
+                            .addComponent(lblDateOfArrest)
+                            .addComponent(lblCrimeComitted)
+                            .addComponent(lblName)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(txtPrisoner, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(47, 47, 47)
+                                .addComponent(jButton1))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(508, 508, 508)
+                        .addComponent(jLabel7)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addComponent(jLabel7)
+                .addGap(32, 32, 32)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(txtPrisoner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1))
+                .addGap(37, 37, 37)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(lblName))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(lblCrimeComitted, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(lblDateOfArrest, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(lblSentence, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(lblParole, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(114, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void txtPrisonerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPrisonerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPrisonerActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        String Name=txtPrisoner.getText();
+       
+       Case c= pcd.findCase(Name);
+       lblCrimeComitted.setText(c.getCCrimeComitted());
+       lblDateOfArrest.setText(c.getCDateOfCrime());
+       lblName.setText(c.getCulpritName());
+       lblParole.setText(c.getParole());
+       lblSentence.setText(c.getSentence());
+       
+           
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable PrisonTab;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblCrimeComitted;
+    private javax.swing.JLabel lblDateOfArrest;
+    private javax.swing.JLabel lblName;
+    private javax.swing.JLabel lblParole;
+    private javax.swing.JLabel lblSentence;
+    private javax.swing.JTextField txtPrisoner;
     // End of variables declaration//GEN-END:variables
 }

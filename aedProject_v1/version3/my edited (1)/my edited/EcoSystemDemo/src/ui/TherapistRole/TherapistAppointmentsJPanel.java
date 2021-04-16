@@ -44,13 +44,15 @@ public class TherapistAppointmentsJPanel extends javax.swing.JPanel {
      public void populateTable() {
          DefaultTableModel model = (DefaultTableModel) TabAssignedCases.getModel();
         model.setRowCount(0);
-        for (Case c : system.getCaseDirectory().getCaseList()) {
-            if(c.getStatus().equals("Fresh"))
+        for (Case c : system.getHospitalCaseDirectory().getCaseList()) {
+            if(c.getTstatus().equals("Fresh"))
             {
-            Object [] row = new Object[3];
+            Object [] row = new Object[4];
                 row[0] = c;
                 row[1] = c.getVictimName();
-                 row[2] = c.getStatus();
+                row[2] = c.getIssue();
+                 
+                row[3] = c.getTstatus();
                 
                 
                 model.addRow(row);
@@ -61,13 +63,13 @@ public class TherapistAppointmentsJPanel extends javax.swing.JPanel {
       public void populateApptTable() {
          DefaultTableModel model = (DefaultTableModel) tabAppointments.getModel();
         model.setRowCount(0);
-        for (Case c : system.getCaseDirectory().getCaseList()) {
-            if(c.getStatus().equals("AppointmentWIthTherapist"))
+        for (Case c : system.getHospitalCaseDirectory().getCaseList()) {
+            if(c.getTstatus().equals("AppointmentWIthTherapist"))
             {  Object [] row = new Object[4];
                 row[0] = c;
                 row[1] = c.getVictimName();
                  row[2] = c.getDocAppointment();
-                  row[3] = c.getStatus();
+                  row[3] = c.getTstatus();
                 
                 
                 model.addRow(row);
@@ -264,10 +266,10 @@ public class TherapistAppointmentsJPanel extends javax.swing.JPanel {
             return;
         }
         Case c=(Case) TabAssignedCases.getValueAt(selectedRow, 0);
-        txtCase.setText("");
+        txtCase.setText(c.getCaseID()+"");
         txtName.setText(c.getVictimName());
-        txtDetail.setText(c.getVictomDescription());
-        txtStatus.setText(c.getStatus());
+        txtDetail.setText(c.getDetails());
+        txtStatus.setText(c.getTstatus());
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -281,7 +283,7 @@ public class TherapistAppointmentsJPanel extends javax.swing.JPanel {
         Case c=(Case) TabAssignedCases.getValueAt(selectedRow, 0);
         String AppointmentDate=txtDate.getText();
         c.setDocAppointment(AppointmentDate);
-        c.setStatus("AppointmentWIthTherapist");
+        c.setTstatus("AppointmentWIthTherapist");
         populateApptTable();
         populateTable();
     }//GEN-LAST:event_jButton1ActionPerformed

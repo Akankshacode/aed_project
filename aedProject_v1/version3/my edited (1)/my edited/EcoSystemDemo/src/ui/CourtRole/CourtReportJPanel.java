@@ -5,6 +5,7 @@
  */
 package ui.CourtRole;
 
+import Business.Case.Case;
 import Business.Enterprise.Enterprise;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
@@ -23,23 +24,24 @@ public class CourtReportJPanel extends javax.swing.JPanel {
     private JPanel userProcessContainer;
     private Enterprise enterprise;
     private UserAccount userAccount;
-    public CourtReportJPanel(JPanel userProcessContainer, UserAccount account, Enterprise enterprise) {
+    private Case ca;
+    public CourtReportJPanel(JPanel userProcessContainer, UserAccount account, Enterprise enterprise, Case c) {
         initComponents();
         
         this.userProcessContainer = userProcessContainer;
         this.enterprise = enterprise;
         this.userAccount = account;
-        
+        ca=c;
         populate();
     }
 
     public void populate(){
-        lblCaseID.setText("123");
-        lblIssue.setText("Harrasment");
-        lblDefendant.setText("Walter White");
-        lblPlaintiff.setText("Saul Goodman");
-        lblIncidentReport.setText("Harrasment at the workplace");
-        lblLawInvoked.setText("Article 14");
+        lblCaseID.setText(ca.getCaseID()+"");
+        lblIssue.setText(ca.getIssue());
+        lblDefendant.setText(ca.getCulpritName());
+        lblPlaintiff.setText(ca.getVictimName());
+        lblIncidentReport.setText(ca.getDetails());
+        lblLawInvoked.setText(ca.getLawInvoked());
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -73,12 +75,14 @@ public class CourtReportJPanel extends javax.swing.JPanel {
         jLabel11 = new javax.swing.JLabel();
         txtSentence = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
-        txtRestrainingOrder = new javax.swing.JTextField();
+        txtParole = new javax.swing.JTextField();
         btnBack = new javax.swing.JButton();
+        txtRestrainingOrder1 = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 0, 36)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Court Decision");
+        jLabel1.setText("TRIAL");
 
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel9.setText("Evidence Presented :");
@@ -120,7 +124,7 @@ public class CourtReportJPanel extends javax.swing.JPanel {
         jLabel11.setText("Sentence :");
 
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel12.setText("Restraining Order :");
+        jLabel12.setText("Possibility of Parole:");
 
         btnBack.setText("Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -129,57 +133,59 @@ public class CourtReportJPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel13.setText("Restraining Order :");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel3)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel3)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(btnBack)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
-                                        .addComponent(jLabel2)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(lblCaseID, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)
-                                    .addComponent(lblIssue, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel7)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel10)
-                                    .addComponent(jLabel4))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(txtJuryDecision)
-                                        .addComponent(lblPlaintiff, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addComponent(lblDefendant, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblIncidentReport, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblLawInvoked, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel9)
-                                    .addComponent(jLabel8)
-                                    .addComponent(jLabel11)
-                                    .addComponent(jLabel12))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(txtJudgement, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtEvidence, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtSentence, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtRestrainingOrder, javax.swing.GroupLayout.Alignment.LEADING)))))
+                                .addComponent(btnBack)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                                .addComponent(jLabel2)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lblCaseID, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)
+                            .addComponent(lblIssue, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(254, 254, 254)
-                        .addComponent(btnSubmit)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel4))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(txtJuryDecision)
+                                .addComponent(lblPlaintiff, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(lblDefendant, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblIncidentReport, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblLawInvoked, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel13))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnSubmit)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(txtJudgement, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtEvidence, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtSentence, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtParole, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtRestrainingOrder1)))))
                 .addContainerGap(200, Short.MAX_VALUE))
         );
 
@@ -238,11 +244,15 @@ public class CourtReportJPanel extends javax.swing.JPanel {
                     .addComponent(txtSentence, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtRestrainingOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtParole, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel12))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtRestrainingOrder1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel13))
+                .addGap(10, 10, 10)
                 .addComponent(btnSubmit)
-                .addGap(47, 47, 47))
+                .addGap(23, 23, 23))
         );
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jLabel10, jLabel11, jLabel12, jLabel2, jLabel3, jLabel4, jLabel5, jLabel6, jLabel7, jLabel8, jLabel9});
@@ -258,7 +268,15 @@ public class CourtReportJPanel extends javax.swing.JPanel {
         String evidence = txtEvidence.getText();
         String judgement =txtJudgement.getText();
         String sentence = txtSentence.getText();
-        String restrainingOrder = txtRestrainingOrder.getText();
+        String Parole = txtParole.getText();
+        String RestrainingOrder=txtRestrainingOrder1.getText();
+        ca.setDecision(JuryDecision);
+        ca.setEvidence_Present(evidence);
+        ca.setJudgement(judgement);
+        ca.setSentence(sentence);
+        ca.setParole(Parole);
+        ca.setRestrainingOrder(RestrainingOrder);
+        ca.setLstatus("Verdict Declared");
         
         JOptionPane.showMessageDialog(this, "Sentence Passed");
     }//GEN-LAST:event_btnSubmitActionPerformed
@@ -279,6 +297,7 @@ public class CourtReportJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -296,7 +315,8 @@ public class CourtReportJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtEvidence;
     private javax.swing.JTextField txtJudgement;
     private javax.swing.JTextField txtJuryDecision;
-    private javax.swing.JTextField txtRestrainingOrder;
+    private javax.swing.JTextField txtParole;
+    private javax.swing.JTextField txtRestrainingOrder1;
     private javax.swing.JTextField txtSentence;
     // End of variables declaration//GEN-END:variables
 }

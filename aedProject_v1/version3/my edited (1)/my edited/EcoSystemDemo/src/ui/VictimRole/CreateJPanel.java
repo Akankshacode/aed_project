@@ -160,7 +160,7 @@ public class CreateJPanel extends javax.swing.JPanel {
         String issue = txtIssue.getText();
         String culpritName = txtCulprit.getText();
         String description = txtDescr.getText();
-        String status ="Case sent";
+        String status ="Case InProgress";
         
        String name =account.getEmployee().getName();
        cd.createCase(issue, culpritName, description, status,name,date);

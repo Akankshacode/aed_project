@@ -48,14 +48,14 @@ public class DoctorReportJPanel extends javax.swing.JPanel {
       public void populateTable() {
          DefaultTableModel model = (DefaultTableModel) tabAppointment.getModel();
         model.setRowCount(0);
-        for (Case c : system.getCaseDirectory().getCaseList()) {
-            if(c.getStatus().equals("AppointmentWIthDoctor")||c.getStatus().equals("Completed")||c.getStatus().equals("ReportSent"))
+        for (Case c : system.getHospitalCaseDirectory().getCaseList()) {
+            if(c.getDstatus().equals("AppointmentWIthDoctor")||c.getDstatus().equals("Completed")||c.getDstatus().equals("ReportSent"))
             {
             Object [] row = new Object[4];
                 row[0] = c;
                 row[1] = c.getVictimName();
                  row[2] = c.getDocAppointment();
-                 row[3] = c.getStatus();
+                 row[3] = c.getDstatus();
                 
                 
                 model.addRow(row);
@@ -90,7 +90,7 @@ public class DoctorReportJPanel extends javax.swing.JPanel {
                 {null, null, null, null}
             },
             new String [] {
-                "Case Number", "Victim Name", "Appointment date", "Status"
+                "Case Number", "Patient", "Appointment date", "Status"
             }
         ));
         jScrollPane1.setViewportView(tabAppointment);
@@ -200,7 +200,7 @@ public class DoctorReportJPanel extends javax.swing.JPanel {
         Case casse=(Case) tabAppointment.getValueAt(selectedRow, 0);
         
      
-       if(! casse.getStatus().equals("Completed"))
+       if(! casse.getDstatus().equals("Completed"))
        {
            JOptionPane.showMessageDialog(null,"Appointment is not completed", "Warining", JOptionPane.WARNING_MESSAGE);
             return;
@@ -235,7 +235,7 @@ public class DoctorReportJPanel extends javax.swing.JPanel {
         Case c=(Case) tabAppointment.getValueAt(selectedRow, 0);
         
      
-        c.setStatus("Completed");
+        c.setDstatus("Completed");
          populateTable();
        
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -251,7 +251,7 @@ public class DoctorReportJPanel extends javax.swing.JPanel {
         }
         Case c=(Case) tabAppointment.getValueAt(selectedRow, 0);
          
-       if(! c.getStatus().equals("ReportSent"))
+       if(! c.getDstatus().equals("ReportSent"))
        {
            JOptionPane.showMessageDialog(null,"Report Needs to be made", "Warining", JOptionPane.WARNING_MESSAGE);
             return;

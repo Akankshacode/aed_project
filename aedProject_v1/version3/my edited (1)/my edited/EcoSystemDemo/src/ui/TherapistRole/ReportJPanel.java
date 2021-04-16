@@ -186,7 +186,7 @@ public class ReportJPanel extends javax.swing.JPanel {
         c.setTherapistSymptom(Symptoms);
         c.setTherapistTherapy(Therapy);
         c.setTherapistDescription(Problem);
-        c.setStatus("ReportSent");
+        c.setTstatus("ReportSent");
         JOptionPane.showMessageDialog(null, "Report Has been Created");
     }//GEN-LAST:event_jButton1ActionPerformed
 

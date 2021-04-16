@@ -8,6 +8,7 @@ package Business;
 import Business.Case.CaseDirectory;
 import Business.Case.HospitalCaseDirectory;
 import Business.Case.LawCaseDirectory;
+import Business.Case.PoliceCaseDirectory;
 import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.Role.Role;
@@ -24,12 +25,21 @@ public class EcoSystem extends Organization{
     private CaseDirectory caseDir;
     private HospitalCaseDirectory hcaseDir;
        private LawCaseDirectory lcaseDir;
+       private PoliceCaseDirectory pcaseDir;
     private ArrayList<Network> networkList;
     public static EcoSystem getInstance(){
         if(business==null){
             business=new EcoSystem();
         }
         return business;
+    }
+
+    public PoliceCaseDirectory getPoliceCaseDirectory() {
+        return pcaseDir;
+    }
+
+    public void setPoliceCaseDirectory(PoliceCaseDirectory pcaseDir) {
+        this.pcaseDir = pcaseDir;
     }
 
     public HospitalCaseDirectory getHcaseDir() {
@@ -86,6 +96,7 @@ public class EcoSystem extends Organization{
         networkList=new ArrayList<Network>();
         hcaseDir=new HospitalCaseDirectory();
         lcaseDir=new LawCaseDirectory();
+        pcaseDir=new PoliceCaseDirectory();
         
     }
 

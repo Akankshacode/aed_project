@@ -38,14 +38,14 @@ public class ManageCasesJPanel extends javax.swing.JPanel {
          DefaultTableModel model = (DefaultTableModel) tblCases.getModel();
         model.setRowCount(0);
         for (Case c : business.getCaseDir().getCaseList()) {
-            if(c.getStatus().equals("Case sent"))
+            if(!c.getStatus().equals("Case sent"))
             {
             Object [] row = new Object[5];
                 row[0] = c;
                 row[1] = c.getVictimName();
                  row[2] = c.getIssue();
-                 row[3] = c.getDetails(); 
-                 row[4]=c.getSocialStatus();
+                 row[3]=c.getSocialWorker();
+                 row[4] = c.getStatus(); 
                 model.addRow(row);
             }
         }
@@ -74,7 +74,7 @@ public class ManageCasesJPanel extends javax.swing.JPanel {
                 {null, null, null, null, null}
             },
             new String [] {
-                "CaseID", "VictimName", "Issue", "Status", "Social Worker"
+                "CaseID", "VictimName", "Issue", "Social Worker", "Status"
             }
         ));
         jScrollPane1.setViewportView(tblCases);
