@@ -274,6 +274,7 @@ public class CriminalReportJPanle extends javax.swing.JPanel {
        c.setCAddress(Address);
        c.setCCrimeComitted(CrimeComitted);
        c.setCDateOfCrime(DateOfCrime);
+       c.setPstatus("Investigation");
         JOptionPane.showMessageDialog(null, "Report Has been Created");
     }//GEN-LAST:event_jButton2ActionPerformed
 

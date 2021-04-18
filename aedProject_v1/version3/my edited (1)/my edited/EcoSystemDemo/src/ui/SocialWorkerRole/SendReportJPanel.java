@@ -69,7 +69,6 @@ private LawCaseDirectory ldir;
         tblReport = new javax.swing.JTable();
         btnHospital = new javax.swing.JButton();
         btnLawfirm = new javax.swing.JButton();
-        btnPolice = new javax.swing.JButton();
         backJButton = new javax.swing.JButton();
 
         lblHeading.setText("List of Reports");
@@ -101,13 +100,6 @@ private LawCaseDirectory ldir;
             }
         });
 
-        btnPolice.setText("Send Report to Police");
-        btnPolice.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPoliceActionPerformed(evt);
-            }
-        });
-
         backJButton.setText("<< Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,12 +114,10 @@ private LawCaseDirectory ldir;
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(103, 103, 103)
+                        .addGap(164, 164, 164)
                         .addComponent(btnHospital)
-                        .addGap(183, 183, 183)
-                        .addComponent(btnLawfirm)
-                        .addGap(187, 187, 187)
-                        .addComponent(btnPolice))
+                        .addGap(230, 230, 230)
+                        .addComponent(btnLawfirm))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(30, 30, 30)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -136,7 +126,7 @@ private LawCaseDirectory ldir;
                                 .addComponent(backJButton)
                                 .addGap(70, 70, 70)
                                 .addComponent(lblHeading, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(264, Short.MAX_VALUE))
+                .addContainerGap(281, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -154,8 +144,7 @@ private LawCaseDirectory ldir;
                 .addGap(63, 63, 63)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnHospital, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnLawfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnPolice, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnLawfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(345, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -203,19 +192,6 @@ private LawCaseDirectory ldir;
          ca.setSocialStatus("Report Sent");
     }//GEN-LAST:event_btnLawfirmActionPerformed
 
-    private void btnPoliceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPoliceActionPerformed
-        int selectedRow = tblReport.getSelectedRow();
-
-        if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(null, "Please Select a case", "warning", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        Case ca = (Case) tblReport.getValueAt(selectedRow, 0);
-
-        JOptionPane.showMessageDialog(null, "Report sent to Police");
-         ca.setSocialStatus("Report Sent");
-    }//GEN-LAST:event_btnPoliceActionPerformed
-
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
         userProcessContainer.remove(this);
         Component[] componentArray = userProcessContainer.getComponents();
@@ -229,7 +205,6 @@ private LawCaseDirectory ldir;
     private javax.swing.JButton backJButton;
     private javax.swing.JButton btnHospital;
     private javax.swing.JButton btnLawfirm;
-    private javax.swing.JButton btnPolice;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblHeading;
     private javax.swing.JTable tblReport;

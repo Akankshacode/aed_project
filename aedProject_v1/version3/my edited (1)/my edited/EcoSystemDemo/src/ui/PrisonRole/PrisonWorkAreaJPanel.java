@@ -39,8 +39,9 @@ public class PrisonWorkAreaJPanel extends javax.swing.JPanel {
         this.organization=organization;
         this.enterprise=enterprise;
         this.system=business;
+                pcd=system.getPoliceCaseDirectory();
         populateTable();
-            pcd=system.getPoliceCaseDirectory();
+  
     }
 
     public void populateTable()
@@ -49,9 +50,10 @@ public class PrisonWorkAreaJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
            if(pcd!=null)
            {
+               
                for (Case c : pcd.getCaseList()) 
         {
-            if(c.getPstatus().equals("In Prison"))
+            if(c.getPstatus().equals("InPrison"))
             { Object [] row = new Object[5];
                 row[0] = c.getCulpritName();
                 row[1] = c.getCCrimeComitted();

@@ -68,20 +68,20 @@ public class CourtWorkAreaJPanel extends javax.swing.JPanel {
 
         caseTab.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "CaseID", "Defendant", "Lawyer", "Issue", "Judgement"
+                "CaseID", "Defendant", "Lawyer", "Issue", "Judgement", "Status"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, true
+                false, false, false, false, true, true
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -210,24 +210,33 @@ public class CourtWorkAreaJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null,"Please Select a case", "Warining", JOptionPane.WARNING_MESSAGE);
             return;
         }
+   
+            
         Case c=(Case) caseTab.getValueAt(selectedRow, 0);
+         if(!c.getLawyerStatus().equals("VerdictDeclared")){ 
+            JOptionPane.showMessageDialog(null,"Verdict needs to be declared", "Warining", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+         c.setPstatus("InProgress");
         PoliceCaseDirectory pcd= system.getPoliceCaseDirectory();
         pcd.AddCase(c);
+        JOptionPane.showMessageDialog(null, "Criminal is to be arrested");
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void populate() {
+    public void populate() {
           DefaultTableModel model = (DefaultTableModel) caseTab.getModel();
         model.setRowCount(0);
         for (Case c : system.getLcaseDir().getCaseList()) {
      //       if(c.getStatus().equals("AppointmentWIthDoctor")||c.getStatus().equals("Completed")||c.getStatus().equals("ReportSent"))
        //     {
-            Object [] row = new Object[5];
+            Object [] row = new Object[6];
                 row[0] = c;
                 row[1] = c.getCulpritName();
                 row[2]= c.getLawyer();
                  row[3] = c.getIssue();
                  row[4] = c.getJudgement(); 
+                 row[5]=c.getLawyerStatus();
                  
                 model.addRow(row);
          //   }

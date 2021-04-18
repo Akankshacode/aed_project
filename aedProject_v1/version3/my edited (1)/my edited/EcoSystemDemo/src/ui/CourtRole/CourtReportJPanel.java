@@ -9,6 +9,7 @@ import Business.Case.Case;
 import Business.Enterprise.Enterprise;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
+import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -276,17 +277,23 @@ public class CourtReportJPanel extends javax.swing.JPanel {
         ca.setSentence(sentence);
         ca.setParole(Parole);
         ca.setRestrainingOrder(RestrainingOrder);
-        ca.setLstatus("Verdict Declared");
+        ca.setLawyerStatus("VerdictDeclared");
         
-        JOptionPane.showMessageDialog(this, "Sentence Passed");
+        JOptionPane.showMessageDialog(this, "SentencePassed");
     }//GEN-LAST:event_btnSubmitActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
         
         userProcessContainer.remove(this);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+      CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
+        
+         CourtWorkAreaJPanel dwjp = (CourtWorkAreaJPanel) component;
+        dwjp.populate();
+       
     }//GEN-LAST:event_btnBackActionPerformed
 
 

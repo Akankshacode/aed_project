@@ -41,6 +41,7 @@ public class ManageCriminalJPanel extends javax.swing.JPanel {
         this.enterprise=enterprise;
         this.system=business;
         pcd=system.getPoliceCaseDirectory();
+        populateTable();
     }
 
     public void populateTable()
@@ -53,10 +54,14 @@ public class ManageCriminalJPanel extends javax.swing.JPanel {
                for (Case c : pcd.getCaseList()) 
         {
             
-            Object [] row = new Object[3];
+            Object [] row = new Object[7];
                 row[0] = c;
-                row[1] = c.getVictimName();
-                 row[2] = c.getPstatus();
+                row[1] = c.getCulpritName();
+                 row[2] = c.getCCrimeComitted();
+                 row[3]=c.getCDateOfCrime();
+                 row[4]=c.getCphoneNumber();
+                 row[5]=c.getCAddress();
+                 row[6]=c.getPstatus();
                 
                 
                 model.addRow(row);
@@ -82,13 +87,13 @@ public class ManageCriminalJPanel extends javax.swing.JPanel {
 
         CulpritTab.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Name", "Crime committed", "Date of Crime", "Phone Number", "Address", "Status"
+                "Case Id", "Name", "Crime committed", "Date of Crime", "Phone Number", "Address", "Status"
             }
         ));
         jScrollPane1.setViewportView(CulpritTab);
@@ -186,13 +191,13 @@ public class ManageCriminalJPanel extends javax.swing.JPanel {
         }
         Case c=(Case) CulpritTab.getValueAt(selectedRow, 0);
         
-       if(! c.getTstatus().equals("Arrested"))
+       if(! c.getPstatus().equals("Arrested"))
        {
            JOptionPane.showMessageDialog(null,"Need To Arrest Culprit First", "Warining", JOptionPane.WARNING_MESSAGE);
             return;
        }
      
-        c.setPstatus("In Prison");
+        c.setPstatus("InPrison");
          JOptionPane.showMessageDialog(null, "Criminal is in Prison");
          populateTable();
          

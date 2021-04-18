@@ -47,7 +47,7 @@ public class PoliceCaseDirectory {
        {
            for(Case ca: caseList)
            {
-           if(ca.getVictimName().equals(name))
+           if((ca.getCulpritName().toLowerCase().trim()).equals(name.toLowerCase().trim()))
                return ca;
             }
            return null;

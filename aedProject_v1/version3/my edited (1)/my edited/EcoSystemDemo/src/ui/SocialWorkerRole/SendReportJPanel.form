@@ -19,12 +19,10 @@
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="164" max="-2" attributes="0"/>
                       <Component id="btnHospital" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="183" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="230" max="-2" attributes="0"/>
                       <Component id="btnLawfirm" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="187" max="-2" attributes="0"/>
-                      <Component id="btnPolice" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
@@ -38,7 +36,7 @@
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="264" max="32767" attributes="0"/>
+              <EmptySpace pref="281" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -62,7 +60,6 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnHospital" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
                   <Component id="btnLawfirm" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
-                  <Component id="btnPolice" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="345" max="32767" attributes="0"/>
           </Group>
@@ -137,14 +134,6 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLawfirmActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnPolice">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Send Report to Police"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPoliceActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="backJButton">
