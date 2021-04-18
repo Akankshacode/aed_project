@@ -14,10 +14,11 @@ import Business.Organization.DoctorOrganization;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Component;
+import javamail.javaMailPatient;
+import javamail.javamailUtil;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
-
 
 /**
  *
@@ -28,66 +29,60 @@ public class ViewCasesJPanel extends javax.swing.JPanel {
     /**
      * Creates new form NewJPanel
      */
-     private JPanel userProcessContainer;
-   
+    private JPanel userProcessContainer;
+
     private UserAccount userAccount;
     private DoctorOrganization organization;
     private Enterprise enterprise;
     private EcoSystem system;
     private HospitalCaseDirectory hcd;
-    
-    public ViewCasesJPanel(JPanel userProcessContainer, UserAccount account, DoctorOrganization organization, Enterprise enterprise,EcoSystem system) {
+
+    public ViewCasesJPanel(JPanel userProcessContainer, UserAccount account, DoctorOrganization organization, Enterprise enterprise, EcoSystem system) {
         initComponents();
-  this.userProcessContainer = userProcessContainer;
+        this.userProcessContainer = userProcessContainer;
         this.organization = organization;
         this.enterprise = enterprise;
         this.userAccount = account;
-        this.system= system;
-         hcd=system.getHospitalCaseDirectory();
-        populateTable() ;
-         //populateApptTable();
+        this.system = system;
+        hcd = system.getHospitalCaseDirectory();
+        populateTable();
+        //populateApptTable();
     }
 
-    
-     public void populateTable() {
-         DefaultTableModel model = (DefaultTableModel) tabCase.getModel();
+    public void populateTable() {
+        DefaultTableModel model = (DefaultTableModel) tabCase.getModel();
         model.setRowCount(0);
-           if(hcd!=null)
-           {
-               for (Case c : hcd.getCaseList()) 
-        {
-            if(c.getDstatus().equals("Fresh"))
-            {
-            Object [] row = new Object[3];
+        if (hcd != null) {
+            for (Case c : hcd.getCaseList()) {
+                if (c.getDstatus().equals("Fresh")) {
+                    Object[] row = new Object[3];
+                    row[0] = c;
+                    row[1] = c.getVictimName();
+                    row[2] = c.getDstatus();
+
+                    model.addRow(row);
+                }
+            }
+        }
+    }
+
+    public void populateApptTable() {
+        DefaultTableModel model = (DefaultTableModel) tabAppointment.getModel();
+        model.setRowCount(0);
+
+        for (Case c : hcd.getCaseList()) {
+            if (c.getDstatus().equals("AppointmentWIthDoctor")) {
+                Object[] row = new Object[4];
                 row[0] = c;
                 row[1] = c.getVictimName();
-                 row[2] = c.getDstatus();
-                
-                
+                row[2] = c.getDocAppointment();
+                row[3] = c.getDstatus();
+
                 model.addRow(row);
             }
-        }}
-    }
-     
-      public void populateApptTable() {
-         DefaultTableModel model = (DefaultTableModel) tabAppointment.getModel();
-        model.setRowCount(0);
-      
-        for (Case c :hcd.getCaseList()) {
-            if(c.getDstatus().equals("AppointmentWIthDoctor"))
-            {  Object [] row = new Object[4];
-                row[0] = c;
-                row[1] = c.getVictimName();
-                 row[2] = c.getDocAppointment();
-                  row[3] = c.getDstatus();
-                
-                
-                model.addRow(row);
-        }
         }
     }
-    
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -272,20 +267,21 @@ public class ViewCasesJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       
-         int selectedRow = tabCase.getSelectedRow();
-          
-        if(selectedRow < 0) {
-            JOptionPane.showMessageDialog(null,"Please Select a case", "Warining", JOptionPane.WARNING_MESSAGE);
+
+        int selectedRow = tabCase.getSelectedRow();
+
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Please Select a case", "Warining", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        Case c=(Case) tabCase.getValueAt(selectedRow, 0);
-        String AppointmentDate=txtDate.getText();
+        Case c = (Case) tabCase.getValueAt(selectedRow, 0);
+        String AppointmentDate = txtDate.getText();
         c.setDocAppointment(AppointmentDate);
         c.setDstatus("AppointmentWIthDoctor");
-  
+
         populateTable();
-              populateApptTable();
+        populateApptTable();
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txtDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDateActionPerformed
@@ -294,31 +290,28 @@ public class ViewCasesJPanel extends javax.swing.JPanel {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        
-          int selectedRow = tabCase.getSelectedRow();
-          
-        if(selectedRow < 0) {
-            JOptionPane.showMessageDialog(null,"Please Select a case", "Warining", JOptionPane.WARNING_MESSAGE);
+
+        int selectedRow = tabCase.getSelectedRow();
+
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Please Select a case", "Warining", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        Case c=(Case) tabCase.getValueAt(selectedRow, 0);
-        txtCaseNumber.setText( "" + c.getCaseID());//tc.getCaseID());
+        Case c = (Case) tabCase.getValueAt(selectedRow, 0);
+        txtCaseNumber.setText("" + c.getCaseID());//tc.getCaseID());
         txtName.setText(c.getVictimName());
         txtDetails.setText(c.getDetails());
         txtStatus.setText(c.getDstatus());
-        
-        
-         
-        
-        
+
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-         userProcessContainer.remove(this);
+        userProcessContainer.remove(this);
         Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
-       CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_jButton3ActionPerformed
 
