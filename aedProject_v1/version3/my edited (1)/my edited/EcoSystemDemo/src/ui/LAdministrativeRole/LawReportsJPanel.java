@@ -5,15 +5,19 @@
  */
 package ui.LAdministrativeRole;
 
+import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Color;
 import javax.swing.JPanel;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartFrame;
+import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.CategoryPlot;
+import org.jfree.chart.plot.PiePlot3D;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
+import org.jfree.data.general.DefaultPieDataset;
 
 /**
  *
@@ -25,6 +29,7 @@ public class LawReportsJPanel extends javax.swing.JPanel {
      * Creates new form LawReportsJPanel
      */
     private JPanel userProcessContainer;
+    
     public LawReportsJPanel( JPanel userProcessContainer) {
         initComponents();
         this.userProcessContainer=userProcessContainer;
@@ -45,10 +50,13 @@ public class LawReportsJPanel extends javax.swing.JPanel {
         btncompleted = new javax.swing.JButton();
         backJButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        btnvictim = new javax.swing.JButton();
+        btnClient = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        btnSocialWorker = new javax.swing.JButton();
+        btnCourt = new javax.swing.JButton();
+        piePanel = new javax.swing.JPanel();
+        barPanel = new javax.swing.JPanel();
+        linePanel = new javax.swing.JPanel();
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel4.setText("Successful Completion reports :");
@@ -81,10 +89,10 @@ public class LawReportsJPanel extends javax.swing.JPanel {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Law Reports");
 
-        btnvictim.setText("View");
-        btnvictim.addActionListener(new java.awt.event.ActionListener() {
+        btnClient.setText("View");
+        btnClient.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnvictimActionPerformed(evt);
+                btnClientActionPerformed(evt);
             }
         });
 
@@ -94,108 +102,217 @@ public class LawReportsJPanel extends javax.swing.JPanel {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setText("Court reports :");
 
-        btnSocialWorker.setText("View");
-        btnSocialWorker.addActionListener(new java.awt.event.ActionListener() {
+        btnCourt.setText("View");
+        btnCourt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSocialWorkerActionPerformed(evt);
+                btnCourtActionPerformed(evt);
             }
         });
+
+        piePanel.setBackground(new java.awt.Color(153, 255, 204));
+        piePanel.setLayout(new java.awt.BorderLayout());
+
+        barPanel.setBackground(new java.awt.Color(153, 255, 153));
+        barPanel.setLayout(new java.awt.BorderLayout());
+
+        linePanel.setBackground(new java.awt.Color(0, 153, 153));
+        linePanel.setLayout(new java.awt.BorderLayout());
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(124, 124, 124)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnOpen))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addGap(18, 18, 18)
-                        .addComponent(btncompleted))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnSocialWorker))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnvictim)))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 628, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(backJButton))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(45, 45, 45)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(backJButton)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(jLabel5)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(btnOpen))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(jLabel4)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(btncompleted))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(jLabel3)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(btnCourt))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(jLabel2)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(btnClient))))
+                                .addGap(107, 107, 107))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(piePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 412, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(barPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 417, Short.MAX_VALUE)
+                            .addComponent(linePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 69, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
-                .addComponent(backJButton)
-                .addGap(52, 52, 52)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnvictim)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSocialWorker)
-                    .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btncompleted)
-                    .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnOpen)
-                    .addComponent(jLabel5))
-                .addContainerGap(260, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(58, 58, 58)
+                        .addComponent(backJButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnClient)
+                            .addComponent(jLabel2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnCourt)
+                            .addComponent(jLabel3))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btncompleted)
+                            .addComponent(jLabel4))
+                        .addGap(7, 7, 7)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnOpen)
+                            .addComponent(jLabel5)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(barPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(26, 26, 26)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(linePanel, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                    .addComponent(piePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnOpenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOpenActionPerformed
-        // TODO add your handling code here:
-        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+      DefaultCategoryDataset bardataset = new DefaultCategoryDataset();
 
-        dataset.setValue(0,"CASES", "2015");
-        dataset.setValue(0,"CASES", "2016");
-        dataset.setValue(0,"CASES", "2017");
-        dataset.setValue(20,"CASES", "2018");
-        dataset.setValue(30,"CASES", "2019");
-        dataset.setValue(50,"CASES", "2020");
+        bardataset.setValue(300,"CASES", "2015");
+        bardataset.setValue(400,"CASES", "2016");
+        bardataset.setValue(100,"CASES", "2017");
+        bardataset.setValue(00,"CASES", "2018");
+        bardataset.setValue(620,"CASES", "2019");
+        bardataset.setValue(200,"CASES", "2020");
 
-        JFreeChart bar = ChartFactory.createBarChart3D("Open Victim Cases 2015 - 2020", "YEARS", "CASES", dataset,PlotOrientation.VERTICAL, true,true,false);
-        CategoryPlot p = bar.getCategoryPlot();
+        JFreeChart bar = ChartFactory.createBarChart3D("Open Court Cases 2015 - 2020", "YEARS", "CASES", bardataset,PlotOrientation.VERTICAL, true,true,false);
+        CategoryPlot p = (CategoryPlot)bar.getCategoryPlot();
         p.setRangeGridlinePaint(Color.BLUE);
-        ChartFrame frame = new ChartFrame("Open Victim Cases Report",bar);
-        frame.setVisible(true);
-        frame.setSize(600,500);
+        ChartPanel barPan = new ChartPanel(bar);
+        barPanel.removeAll();
+        barPanel.add(barPan,BorderLayout.CENTER);
+        barPanel.validate();
+        
+        
+        DefaultCategoryDataset linedataset = new DefaultCategoryDataset();
+
+        linedataset.setValue(300,"CASES", "2015");
+        linedataset.setValue(400,"CASES", "2016");
+        linedataset.setValue(100,"CASES", "2017");
+        linedataset.setValue(00,"CASES", "2018");
+        linedataset.setValue(620,"CASES", "2019");
+        linedataset.setValue(200,"CASES", "2020");
+
+        JFreeChart line = ChartFactory.createLineChart("Open Court Cases 2015 - 2020", "YEARS", "CASES", linedataset,PlotOrientation.VERTICAL, true,true,false);
+        CategoryPlot p1 = (CategoryPlot)line.getCategoryPlot();
+        p1.setRangeGridlinePaint(Color.YELLOW);
+        ChartPanel linePan = new ChartPanel(line);
+        
+        linePanel.removeAll();
+        linePanel.add(linePan,BorderLayout.CENTER);
+        linePanel.validate();
+        
+        
+        DefaultPieDataset piedataset = new DefaultPieDataset();
+        piedataset.setValue("2015", 300);
+        piedataset.setValue("2016", 400);
+        piedataset.setValue("2017", 100);
+        piedataset.setValue("2018", 00);
+        piedataset.setValue("2019", 620);
+        piedataset.setValue("2020", 200);
+        
+        JFreeChart pieChart = ChartFactory.createPieChart3D("Open Court Cases 2015 - 2020", piedataset,true,true,true);
+        
+        PiePlot3D Pie = (PiePlot3D)pieChart.getPlot();
+        
+        ChartPanel piepan = new ChartPanel(pieChart);
+        
+        piePanel.removeAll();
+        piePanel.add(piepan,BorderLayout.CENTER);
+        piePanel.validate();
+        
     }//GEN-LAST:event_btnOpenActionPerformed
 
     private void btncompletedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncompletedActionPerformed
         // TODO add your handling code here:
         //calculate based on above data
-        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+        DefaultCategoryDataset bardataset = new DefaultCategoryDataset();
 
-        dataset.setValue(60,"CASES", "2015");
-        dataset.setValue(70,"CASES", "2016");
-        dataset.setValue(75,"CASES", "2017");
-        dataset.setValue(80,"CASES", "2018");
-        dataset.setValue(88,"CASES", "2019");
-        dataset.setValue(97,"CASES", "2020");
+        bardataset.setValue(600,"CASES", "2015");
+        bardataset.setValue(400,"CASES", "2016");
+        bardataset.setValue(500,"CASES", "2017");
+        bardataset.setValue(400,"CASES", "2018");
+        bardataset.setValue(100,"CASES", "2019");
+        bardataset.setValue(380,"CASES", "2020");
 
-        JFreeChart bar = ChartFactory.createBarChart3D("Completed Victim Cases 2015 - 2020", "YEARS", "CASES", dataset,PlotOrientation.VERTICAL, true,true,false);
-        CategoryPlot p = bar.getCategoryPlot();
+        JFreeChart bar = ChartFactory.createBarChart3D("Completed Court Cases 2015 - 2020", "YEARS", "CASES", bardataset,PlotOrientation.VERTICAL, true,true,false);
+        CategoryPlot p = (CategoryPlot)bar.getCategoryPlot();
         p.setRangeGridlinePaint(Color.BLUE);
-        ChartFrame frame = new ChartFrame("Completed Victim Cases Report",bar);
-        frame.setVisible(true);
-        frame.setSize(600,500);
+        ChartPanel barPan = new ChartPanel(bar);
+        barPanel.removeAll();
+        barPanel.add(barPan,BorderLayout.CENTER);
+        barPanel.validate();
+        
+        
+        DefaultCategoryDataset linedataset = new DefaultCategoryDataset();
+
+        linedataset.setValue(600,"CASES", "2015");
+        linedataset.setValue(400,"CASES", "2016");
+        linedataset.setValue(500,"CASES", "2017");
+        linedataset.setValue(400,"CASES", "2018");
+        linedataset.setValue(100,"CASES", "2019");
+        linedataset.setValue(380,"CASES", "2020");
+
+        JFreeChart line = ChartFactory.createLineChart("Completed Court Cases 2015 - 2020", "YEARS", "CASES", linedataset,PlotOrientation.VERTICAL, true,true,false);
+        CategoryPlot p1 = (CategoryPlot)line.getCategoryPlot();
+        p1.setRangeGridlinePaint(Color.YELLOW);
+        ChartPanel linePan = new ChartPanel(line);
+        
+        linePanel.removeAll();
+        linePanel.add(linePan,BorderLayout.CENTER);
+        linePanel.validate();
+        
+        
+        DefaultPieDataset piedataset = new DefaultPieDataset();
+        piedataset.setValue("2015", 600);
+        piedataset.setValue("2016", 400);
+        piedataset.setValue("2017", 500);
+        piedataset.setValue("2018", 400);
+        piedataset.setValue("2019", 100);
+        piedataset.setValue("2020", 380);
+        
+        JFreeChart pieChart = ChartFactory.createPieChart3D("Completed Court Cases 2015 - 2020", piedataset,true,true,true);
+        
+        PiePlot3D Pie = (PiePlot3D)pieChart.getPlot();
+        
+        ChartPanel piepan = new ChartPanel(pieChart);
+        
+        piePanel.removeAll();
+        piePanel.add(piepan,BorderLayout.CENTER);
+        piePanel.validate();
+        
     }//GEN-LAST:event_btncompletedActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
@@ -205,56 +322,147 @@ public class LawReportsJPanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_backJButtonActionPerformed
 
-    private void btnvictimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnvictimActionPerformed
+    private void btnClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientActionPerformed
         // TODO add your handling code here:
-        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+        DefaultCategoryDataset bardataset = new DefaultCategoryDataset();
 
-        dataset.setValue(510,"CASES", "2015");
-        dataset.setValue(740,"CASES", "2016");
-        dataset.setValue(820,"CASES", "2017");
-        dataset.setValue(410,"CASES", "2018");
-        dataset.setValue(980,"CASES", "2019");
-        dataset.setValue(607,"CASES", "2020");
+        bardataset.setValue(510,"CASES", "2015");
+        bardataset.setValue(740,"CASES", "2016");
+        bardataset.setValue(820,"CASES", "2017");
+        bardataset.setValue(410,"CASES", "2018");
+        bardataset.setValue(980,"CASES", "2019");
+        bardataset.setValue(607,"CASES", "2020");
 
-        JFreeChart bar = ChartFactory.createBarChart3D("Victim Cases 2015 - 2020", "YEARS", "CASES", dataset,PlotOrientation.VERTICAL, true,true,false);
-        CategoryPlot p = bar.getCategoryPlot();
+        JFreeChart bar = ChartFactory.createBarChart3D("Client Cases 2015 - 2020", "YEARS", "CASES", bardataset,PlotOrientation.VERTICAL, true,true,false);
+        CategoryPlot p = (CategoryPlot)bar.getCategoryPlot();
         p.setRangeGridlinePaint(Color.BLUE);
-        ChartFrame frame = new ChartFrame("Victim Cases Report",bar);
-        frame.setVisible(true);
-        frame.setSize(600,500);
-    }//GEN-LAST:event_btnvictimActionPerformed
+        ChartPanel barPan = new ChartPanel(bar);
+        barPanel.removeAll();
+        barPanel.add(barPan,BorderLayout.CENTER);
+        barPanel.validate();
+        
+        
+        DefaultCategoryDataset linedataset = new DefaultCategoryDataset();
 
-    private void btnSocialWorkerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSocialWorkerActionPerformed
+        linedataset.setValue(510,"CASES", "2015");
+        linedataset.setValue(740,"CASES", "2016");
+        linedataset.setValue(820,"CASES", "2017");
+        linedataset.setValue(410,"CASES", "2018");
+        linedataset.setValue(980,"CASES", "2019");
+        linedataset.setValue(607,"CASES", "2020");
+
+        JFreeChart line = ChartFactory.createLineChart("Client Cases 2015 - 2020", "YEARS", "CASES", linedataset,PlotOrientation.VERTICAL, true,true,false);
+        CategoryPlot p1 = (CategoryPlot)line.getCategoryPlot();
+        p1.setRangeGridlinePaint(Color.YELLOW);
+        ChartPanel linePan = new ChartPanel(line);
+        
+        linePanel.removeAll();
+        linePanel.add(linePan,BorderLayout.CENTER);
+        linePanel.validate();
+        
+        
+        DefaultPieDataset piedataset = new DefaultPieDataset();
+        piedataset.setValue("2015", 510);
+        piedataset.setValue("2016", 740);
+        piedataset.setValue("2017", 820);
+        piedataset.setValue("2018", 410);
+        piedataset.setValue("2019", 980);
+        piedataset.setValue("2020", 607);
+        
+        JFreeChart pieChart = ChartFactory.createPieChart3D("Client Cases 2015 - 2020", piedataset,true,true,true);
+        
+        PiePlot3D Pie = (PiePlot3D)pieChart.getPlot();
+        
+        ChartPanel piepan = new ChartPanel(pieChart);
+        
+        piePanel.removeAll();
+        piePanel.add(piepan,BorderLayout.CENTER);
+        piePanel.validate();
+        
+        
+       
+    }//GEN-LAST:event_btnClientActionPerformed
+ 
+    private void btnCourtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCourtActionPerformed
         // TODO add your handling code here:
         //add combobox with 2018-2020 for each socail worker
-        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+ 
+        DefaultCategoryDataset bardataset = new DefaultCategoryDataset();
 
-        dataset.setValue(60,"CASES", "Aaron P");
-        dataset.setValue(70,"CASES", "Maria L");
-        dataset.setValue(75,"CASES", "Jack C");
-        dataset.setValue(80,"CASES", "Nicole H");
-        dataset.setValue(88,"CASES", "John S");
-        dataset.setValue(97,"CASES", "Ann M");
+        bardataset.setValue(900,"CASES", "2015");
+        bardataset.setValue(800,"CASES", "2016");
+        bardataset.setValue(600,"CASES", "2017");
+        bardataset.setValue(400,"CASES", "2018");
+        bardataset.setValue(720,"CASES", "2019");
+        bardataset.setValue(580,"CASES", "2020");
 
-        JFreeChart bar = ChartFactory.createBarChart3D("Social worker cases", "Social Workers", "CASES", dataset,PlotOrientation.VERTICAL, true,true,false);
-        CategoryPlot p = bar.getCategoryPlot();
+        JFreeChart bar = ChartFactory.createBarChart3D("Court Cases 2015 - 2020", "YEARS", "CASES", bardataset,PlotOrientation.VERTICAL, true,true,false);
+        CategoryPlot p = (CategoryPlot)bar.getCategoryPlot();
         p.setRangeGridlinePaint(Color.BLUE);
-        ChartFrame frame = new ChartFrame("Social Worker cases report",bar);
-        frame.setVisible(true);
-        frame.setSize(600,500);
-    }//GEN-LAST:event_btnSocialWorkerActionPerformed
+        ChartPanel barPan = new ChartPanel(bar);
+        barPanel.removeAll();
+        barPanel.add(barPan,BorderLayout.CENTER);
+        barPanel.validate();
+        
+        
+        DefaultCategoryDataset linedataset = new DefaultCategoryDataset();
+
+        linedataset.setValue(900,"CASES", "2015");
+        linedataset.setValue(800,"CASES", "2016");
+        linedataset.setValue(600,"CASES", "2017");
+        linedataset.setValue(400,"CASES", "2018");
+        linedataset.setValue(720,"CASES", "2019");
+        linedataset.setValue(580,"CASES", "2020");
+
+        JFreeChart line = ChartFactory.createLineChart("Court Cases 2015 - 2020", "YEARS", "CASES", linedataset,PlotOrientation.VERTICAL, true,true,false);
+        CategoryPlot p1 = (CategoryPlot)line.getCategoryPlot();
+        p1.setRangeGridlinePaint(Color.YELLOW);
+        ChartPanel linePan = new ChartPanel(line);
+        
+        linePanel.removeAll();
+        linePanel.add(linePan,BorderLayout.CENTER);
+        linePanel.validate();
+        
+        
+        DefaultPieDataset piedataset = new DefaultPieDataset();
+        piedataset.setValue("2015", 900);
+        piedataset.setValue("2016", 800);
+        piedataset.setValue("2017", 600);
+        piedataset.setValue("2018", 400);
+        piedataset.setValue("2019", 720);
+        piedataset.setValue("2020", 580);
+        
+        JFreeChart pieChart = ChartFactory.createPieChart3D("Court Cases 2015 - 2020", piedataset,true,true,true);
+        
+        PiePlot3D Pie = (PiePlot3D)pieChart.getPlot();
+        
+        ChartPanel piepan = new ChartPanel(pieChart);
+        
+        piePanel.removeAll();
+        piePanel.add(piepan,BorderLayout.CENTER);
+        piePanel.validate();
+        
+        
+        
+        
+        
+        
+    }//GEN-LAST:event_btnCourtActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backJButton;
+    private javax.swing.JPanel barPanel;
+    private javax.swing.JButton btnClient;
+    private javax.swing.JButton btnCourt;
     private javax.swing.JButton btnOpen;
-    private javax.swing.JButton btnSocialWorker;
     private javax.swing.JButton btncompleted;
-    private javax.swing.JButton btnvictim;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel linePanel;
+    private javax.swing.JPanel piePanel;
     // End of variables declaration//GEN-END:variables
 }
