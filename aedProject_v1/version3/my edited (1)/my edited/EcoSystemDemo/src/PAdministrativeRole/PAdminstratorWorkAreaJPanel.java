@@ -44,6 +44,7 @@ public class PAdminstratorWorkAreaJPanel extends javax.swing.JPanel {
         manageEmployeeJButton = new javax.swing.JButton();
         manageOrganizationJButton = new javax.swing.JButton();
         userJButton = new javax.swing.JButton();
+        btnreports = new javax.swing.JButton();
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -81,6 +82,14 @@ public class PAdminstratorWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         jPanel1.add(userJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 150, -1));
+
+        btnreports.setText("View Reports");
+        btnreports.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnreportsActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnreports, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -130,8 +139,18 @@ public class PAdminstratorWorkAreaJPanel extends javax.swing.JPanel {
         layout.next(userProcessContainer);
     }//GEN-LAST:event_userJButtonActionPerformed
 
+    private void btnreportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnreportsActionPerformed
+        // TODO add your handling code here:
+        PoliceReportsJPanel nrjp = new PoliceReportsJPanel(userProcessContainer);
+        userProcessContainer.add("PoliceReportsJPanel", nrjp);
+
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnreportsActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnreports;
     private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
