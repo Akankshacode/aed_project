@@ -61,6 +61,8 @@ public class MainJFrame extends javax.swing.JFrame {
         jSplitPane1.setPreferredSize(new java.awt.Dimension(1496, 237));
 
         jPanel1.setBackground(new java.awt.Color(255, 204, 204));
+        jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel1.setFocusable(false);
 
         loginJButton.setBackground(new java.awt.Color(255, 255, 255));
         loginJButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
