@@ -50,12 +50,19 @@ public class HospitalReportsJPanel extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         btnSocialWorker = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 204, 204));
+        setMaximumSize(new java.awt.Dimension(2147483647, 2147483647));
+        setMinimumSize(new java.awt.Dimension(3, 7));
+        setPreferredSize(new java.awt.Dimension(1496, 237));
+
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel4.setText("Successful Completion reports :");
 
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel5.setText("Open cases reports :");
 
+        btnOpen.setBackground(new java.awt.Color(255, 255, 255));
+        btnOpen.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnOpen.setText("View");
         btnOpen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -63,6 +70,8 @@ public class HospitalReportsJPanel extends javax.swing.JPanel {
             }
         });
 
+        btncompleted.setBackground(new java.awt.Color(255, 255, 255));
+        btncompleted.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btncompleted.setText("View");
         btncompleted.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -70,7 +79,10 @@ public class HospitalReportsJPanel extends javax.swing.JPanel {
             }
         });
 
-        backJButton.setText("<< Back");
+        backJButton.setBackground(new java.awt.Color(255, 255, 255));
+        backJButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        backJButton.setText("Back");
+        backJButton.setActionCommand("Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backJButtonActionPerformed(evt);
@@ -81,6 +93,8 @@ public class HospitalReportsJPanel extends javax.swing.JPanel {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Hospital Reports");
 
+        btnvictim.setBackground(new java.awt.Color(255, 255, 255));
+        btnvictim.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnvictim.setText("View");
         btnvictim.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,6 +108,8 @@ public class HospitalReportsJPanel extends javax.swing.JPanel {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setText("Out-Patient reports :");
 
+        btnSocialWorker.setBackground(new java.awt.Color(255, 255, 255));
+        btnSocialWorker.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnSocialWorker.setText("View");
         btnSocialWorker.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -105,8 +121,14 @@ public class HospitalReportsJPanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(124, 124, 124)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(backJButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel5)
@@ -124,22 +146,16 @@ public class HospitalReportsJPanel extends javax.swing.JPanel {
                         .addComponent(jLabel2)
                         .addGap(18, 18, 18)
                         .addComponent(btnvictim)))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 628, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(backJButton))
-                .addContainerGap(7, Short.MAX_VALUE))
+                .addGap(199, 199, 199))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
-                .addComponent(backJButton)
-                .addGap(52, 52, 52)
+                .addGap(23, 23, 23)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(backJButton))
+                .addGap(55, 55, 55)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnvictim)
                     .addComponent(jLabel2))
@@ -155,7 +171,7 @@ public class HospitalReportsJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnOpen)
                     .addComponent(jLabel5))
-                .addContainerGap(253, Short.MAX_VALUE))
+                .addContainerGap(299, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

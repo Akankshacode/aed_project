@@ -61,7 +61,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
                 manageEmployeeJButtonActionPerformed(evt);
             }
         });
-        add(manageEmployeeJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, 180, -1));
+        add(manageEmployeeJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 210, 180, -1));
 
         manageOrganizationJButton.setBackground(new java.awt.Color(255, 255, 255));
         manageOrganizationJButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -71,7 +71,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
                 manageOrganizationJButtonActionPerformed(evt);
             }
         });
-        add(manageOrganizationJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 180, -1));
+        add(manageOrganizationJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 180, -1));
 
         userJButton.setBackground(new java.awt.Color(255, 255, 255));
         userJButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -81,7 +81,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
                 userJButtonActionPerformed(evt);
             }
         });
-        add(userJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 180, -1));
+        add(userJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 260, 180, -1));
 
         btnReports.setBackground(new java.awt.Color(255, 255, 255));
         btnReports.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -91,7 +91,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
                 btnReportsActionPerformed(evt);
             }
         });
-        add(btnReports, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, 180, -1));
+        add(btnReports, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, 180, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void manageEmployeeJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageEmployeeJButtonActionPerformed
