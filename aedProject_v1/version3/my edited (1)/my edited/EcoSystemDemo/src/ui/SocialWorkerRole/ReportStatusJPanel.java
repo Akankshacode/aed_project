@@ -10,6 +10,7 @@ import Business.EcoSystem;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Component;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -38,13 +39,13 @@ public class ReportStatusJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) tblReports.getModel();
         model.setRowCount(0);
         for (Case c : business.getCaseDir().getCaseList()) {
-            if (c.getStatus().equals("Case sent")) {
+            if (c.getStatus().equals("ReportSent")) {
                 Object[] row = new Object[5];
                 row[0] = c;
 //                row[1] = c.getVictimName();
-                row[2] = c.getSocialObservations();
-                row[3] = c.getDetails();
-                row[4] = c.getIssue();
+                row[1] = c.getSocialObservations();
+                row[2] = c.getDetails();
+                row[3] = c.getIssue();
                 model.addRow(row);
             }
         }
@@ -71,32 +72,32 @@ public class ReportStatusJPanel extends javax.swing.JPanel {
 
         tblReports.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Case ID", "Report ID", "Observations", "Description", "Issue"
+                "Case ID", "Observations", "Description", "Issue"
             }
         ));
         jScrollPane1.setViewportView(tblReports);
 
-        btnViewHospStatus.setText("View Hospital Status");
+        btnViewHospStatus.setText("View Hospital Report");
         btnViewHospStatus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnViewHospStatusActionPerformed(evt);
             }
         });
 
-        btnViewLawstatus.setText("View Lawfirm Status");
+        btnViewLawstatus.setText("View Lawfirm Report");
         btnViewLawstatus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnViewLawstatusActionPerformed(evt);
             }
         });
 
-        btnViewPoliceStatus.setText("View Police Status");
+        btnViewPoliceStatus.setText("View Police Report");
         btnViewPoliceStatus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnViewPoliceStatusActionPerformed(evt);
@@ -124,13 +125,13 @@ public class ReportStatusJPanel extends javax.swing.JPanel {
                         .addGap(58, 58, 58)
                         .addComponent(btnViewPoliceStatus))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addComponent(backJButton)
                         .addGap(80, 80, 80)
-                        .addComponent(lblHeading, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(lblHeading, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(88, 88, 88)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -140,9 +141,9 @@ public class ReportStatusJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lblHeading, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(backJButton))
-                .addGap(34, 34, 34)
+                .addGap(35, 35, 35)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
+                .addGap(41, 41, 41)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnViewHospStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnViewLawstatus, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -167,7 +168,16 @@ public class ReportStatusJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnViewPoliceStatusActionPerformed
 
     private void btnViewHospStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewHospStatusActionPerformed
-        ViewHospStatusJPanel viewHStatus = new ViewHospStatusJPanel(userProcessContainer, business, userAccount);
+
+         int selectedRow = tblReports.getSelectedRow();
+          
+        if(selectedRow < 0) {
+            JOptionPane.showMessageDialog(null,"Please Select a case", "Warining", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+            Case c=(Case) tblReports.getValueAt(selectedRow, 0);
+        
+        ViewHospStatusJPanel viewHStatus = new ViewHospStatusJPanel(userProcessContainer, business, userAccount,c.getCaseID()+"");
         userProcessContainer.add("ViewHospStatusJPanel", viewHStatus);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);

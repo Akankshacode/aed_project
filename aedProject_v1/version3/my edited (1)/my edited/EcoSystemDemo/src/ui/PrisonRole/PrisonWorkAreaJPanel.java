@@ -225,12 +225,14 @@ public class PrisonWorkAreaJPanel extends javax.swing.JPanel {
         String Name=txtPrisoner.getText();
        
        Case c= pcd.findCase(Name);
+       if(c!=null)
+       {
        lblCrimeComitted.setText(c.getCCrimeComitted());
        lblDateOfArrest.setText(c.getCDateOfCrime());
        lblName.setText(c.getCulpritName());
        lblParole.setText(c.getParole());
        lblSentence.setText(c.getSentence());
-       
+       }
            
     }//GEN-LAST:event_jButton1ActionPerformed
 

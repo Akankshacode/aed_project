@@ -280,10 +280,16 @@ public class TherapistAppointmentsJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null,"Please Select a case", "Warining", JOptionPane.WARNING_MESSAGE);
             return;
         }
+         if(!userAccount.getEmployee().getFlag()==true)
+        {
+          JOptionPane.showMessageDialog(null, "Appointment with another patient  for now ", "Warining", JOptionPane.WARNING_MESSAGE);
+            return;  
+        }
         Case c=(Case) TabAssignedCases.getValueAt(selectedRow, 0);
         String AppointmentDate=txtDate.getText();
         c.setDocAppointment(AppointmentDate);
         c.setTstatus("AppointmentWIthTherapist");
+         userAccount.getEmployee().setFlag(false);
         populateApptTable();
         populateTable();
     }//GEN-LAST:event_jButton1ActionPerformed

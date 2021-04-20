@@ -49,7 +49,7 @@ private LawCaseDirectory ldir;
                 row[0] = c;
                   row[1] = c.getVictimName();
                 row[2] = c.getSocialObservations();
-                row[3] = c.getSocialStatus();
+                row[3] = c.getStatus();
                 model.addRow(row);
             }
         }
@@ -164,7 +164,7 @@ private LawCaseDirectory ldir;
           ca.setDstatus("Fresh");
         ca.setTstatus("Fresh");
           ca.setHstatus("Fresh");
-          ca.setSocialStatus("Report Sent");
+          ca.setStatus("ReportSent");
         hdir.AddCase(ca);
         
         JOptionPane.showMessageDialog(null, "Report sent to Hospital");
@@ -189,7 +189,7 @@ private LawCaseDirectory ldir;
         ldir.AddCase(ca);
         
         JOptionPane.showMessageDialog(null, "Report sent to Law Firm");
-         ca.setSocialStatus("Report Sent");
+         ca.setStatus("ReportSent");
     }//GEN-LAST:event_btnLawfirmActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed

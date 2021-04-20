@@ -249,9 +249,14 @@ public class TherapistReportJPanel extends javax.swing.JPanel {
         }
         Case c=(Case) tabAppointment.getValueAt(selectedRow, 0);
         
+            if(!c.getTstatus().equals("AppointmentWIthTherapist")) {
+            JOptionPane.showMessageDialog(null,"Appointment is already done", "Warining",JOptionPane.WARNING_MESSAGE);
+            return;
+        }
      
         c.setTstatus("Completed");
          populateTable();
+                userAccount.getEmployee().setFlag(true);
        
     }//GEN-LAST:event_jButton1ActionPerformed
 

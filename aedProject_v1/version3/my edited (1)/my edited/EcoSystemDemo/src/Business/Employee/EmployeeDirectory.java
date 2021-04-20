@@ -28,7 +28,9 @@ public class EmployeeDirectory {
         employee.setAddress(Address);
         employee.setEmail(Email);
         employee.setPhone(Phone);
+           employee.setFlag(true);
         employeeList.add(employee);
+        
         return employee;
     }
        public void deleteEmployee(Employee employee){

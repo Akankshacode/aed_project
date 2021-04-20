@@ -16,10 +16,19 @@ public class Employee {
     private String address;
     private int id;
     private static int count = 1;
+     private boolean flag =true;
 
     public Employee() {
         id = count;
         count++;
+    }
+
+    public boolean getFlag() {
+        return flag;
+    }
+
+    public void setFlag(boolean flag) {
+        this.flag = flag;
     }
 
     public String getPhone() {
