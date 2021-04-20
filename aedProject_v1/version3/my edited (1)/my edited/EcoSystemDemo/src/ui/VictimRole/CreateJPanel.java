@@ -62,6 +62,8 @@ public class CreateJPanel extends javax.swing.JPanel {
         btnSubmit = new javax.swing.JButton();
         backJButton = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 204, 204));
+
         jLabel1.setText("Register Complaint");
 
         lblDate.setText("Date");
@@ -74,6 +76,8 @@ public class CreateJPanel extends javax.swing.JPanel {
 
         txtDescr.setHorizontalAlignment(javax.swing.JTextField.LEFT);
 
+        btnSubmit.setBackground(new java.awt.Color(255, 255, 255));
+        btnSubmit.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         btnSubmit.setText("Submit");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -81,6 +85,8 @@ public class CreateJPanel extends javax.swing.JPanel {
             }
         });
 
+        backJButton.setBackground(new java.awt.Color(255, 255, 255));
+        backJButton.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         backJButton.setText("<< Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

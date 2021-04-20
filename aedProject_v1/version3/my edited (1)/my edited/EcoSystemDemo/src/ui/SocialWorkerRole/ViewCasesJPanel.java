@@ -62,6 +62,8 @@ public class ViewCasesJPanel extends javax.swing.JPanel {
         tblCases = new javax.swing.JTable();
         backJButton = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 204, 204));
+
         tblCases.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -75,6 +77,8 @@ public class ViewCasesJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tblCases);
 
+        backJButton.setBackground(new java.awt.Color(255, 255, 255));
+        backJButton.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         backJButton.setText("<< Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

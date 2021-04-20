@@ -49,6 +49,8 @@ public class ViewPoliceStatsJPanel extends javax.swing.JPanel {
         jLabel5 = new javax.swing.JLabel();
         backJButton = new javax.swing.JButton();
 
+        jPanel1.setBackground(new java.awt.Color(255, 204, 204));
+
         lblHeading.setText("Police Status");
 
         jLabel1.setText("jLabel1");
@@ -63,6 +65,7 @@ public class ViewPoliceStatsJPanel extends javax.swing.JPanel {
 
         jLabel5.setText("jLabel1");
 
+        backJButton.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         backJButton.setText("<< Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

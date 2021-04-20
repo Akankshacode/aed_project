@@ -68,6 +68,8 @@ public class ReportStatusJPanel extends javax.swing.JPanel {
         btnViewPoliceStatus = new javax.swing.JButton();
         backJButton = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 204, 204));
+
         lblHeading.setText("List of reports");
 
         tblReports.setModel(new javax.swing.table.DefaultTableModel(
@@ -83,6 +85,8 @@ public class ReportStatusJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tblReports);
 
+        btnViewHospStatus.setBackground(new java.awt.Color(255, 255, 255));
+        btnViewHospStatus.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         btnViewHospStatus.setText("View Hospital Report");
         btnViewHospStatus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,6 +94,8 @@ public class ReportStatusJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnViewLawstatus.setBackground(new java.awt.Color(255, 255, 255));
+        btnViewLawstatus.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         btnViewLawstatus.setText("View Lawfirm Report");
         btnViewLawstatus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,6 +103,8 @@ public class ReportStatusJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnViewPoliceStatus.setBackground(new java.awt.Color(255, 255, 255));
+        btnViewPoliceStatus.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         btnViewPoliceStatus.setText("View Police Report");
         btnViewPoliceStatus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -115,29 +123,29 @@ public class ReportStatusJPanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(253, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(btnViewHospStatus)
                         .addGap(37, 37, 37)
                         .addComponent(btnViewLawstatus)
                         .addGap(58, 58, 58)
                         .addComponent(btnViewPoliceStatus))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
+                        .addGap(14, 14, 14)
                         .addComponent(backJButton)
                         .addGap(80, 80, 80)
                         .addComponent(lblHeading, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(88, 88, 88)
+                        .addGap(82, 82, 82)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(197, 197, 197))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(6, 6, 6)
+                .addGap(57, 57, 57)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lblHeading, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(backJButton))
@@ -148,7 +156,7 @@ public class ReportStatusJPanel extends javax.swing.JPanel {
                     .addComponent(btnViewHospStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnViewLawstatus, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnViewPoliceStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(91, Short.MAX_VALUE))
+                .addContainerGap(284, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -184,7 +192,14 @@ public class ReportStatusJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnViewHospStatusActionPerformed
 
     private void btnViewLawstatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewLawstatusActionPerformed
-        ViewLawStatsJPanel viewLStatus = new ViewLawStatsJPanel(userProcessContainer, business, userAccount);
+         int selectedRow = tblReports.getSelectedRow();
+          
+        if(selectedRow < 0) {
+            JOptionPane.showMessageDialog(null,"Please Select a case", "Warining", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+            Case c=(Case) tblReports.getValueAt(selectedRow, 0);
+        ViewLawStatsJPanel viewLStatus = new ViewLawStatsJPanel(userProcessContainer, business, userAccount,c.getCaseID()+"");
         userProcessContainer.add("ViewLawStatsJPanel", viewLStatus);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);

@@ -61,6 +61,8 @@ public class CourtWorkAreaJPanel extends javax.swing.JPanel {
         btnHandle = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
 
+        jPanel1.setBackground(new java.awt.Color(255, 204, 204));
+
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         enterpriseLabel.setText("EnterPrise :");
 
@@ -94,6 +96,8 @@ public class CourtWorkAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(caseTab);
 
+        btnRefresh.setBackground(new java.awt.Color(255, 255, 255));
+        btnRefresh.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         btnRefresh.setText("Refresh");
         btnRefresh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,6 +105,8 @@ public class CourtWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnHandle.setBackground(new java.awt.Color(255, 255, 255));
+        btnHandle.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         btnHandle.setText("TRIAL");
         btnHandle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,6 +114,8 @@ public class CourtWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         jButton1.setText("RESOLVE");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -217,7 +225,7 @@ public class CourtWorkAreaJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null,"Verdict needs to be declared", "Warining", JOptionPane.WARNING_MESSAGE);
             return;
         }
-         c.setPstatus("InProgress");
+         c.setPstatus("InPrison");
         PoliceCaseDirectory pcd= system.getPoliceCaseDirectory();
         pcd.AddCase(c);
         JOptionPane.showMessageDialog(null, "Criminal is to be arrested");

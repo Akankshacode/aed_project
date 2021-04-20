@@ -71,6 +71,8 @@ private LawCaseDirectory ldir;
         btnLawfirm = new javax.swing.JButton();
         backJButton = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 204, 204));
+
         lblHeading.setText("List of Reports");
 
         tblReport.setModel(new javax.swing.table.DefaultTableModel(
@@ -86,6 +88,8 @@ private LawCaseDirectory ldir;
         ));
         jScrollPane1.setViewportView(tblReport);
 
+        btnHospital.setBackground(new java.awt.Color(255, 255, 255));
+        btnHospital.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         btnHospital.setText("Send Report to Hospital");
         btnHospital.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,6 +97,8 @@ private LawCaseDirectory ldir;
             }
         });
 
+        btnLawfirm.setBackground(new java.awt.Color(255, 255, 255));
+        btnLawfirm.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         btnLawfirm.setText("Send Report to Lawfirm");
         btnLawfirm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

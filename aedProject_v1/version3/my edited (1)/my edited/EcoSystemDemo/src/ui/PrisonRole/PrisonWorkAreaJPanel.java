@@ -94,6 +94,8 @@ public class PrisonWorkAreaJPanel extends javax.swing.JPanel {
         lblParole = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 204, 204));
+
         PrisonTab.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -115,6 +117,8 @@ public class PrisonWorkAreaJPanel extends javax.swing.JPanel {
 
         jLabel1.setText("Search for Prisoner");
 
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         jButton1.setText("Search");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

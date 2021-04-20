@@ -94,6 +94,8 @@ public class CriminalReportJPanle extends javax.swing.JPanel {
         jLabel8 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 204, 204));
+
         PoliceTab.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -107,6 +109,8 @@ public class CriminalReportJPanle extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(PoliceTab);
 
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         jButton1.setText("View Details");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -128,6 +132,7 @@ public class CriminalReportJPanle extends javax.swing.JPanel {
 
         jLabel7.setText("Address");
 
+        jButton2.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         jButton2.setText("Create Report");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

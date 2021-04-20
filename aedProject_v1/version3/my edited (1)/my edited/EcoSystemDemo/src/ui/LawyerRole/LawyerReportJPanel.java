@@ -69,6 +69,8 @@ public class LawyerReportJPanel extends javax.swing.JPanel {
         lblIncidentReport = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 204, 204));
+
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 0, 36)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Report");
@@ -93,6 +95,7 @@ public class LawyerReportJPanel extends javax.swing.JPanel {
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel9.setText("Personal Comments :");
 
+        btnGenerateReport.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         btnGenerateReport.setText("Generate Report");
         btnGenerateReport.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

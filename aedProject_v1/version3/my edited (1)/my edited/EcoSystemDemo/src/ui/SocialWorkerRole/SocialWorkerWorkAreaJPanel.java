@@ -48,8 +48,13 @@ public class SocialWorkerWorkAreaJPanel extends javax.swing.JPanel {
         btnSendReports = new javax.swing.JButton();
         btnReportStatus = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 204, 204));
+
+        jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         jLabel1.setText("Social Worker");
 
+        btnManageCases.setBackground(new java.awt.Color(255, 255, 255));
+        btnManageCases.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         btnManageCases.setText("Manage Cases");
         btnManageCases.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -57,6 +62,8 @@ public class SocialWorkerWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnSendReports.setBackground(new java.awt.Color(255, 255, 255));
+        btnSendReports.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         btnSendReports.setText("Send reports");
         btnSendReports.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -64,6 +71,8 @@ public class SocialWorkerWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnReportStatus.setBackground(new java.awt.Color(255, 255, 255));
+        btnReportStatus.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         btnReportStatus.setText("Report Status");
         btnReportStatus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -80,12 +89,12 @@ public class SocialWorkerWorkAreaJPanel extends javax.swing.JPanel {
                 .addComponent(btnManageCases)
                 .addGap(56, 56, 56)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnSendReports)
                         .addGap(76, 76, 76)
-                        .addComponent(btnReportStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(213, Short.MAX_VALUE))
+                        .addComponent(btnReportStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(198, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

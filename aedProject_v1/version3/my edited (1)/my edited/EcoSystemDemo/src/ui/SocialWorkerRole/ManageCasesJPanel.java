@@ -66,6 +66,8 @@ public class ManageCasesJPanel extends javax.swing.JPanel {
         btnGenerateReport = new javax.swing.JButton();
         backJButton = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 204, 204));
+
         tblCases.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -79,6 +81,7 @@ public class ManageCasesJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tblCases);
 
+        btnGenerateReport.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         btnGenerateReport.setText("Generate Report");
         btnGenerateReport.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,6 +89,7 @@ public class ManageCasesJPanel extends javax.swing.JPanel {
             }
         });
 
+        backJButton.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         backJButton.setText("<< Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

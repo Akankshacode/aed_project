@@ -58,7 +58,7 @@ public class LawReportsJPanel extends javax.swing.JPanel {
         barPanel = new javax.swing.JPanel();
         linePanel = new javax.swing.JPanel();
 
-        setBackground(new java.awt.Color(0, 102, 102));
+        setBackground(new java.awt.Color(255, 204, 204));
         setForeground(new java.awt.Color(255, 255, 255));
 
         jLabel4.setBackground(new java.awt.Color(51, 255, 204));

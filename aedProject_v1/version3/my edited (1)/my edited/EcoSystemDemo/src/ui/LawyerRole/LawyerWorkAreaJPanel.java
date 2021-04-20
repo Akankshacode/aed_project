@@ -78,6 +78,8 @@ public class LawyerWorkAreaJPanel extends javax.swing.JPanel {
         btnRefresh = new javax.swing.JButton();
         btnHandle = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 204, 204));
+
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         enterpriseLabel.setText("EnterPrise :");
 
@@ -111,6 +113,7 @@ public class LawyerWorkAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(workRequestJTable);
 
+        btnRefresh.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         btnRefresh.setText("Refresh");
         btnRefresh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -118,6 +121,7 @@ public class LawyerWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnHandle.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         btnHandle.setText("Handle Case");
         btnHandle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
