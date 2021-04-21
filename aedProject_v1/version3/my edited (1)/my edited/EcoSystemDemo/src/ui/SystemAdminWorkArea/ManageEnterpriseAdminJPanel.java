@@ -109,7 +109,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 204, 204));
         setMaximumSize(new java.awt.Dimension(2147483647, 2147483647));
         setMinimumSize(new java.awt.Dimension(3, 7));
-        setPreferredSize(new java.awt.Dimension(1496, 237));
+        setPreferredSize(new java.awt.Dimension(1496, 1037));
 
         enterpriseJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -257,7 +257,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
                     .addComponent(nameJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(submitJButton)
-                .addContainerGap(168, Short.MAX_VALUE))
+                .addContainerGap(387, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
