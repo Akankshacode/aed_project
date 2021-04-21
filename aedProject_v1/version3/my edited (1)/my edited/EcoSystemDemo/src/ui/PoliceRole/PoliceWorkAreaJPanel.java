@@ -78,7 +78,7 @@ public class PoliceWorkAreaJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(172, 172, 172)
                 .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 238, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 293, Short.MAX_VALUE)
                 .addComponent(jButton2)
                 .addGap(186, 186, 186))
             .addGroup(layout.createSequentialGroup()
@@ -98,7 +98,7 @@ public class PoliceWorkAreaJPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(143, 143, 143)
                         .addComponent(jButton2)))
-                .addContainerGap(382, Short.MAX_VALUE))
+                .addContainerGap(828, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

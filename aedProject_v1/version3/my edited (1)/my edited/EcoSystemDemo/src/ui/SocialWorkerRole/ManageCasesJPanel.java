@@ -6,6 +6,7 @@
 package ui.SocialWorkerRole;
 
 import Business.Case.Case;
+import Business.Case.CaseDirectory;
 import Business.EcoSystem;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
@@ -26,12 +27,15 @@ public class ManageCasesJPanel extends javax.swing.JPanel {
     private JPanel userProcessContainer;
     private EcoSystem business;
     private UserAccount userAccount;
+    private CaseDirectory cd;
     public ManageCasesJPanel(JPanel userProcessContainer,EcoSystem business,UserAccount userAccount) {
         initComponents();
         this.userProcessContainer=userProcessContainer;
         this.business=business;
         this.userAccount=userAccount;
         populateTable();
+         cd=business.getCaseDir();
+        
     }
     
     public void populateTable(){
@@ -65,6 +69,7 @@ public class ManageCasesJPanel extends javax.swing.JPanel {
         tblCases = new javax.swing.JTable();
         btnGenerateReport = new javax.swing.JButton();
         backJButton = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 204, 204));
 
@@ -97,6 +102,13 @@ public class ManageCasesJPanel extends javax.swing.JPanel {
             }
         });
 
+        jButton1.setText("Remove");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -107,12 +119,15 @@ public class ManageCasesJPanel extends javax.swing.JPanel {
                         .addGap(53, 53, 53)
                         .addComponent(backJButton))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(238, 238, 238)
-                        .addComponent(btnGenerateReport))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(36, 36, 36)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 736, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(80, Short.MAX_VALUE))
+                .addContainerGap(228, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(238, 238, 238)
+                .addComponent(btnGenerateReport)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(212, 212, 212))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -120,10 +135,12 @@ public class ManageCasesJPanel extends javax.swing.JPanel {
                 .addGap(19, 19, 19)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
-                .addComponent(btnGenerateReport)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnGenerateReport)
+                    .addComponent(jButton1))
                 .addGap(12, 12, 12)
                 .addComponent(backJButton)
-                .addContainerGap(271, Short.MAX_VALUE))
+                .addContainerGap(774, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -151,10 +168,25 @@ public class ManageCasesJPanel extends javax.swing.JPanel {
 
     }//GEN-LAST:event_backJButtonActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+         int selectedRow = tblCases.getSelectedRow();
+          
+        if(selectedRow < 0) {
+            JOptionPane.showMessageDialog(null,"Please Select a case", "warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        Case ca = (Case) tblCases.getValueAt(selectedRow, 0);
+        cd.deleteCase(ca);
+        populateTable();
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backJButton;
     private javax.swing.JButton btnGenerateReport;
+    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblCases;
     // End of variables declaration//GEN-END:variables

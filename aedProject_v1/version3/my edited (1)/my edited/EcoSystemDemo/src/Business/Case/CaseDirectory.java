@@ -26,6 +26,7 @@ public class CaseDirectory {
 
     public Case createCase(String issue,String culpritName, String description, String status,String name,String date){
         Case c = new Case();
+       
         c.setIssue(issue);
         c.setCulpritName(culpritName);
         c.setDetails(description);
@@ -38,6 +39,7 @@ public class CaseDirectory {
         c.setTherapist("NotAssigned");
         c.setDoctor("NotAssigned");
         c.setLawyer("NotAssigned");
+
        
         caseList.add(c);
         return c;
@@ -54,5 +56,6 @@ public class CaseDirectory {
             }
            return null;
        }
-               
+       
+
 }

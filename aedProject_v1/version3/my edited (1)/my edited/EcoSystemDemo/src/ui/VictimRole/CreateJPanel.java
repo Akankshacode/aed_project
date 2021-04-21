@@ -31,6 +31,8 @@ public class CreateJPanel extends javax.swing.JPanel {
     private EcoSystem ecosystem;
     private CaseDirectory cd;
     private UserAccount account;
+    private static int count=1000;
+    
     
     public CreateJPanel(JPanel userProcessContainer, EcoSystem ecosystem,UserAccount account) {
         initComponents();
@@ -38,6 +40,7 @@ public class CreateJPanel extends javax.swing.JPanel {
         this.ecosystem=ecosystem;
         cd=ecosystem.getCaseDir();
         this.account=account;
+        
         
     }
 
@@ -55,15 +58,16 @@ public class CreateJPanel extends javax.swing.JPanel {
         lblIssue = new javax.swing.JLabel();
         lblCulpritName = new javax.swing.JLabel();
         lblDescr = new javax.swing.JLabel();
-        txtDate = new javax.swing.JTextField();
         txtIssue = new javax.swing.JTextField();
         txtCulprit = new javax.swing.JTextField();
         txtDescr = new javax.swing.JTextField();
         btnSubmit = new javax.swing.JButton();
         backJButton = new javax.swing.JButton();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
 
         setBackground(new java.awt.Color(255, 204, 204));
 
+        jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         jLabel1.setText("Register Complaint");
 
         lblDate.setText("Date");
@@ -101,44 +105,47 @@ public class CreateJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(64, 64, 64)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblIssue)
+                            .addComponent(lblDate)
+                            .addComponent(lblCulpritName)
+                            .addComponent(lblDescr))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(64, 64, 64)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(lblIssue)
-                                    .addComponent(lblDate)
-                                    .addComponent(lblCulpritName)
-                                    .addComponent(lblDescr)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(24, 24, 24)
-                                .addComponent(backJButton)))
-                        .addGap(46, 46, 46)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(txtCulprit, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(38, 38, 38)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtDate, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE)
-                                    .addComponent(txtDescr)))
-                            .addComponent(txtIssue, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(txtIssue, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(txtDescr, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addGap(46, 46, 46)
+                                    .addComponent(txtCulprit, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(160, 160, 160)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap()
+                        .addComponent(backJButton))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(153, 153, 153)
+                        .addGap(220, 220, 220)
                         .addComponent(btnSubmit)))
-                .addContainerGap(113, Short.MAX_VALUE))
+                .addContainerGap(535, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(backJButton))
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblDate)
-                    .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblIssue)
                     .addComponent(txtIssue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -146,30 +153,34 @@ public class CreateJPanel extends javax.swing.JPanel {
                         .addGap(24, 24, 24)
                         .addComponent(lblCulpritName)
                         .addGap(25, 25, 25)
-                        .addComponent(lblDescr)
-                        .addGap(41, 41, 41)
-                        .addComponent(backJButton))
+                        .addComponent(lblDescr))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(22, 22, 22)
                         .addComponent(txtCulprit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(txtDescr, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addGap(84, 84, 84)
                 .addComponent(btnSubmit)
-                .addContainerGap())
+                .addContainerGap(632, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
        
-        String date =txtDate.getText();
+       // String date =txtDate.getText();
+        String date= jDateChooser1.getCalendar().getTime().toString();
         String issue = txtIssue.getText();
         String culpritName = txtCulprit.getText();
         String description = txtDescr.getText();
         String status ="Case InProgress";
         
        String name =account.getEmployee().getName();
-       cd.createCase(issue, culpritName, description, status,name,date);
+       
+      
+      
+       
+     Case c=  cd.createCase(issue, culpritName, description, status,name,date);
+     c.setCaseID(count++);
         JOptionPane.showMessageDialog(null, "Case Has Been Registered and an Email has been sent to your mailID");
         String email = account.getEmployee().getEmail();
         javamailUtil.sendMail(email);
@@ -189,13 +200,13 @@ public class CreateJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backJButton;
     private javax.swing.JButton btnSubmit;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblCulpritName;
     private javax.swing.JLabel lblDate;
     private javax.swing.JLabel lblDescr;
     private javax.swing.JLabel lblIssue;
     private javax.swing.JTextField txtCulprit;
-    private javax.swing.JTextField txtDate;
     private javax.swing.JTextField txtDescr;
     private javax.swing.JTextField txtIssue;
     // End of variables declaration//GEN-END:variables

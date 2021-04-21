@@ -9,6 +9,7 @@ import Business.Case.Case;
 import Business.Enterprise.Enterprise;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
+import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -215,16 +216,22 @@ public class LawyerReportJPanel extends javax.swing.JPanel {
         c.setActionPlan(nextSteps);
         c.setPersonalComments(comments);
         c.setLawyer(userAccount.getEmployee().getName());
-        c.setLawyerStatus("Court Review");
+        c.setLawyerStatus("Sent for Court Review");
         JOptionPane.showMessageDialog(this, "Report filed!");
     }//GEN-LAST:event_btnGenerateReportActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
 
-        userProcessContainer.remove(this);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+       userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+      CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
+        
+        LawyerWorkAreaJPanel dwjp = (LawyerWorkAreaJPanel) component;
+        dwjp.populateTable();
+        
     }//GEN-LAST:event_btnBackActionPerformed
 
 

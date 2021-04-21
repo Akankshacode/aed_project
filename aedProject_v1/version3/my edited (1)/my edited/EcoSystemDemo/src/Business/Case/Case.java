@@ -12,7 +12,7 @@ import Business.Employee.Employee;
  * @author Akanksha
  */
 public class Case {
-    private static int caseID=1001;
+    private  int caseID;
     
     private String victimName;
     private String issue;
@@ -24,6 +24,7 @@ public class Case {
     private String SocialStatus;
     private String SocialWorker;
    private boolean assigned;
+
 
 
 //HOSPITAL PARAMETERS
@@ -73,6 +74,16 @@ private String Hstatus;
          private String CphoneNumber;
          private String CCrimeComitted;
           private String CDateOfCrime;
+
+    public int getCaseID() {
+        return caseID;
+    }
+
+    public void setCaseID(int caseID) {
+        this.caseID = caseID;
+    }
+
+  
 
     public String getCAddress() {
         return CAddress;
@@ -294,17 +305,13 @@ private String Hstatus;
     private Employee emp;
     
     public Case(){
-        caseID++;
-//        this.issue=
+      
+       
+       
     }
 
-    public int getCaseID() {
-        return caseID;
-    }
+   
 
-    public void setCaseID(int caseID) {
-        this.caseID = caseID;
-    }
 
     public String getVictimName() {
         return victimName;

@@ -54,6 +54,8 @@ public class ViewLawStatsJPanel extends javax.swing.JPanel {
             lblPersonalComments.setText(ca.getPersonalComments());
             lblEvidencePresented.setText(ca.getEvidence_Present());
             lblSentence.setText(ca.getSentence());
+            lblPossibilityOfParole.setText(ca.getParole());
+            lblRestrainingOrder.setText(ca.getRestrainingOrder());
         
       
     }

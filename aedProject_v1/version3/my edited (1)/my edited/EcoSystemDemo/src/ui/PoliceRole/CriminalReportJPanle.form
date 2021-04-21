@@ -43,16 +43,16 @@
                           <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="jButton2" min="-2" max="-2" attributes="0"/>
                           <Component id="lblCourtCaseId" min="-2" pref="194" max="-2" attributes="0"/>
                           <Component id="lblName" min="-2" pref="194" max="-2" attributes="0"/>
                           <Component id="lblSentence" min="-2" pref="194" max="-2" attributes="0"/>
                           <Component id="lblRestrainingOrder" min="-2" pref="194" max="-2" attributes="0"/>
-                          <Component id="txtPhone" alignment="0" min="-2" pref="244" max="-2" attributes="0"/>
-                          <Component id="txtAddress" min="-2" pref="244" max="-2" attributes="0"/>
-                          <Component id="txtDateofCrime" min="-2" pref="244" max="-2" attributes="0"/>
-                          <Component id="txtCrimeComitted" alignment="0" min="-2" pref="244" max="-2" attributes="0"/>
+                          <Component id="txtPhone" alignment="0" pref="244" max="32767" attributes="0"/>
+                          <Component id="txtAddress" pref="244" max="32767" attributes="0"/>
+                          <Component id="txtCrimeComitted" alignment="0" pref="244" max="32767" attributes="0"/>
+                          <Component id="jDateChooser1" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -60,7 +60,7 @@
                       <Component id="jButton3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="200" max="32767" attributes="0"/>
+              <EmptySpace pref="288" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -102,19 +102,19 @@
                   <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtAddress" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="19" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="txtCrimeComitted" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="txtDateofCrime" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                  <Component id="jDateChooser1" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jButton2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+              <EmptySpace pref="469" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -246,8 +246,6 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txtAddress">
     </Component>
-    <Component class="javax.swing.JTextField" name="txtDateofCrime">
-    </Component>
     <Component class="javax.swing.JTextField" name="txtCrimeComitted">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel8">
@@ -262,6 +260,8 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser1">
     </Component>
   </SubComponents>
 </Form>
