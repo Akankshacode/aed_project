@@ -11,6 +11,8 @@ import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -30,6 +32,17 @@ public class MainJFrame extends javax.swing.JFrame {
         initComponents();
         system = dB4OUtil.retrieveSystem();
         this.setSize(1680, 1050);
+        addWindowListener(new WindowAdapter()
+	{
+	@Override
+		public void windowClosing(WindowEvent e)
+			{
+			 dB4OUtil.storeSystem(system);		
+                            JOptionPane.showMessageDialog(null, "CLOSING TIME");
+					System.exit(0);
+			}
+	
+	});
     }
 
     /**
