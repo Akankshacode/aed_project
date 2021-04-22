@@ -50,7 +50,7 @@ public class VictimWorkAreaJPanel extends javax.swing.JPanel {
         btnFileComplaint = new javax.swing.JButton();
         btnViewComplaint = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(204, 255, 204));
         setPreferredSize(new java.awt.Dimension(1680, 1050));
 
         lblHeading.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N

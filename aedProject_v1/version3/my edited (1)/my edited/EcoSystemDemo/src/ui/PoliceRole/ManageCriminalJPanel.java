@@ -14,6 +14,7 @@ import Business.Organization.Organization;
 import Business.Organization.PoliceOrganization;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -41,6 +42,7 @@ public class ManageCriminalJPanel extends javax.swing.JPanel {
         this.enterprise=enterprise;
         this.system=business;
         pcd=system.getPoliceCaseDirectory();
+        CulpritTab.getTableHeader().setForeground(Color.blue);
         populateTable();
     }
 
@@ -85,7 +87,7 @@ public class ManageCriminalJPanel extends javax.swing.JPanel {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(255, 204, 204));
+        setBackground(new java.awt.Color(204, 255, 204));
 
         CulpritTab.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -98,6 +100,8 @@ public class ManageCriminalJPanel extends javax.swing.JPanel {
                 "Case Id", "Name", "Crime committed", "Date of Crime", "Phone Number", "Address", "Status"
             }
         ));
+        CulpritTab.setSelectionBackground(new java.awt.Color(153, 153, 255));
+        CulpritTab.setSelectionForeground(new java.awt.Color(255, 0, 0));
         jScrollPane1.setViewportView(CulpritTab);
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N

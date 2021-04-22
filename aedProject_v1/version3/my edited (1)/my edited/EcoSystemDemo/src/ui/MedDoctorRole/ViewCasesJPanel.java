@@ -13,6 +13,7 @@ import Business.Enterprise.Enterprise;
 import Business.Organization.DoctorOrganization;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Component;
 import java.util.Properties;
 import javax.mail.MessagingException;
@@ -50,6 +51,8 @@ public class ViewCasesJPanel extends javax.swing.JPanel {
         this.system = system;
         hcd = system.getHospitalCaseDirectory();
         populateTable();
+        tabCase.getTableHeader().setForeground(Color.blue);
+         tabAppointment.getTableHeader().setForeground(Color.blue);
         populateApptTable();
     }
 
@@ -172,7 +175,7 @@ public class ViewCasesJPanel extends javax.swing.JPanel {
         jRadioButtonMenuItem1.setSelected(true);
         jRadioButtonMenuItem1.setText("jRadioButtonMenuItem1");
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(204, 255, 204));
 
         jLabel3.setText("Status:");
 
@@ -205,6 +208,8 @@ public class ViewCasesJPanel extends javax.swing.JPanel {
                 "Case No", "Patient Name", "Status"
             }
         ));
+        tabCase.setSelectionBackground(new java.awt.Color(153, 153, 255));
+        tabCase.setSelectionForeground(new java.awt.Color(255, 0, 0));
         jScrollPane1.setViewportView(tabCase);
 
         jLabel1.setText("CASE NUMBER:");
@@ -222,6 +227,8 @@ public class ViewCasesJPanel extends javax.swing.JPanel {
                 "Case Number", "Patient Name", "Date", "Status"
             }
         ));
+        tabAppointment.setSelectionBackground(new java.awt.Color(153, 153, 255));
+        tabAppointment.setSelectionForeground(new java.awt.Color(255, 0, 0));
         jScrollPane2.setViewportView(tabAppointment);
 
         jButton2.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N

@@ -39,7 +39,7 @@ public class LAdminWorkAreaJPanel extends javax.swing.JPanel {
         btnReports = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(204, 255, 204));
         setMinimumSize(new java.awt.Dimension(3, 7));
         setPreferredSize(new java.awt.Dimension(1496, 237));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());

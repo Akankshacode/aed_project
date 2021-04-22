@@ -13,6 +13,7 @@ import Business.Organization.TherapistOrganization;
 import Business.UserAccount.UserAccount;
 import com.toedter.calendar.JCalendar;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -38,6 +39,8 @@ public class TherapistAppointmentsJPanel extends javax.swing.JPanel {
         this.userProcessContainer=userProcessContainer;
         this.userAccount=account;
         this.system=system;
+        TabAssignedCases.getTableHeader().setForeground(Color.blue);
+        tabAppointments.getTableHeader().setForeground(Color.blue);
         populateTable();
         populateApptTable();
     }
@@ -105,7 +108,7 @@ public class TherapistAppointmentsJPanel extends javax.swing.JPanel {
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
         jButton4 = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(204, 255, 204));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("CASE NUMBER:");
@@ -130,6 +133,8 @@ public class TherapistAppointmentsJPanel extends javax.swing.JPanel {
                 "Case Number", "Patient Name", "Date"
             }
         ));
+        tabAppointments.setSelectionBackground(new java.awt.Color(153, 153, 255));
+        tabAppointments.setSelectionForeground(new java.awt.Color(255, 0, 0));
         jScrollPane2.setViewportView(tabAppointments);
 
         txtCase.setText(".");
@@ -169,6 +174,8 @@ public class TherapistAppointmentsJPanel extends javax.swing.JPanel {
                 "Case No", "Patient Name", "Issue", "Status"
             }
         ));
+        TabAssignedCases.setSelectionBackground(new java.awt.Color(153, 153, 255));
+        TabAssignedCases.setSelectionForeground(new java.awt.Color(255, 0, 0));
         jScrollPane1.setViewportView(TabAssignedCases);
 
         jButton3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N

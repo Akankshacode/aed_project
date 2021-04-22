@@ -11,6 +11,7 @@ import Business.Case.LawCaseDirectory;
 import Business.EcoSystem;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -38,6 +39,7 @@ private LawCaseDirectory ldir;
         hdir=business.getHospitalCaseDirectory();
         ldir=business.getLcaseDir();
         populateTable();
+        tblReport.getTableHeader().setForeground(Color.blue);
     }
 
     public void populateTable() {
@@ -75,7 +77,7 @@ private LawCaseDirectory ldir;
         jRadioButtonMenuItem1.setSelected(true);
         jRadioButtonMenuItem1.setText("jRadioButtonMenuItem1");
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(204, 255, 204));
 
         lblHeading.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblHeading.setText("List of Reports");
@@ -91,6 +93,8 @@ private LawCaseDirectory ldir;
                 "Case ID", "Victim Name", "Observations", "Status"
             }
         ));
+        tblReport.setSelectionBackground(new java.awt.Color(153, 153, 255));
+        tblReport.setSelectionForeground(new java.awt.Color(255, 0, 0));
         jScrollPane1.setViewportView(tblReport);
 
         btnHospital.setBackground(new java.awt.Color(255, 255, 255));

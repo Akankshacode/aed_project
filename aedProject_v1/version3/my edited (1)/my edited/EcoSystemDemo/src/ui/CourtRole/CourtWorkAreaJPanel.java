@@ -12,6 +12,7 @@ import Business.Enterprise.Enterprise;
 import Business.Organization.CourtOrganization;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
+import java.awt.Color;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -39,6 +40,7 @@ public class CourtWorkAreaJPanel extends javax.swing.JPanel {
         this.userAccount = account;
         valueLabel.setText(enterprise.getName());
         system=business;
+        caseTab.getTableHeader().setForeground(Color.blue);
         populate();
         
     }
@@ -61,9 +63,9 @@ public class CourtWorkAreaJPanel extends javax.swing.JPanel {
         btnHandle = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(204, 255, 204));
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(204, 255, 204));
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         enterpriseLabel.setText("EnterPrise :");
@@ -96,6 +98,8 @@ public class CourtWorkAreaJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        caseTab.setSelectionBackground(new java.awt.Color(153, 153, 255));
+        caseTab.setSelectionForeground(new java.awt.Color(255, 0, 0));
         jScrollPane1.setViewportView(caseTab);
 
         btnRefresh.setBackground(new java.awt.Color(255, 255, 255));

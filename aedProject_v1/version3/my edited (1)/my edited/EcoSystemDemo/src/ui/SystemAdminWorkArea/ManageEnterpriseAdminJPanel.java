@@ -14,6 +14,7 @@ import Business.Role.LAdminRole;
 import Business.Role.PAdminRole;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Component;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -36,6 +37,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         this.userProcessContainer = userProcessContainer;
         this.system = system;
 
+        enterpriseJTable.getTableHeader().setForeground(Color.blue);
         populateTable();
         populateNetworkComboBox();
     }
@@ -106,7 +108,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         typeComboBox = new javax.swing.JComboBox<>();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(204, 255, 204));
         setMaximumSize(new java.awt.Dimension(2147483647, 2147483647));
         setMinimumSize(new java.awt.Dimension(3, 7));
         setPreferredSize(new java.awt.Dimension(1500, 1000));
@@ -132,6 +134,8 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
             }
         });
         enterpriseJTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
+        enterpriseJTable.setSelectionBackground(new java.awt.Color(153, 153, 255));
+        enterpriseJTable.setSelectionForeground(new java.awt.Color(255, 0, 0));
         jScrollPane1.setViewportView(enterpriseJTable);
 
         jLabel1.setFont(new java.awt.Font("Malayalam MN", 1, 18)); // NOI18N

@@ -12,6 +12,7 @@ import Business.Organization.DoctorOrganization;
 
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -40,6 +41,7 @@ public class DoctorReportJPanel extends javax.swing.JPanel {
         this.enterprise = enterprise;
         this.userAccount = account;
         this.system=system;
+        tabAppointment.getTableHeader().setForeground(Color.blue);
          populateTable();
        
     }
@@ -83,7 +85,7 @@ public class DoctorReportJPanel extends javax.swing.JPanel {
         txtNotes = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(204, 255, 204));
 
         tabAppointment.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -96,6 +98,8 @@ public class DoctorReportJPanel extends javax.swing.JPanel {
                 "Case Number", "Patient", "Appointment date", "Status"
             }
         ));
+        tabAppointment.setSelectionBackground(new java.awt.Color(153, 153, 255));
+        tabAppointment.setSelectionForeground(new java.awt.Color(255, 0, 0));
         jScrollPane1.setViewportView(tabAppointment);
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));

@@ -81,7 +81,7 @@ public class CourtReportJPanel extends javax.swing.JPanel {
         txtRestrainingOrder1 = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(204, 255, 204));
 
         txtJudgement.setBackground(new java.awt.Color(255, 255, 204));
 
