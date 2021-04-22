@@ -58,21 +58,21 @@ public class LawReportsJPanel extends javax.swing.JPanel {
         barPanel = new javax.swing.JPanel();
         linePanel = new javax.swing.JPanel();
 
-        setBackground(new java.awt.Color(255, 204, 204));
+        setBackground(new java.awt.Color(255, 255, 255));
         setForeground(new java.awt.Color(255, 255, 255));
 
         jLabel4.setBackground(new java.awt.Color(51, 255, 204));
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel4.setText("Successful Completion reports :");
 
         jLabel5.setBackground(new java.awt.Color(51, 255, 204));
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel5.setText("Open cases reports :");
 
         btnOpen.setBackground(new java.awt.Color(255, 255, 255));
-        btnOpen.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnOpen.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnOpen.setText("View");
         btnOpen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -81,7 +81,7 @@ public class LawReportsJPanel extends javax.swing.JPanel {
         });
 
         btncompleted.setBackground(new java.awt.Color(255, 255, 255));
-        btncompleted.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btncompleted.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btncompleted.setText("View");
         btncompleted.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,7 +90,7 @@ public class LawReportsJPanel extends javax.swing.JPanel {
         });
 
         backJButton.setBackground(new java.awt.Color(255, 255, 255));
-        backJButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        backJButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         backJButton.setText("Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -103,7 +103,7 @@ public class LawReportsJPanel extends javax.swing.JPanel {
         jLabel1.setText("Law Reports");
 
         btnClient.setBackground(new java.awt.Color(255, 255, 255));
-        btnClient.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnClient.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnClient.setText("View");
         btnClient.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,17 +112,17 @@ public class LawReportsJPanel extends javax.swing.JPanel {
         });
 
         jLabel2.setBackground(new java.awt.Color(51, 255, 204));
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setText("Client Reports :");
 
         jLabel3.setBackground(new java.awt.Color(51, 255, 204));
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setText("Court reports :");
 
         btnCourt.setBackground(new java.awt.Color(255, 255, 255));
-        btnCourt.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnCourt.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnCourt.setText("View");
         btnCourt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -52,6 +52,16 @@ public class PoliceCaseDirectory {
             }
            return null;
        }
+       public Case findById(String id)
+          {
+           for(Case ca: caseList)
+           {
+           if((ca.getCaseID()+"").equals(id))
+               return ca;
+            }
+           System.out.println("CouldnotfindCAse");
+           return null;
+       }   
 }
 
 

@@ -48,7 +48,8 @@ public class PrisonWorkAreaJPanel extends javax.swing.JPanel {
     {
        DefaultTableModel model = (DefaultTableModel) PrisonTab.getModel();
         model.setRowCount(0);
-           if(pcd!=null)
+           
+        if(pcd!=null)
            {
                
                for (Case c : pcd.getCaseList()) 
@@ -66,6 +67,26 @@ public class PrisonWorkAreaJPanel extends javax.swing.JPanel {
                 model.addRow(row);
             }
         }}
+        /*
+          if(pcd!=null)
+           {
+               
+               for (Case c : pcd.getCaseList()) 
+        {
+            if(c.getPstatus().equals("InPrison"))
+            { Object [] row = new Object[5];
+                row[0] = c.getCulpritName();
+                row[1] = c.getCCrimeComitted();
+                 row[2] = c.getCDateOfCrime();
+                   row[3] = c.getSentence();
+                     row[4] = c.getParole();
+                 
+                
+                
+                model.addRow(row);
+            }
+        }}
+        */
         
     }
     /**
@@ -94,7 +115,7 @@ public class PrisonWorkAreaJPanel extends javax.swing.JPanel {
         lblParole = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 204, 204));
+        setBackground(new java.awt.Color(255, 255, 255));
 
         PrisonTab.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -115,10 +136,11 @@ public class PrisonWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         jLabel1.setText("Search for Prisoner");
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         jButton1.setText("Search");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -126,25 +148,35 @@ public class PrisonWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel2.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         jLabel2.setText("Name:");
 
+        jLabel3.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         jLabel3.setText("Crime Comitted");
 
+        jLabel4.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         jLabel4.setText("Date of Arrest");
 
+        jLabel5.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         jLabel5.setText("Sentence");
 
+        jLabel6.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         jLabel6.setText("Parole");
 
-        lblName.setText("jLabel7");
+        lblName.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        lblName.setText("-");
 
-        lblCrimeComitted.setText("jLabel7");
+        lblCrimeComitted.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        lblCrimeComitted.setText("-");
 
-        lblDateOfArrest.setText("jLabel7");
+        lblDateOfArrest.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        lblDateOfArrest.setText("-");
 
-        lblSentence.setText("jLabel7");
+        lblSentence.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        lblSentence.setText("-");
 
-        lblParole.setText("jLabel7");
+        lblParole.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        lblParole.setText("-");
 
         jLabel7.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         jLabel7.setText("Welcome to RedStone Prison DataBase");
@@ -216,7 +248,7 @@ public class PrisonWorkAreaJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(lblParole, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(114, Short.MAX_VALUE))
+                .addContainerGap(109, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

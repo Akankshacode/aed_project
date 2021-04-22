@@ -56,13 +56,14 @@ public class HospitalReportsJPanel extends javax.swing.JPanel {
         linePanel = new javax.swing.JPanel();
         piePanel = new javax.swing.JPanel();
 
-        setBackground(new java.awt.Color(255, 204, 204));
+        setBackground(new java.awt.Color(255, 255, 255));
 
+        jLabel4.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel4.setText("Therapy Sessions :");
 
         btntherapy.setBackground(new java.awt.Color(255, 255, 255));
-        btntherapy.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        btntherapy.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         btntherapy.setText("View");
         btntherapy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,12 +78,13 @@ public class HospitalReportsJPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 0, 36)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Hospital Reports");
 
         btninpatient.setBackground(new java.awt.Color(255, 255, 255));
-        btninpatient.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        btninpatient.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         btninpatient.setText("View");
         btninpatient.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,14 +92,16 @@ public class HospitalReportsJPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel2.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setText("In-Patient Medical :");
 
+        jLabel3.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setText("Total Hospital Patient Intake :");
 
         btntotal.setBackground(new java.awt.Color(255, 255, 255));
-        btntotal.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        btntotal.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         btntotal.setText("View");
         btntotal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -182,12 +186,9 @@ public class HospitalReportsJPanel extends javax.swing.JPanel {
                             .addComponent(jLabel4))
                         .addGap(136, 136, 136)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(barPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(229, 229, 229))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(linePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addComponent(barPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(linePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {barPanel, linePanel, piePanel});

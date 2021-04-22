@@ -96,6 +96,8 @@ public class CriminalReportJPanle extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(255, 204, 204));
 
+        jScrollPane1.setBackground(new java.awt.Color(255, 204, 204));
+
         PoliceTab.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
