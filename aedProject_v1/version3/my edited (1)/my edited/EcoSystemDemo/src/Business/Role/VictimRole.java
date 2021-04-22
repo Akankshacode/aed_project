@@ -11,7 +11,8 @@ import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
 import Business.Organization.VictimOrganization;
-import ui.VictimRole.VictimWorkAreaJPanel;
+import ui.VictimRole.VictimInitialJpanel;
+
 
 /**
  *
@@ -24,6 +25,6 @@ public class VictimRole extends Role{
     }
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-        return new VictimWorkAreaJPanel(userProcessContainer, account, (VictimOrganization)organization, business);
+        return new VictimInitialJpanel(userProcessContainer, account, (VictimOrganization)organization, business);
     }
 }

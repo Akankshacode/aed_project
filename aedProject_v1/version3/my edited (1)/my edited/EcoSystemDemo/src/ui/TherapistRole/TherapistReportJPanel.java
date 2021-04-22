@@ -81,7 +81,7 @@ public class TherapistReportJPanel extends javax.swing.JPanel {
         txtSymtom = new javax.swing.JLabel();
         txtTherapy = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 204, 204));
+        setBackground(new java.awt.Color(255, 255, 255));
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
@@ -102,7 +102,7 @@ public class TherapistReportJPanel extends javax.swing.JPanel {
         });
 
         jButton3.setBackground(new java.awt.Color(255, 255, 255));
-        jButton3.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jButton3.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         jButton3.setText("View Report");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -110,8 +110,10 @@ public class TherapistReportJPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("DESCRIPTION OF PROBLEM");
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("SYMPTOM AS A RESULT");
 
         tabAppointment.setModel(new javax.swing.table.DefaultTableModel(
@@ -138,6 +140,7 @@ public class TherapistReportJPanel extends javax.swing.JPanel {
 
         txtProblem.setText("<html> </html>");
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setText("RECOMMENDED THERAPY");
 
         txtSymtom.setText("<html> </html");

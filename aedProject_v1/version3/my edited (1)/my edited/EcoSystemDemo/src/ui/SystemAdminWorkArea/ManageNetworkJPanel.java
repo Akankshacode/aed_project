@@ -110,6 +110,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
             }
         });
 
+        txtNetworkName.setBackground(new java.awt.Color(255, 255, 204));
         txtNetworkName.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
 
         btnBack.setBackground(new java.awt.Color(255, 255, 255));
@@ -152,14 +153,14 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
                 .addGap(17, 17, 17)
                 .addComponent(btnBack)
                 .addGap(48, 48, 48)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(txtNetworkName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblName))
                 .addGap(18, 18, 18)
                 .addComponent(btnSubmit)
-                .addContainerGap(499, Short.MAX_VALUE))
+                .addContainerGap(1156, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

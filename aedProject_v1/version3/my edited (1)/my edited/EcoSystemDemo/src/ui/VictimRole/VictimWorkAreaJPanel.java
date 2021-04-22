@@ -49,15 +49,15 @@ public class VictimWorkAreaJPanel extends javax.swing.JPanel {
         lblHeading = new javax.swing.JLabel();
         btnFileComplaint = new javax.swing.JButton();
         btnViewComplaint = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 204, 204));
+        setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1680, 1050));
 
-        lblHeading.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        lblHeading.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         lblHeading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblHeading.setText("Victim Work Area");
 
+        btnFileComplaint.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnFileComplaint.setText("File Complaint");
         btnFileComplaint.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -65,6 +65,8 @@ public class VictimWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnViewComplaint.setBackground(new java.awt.Color(255, 255, 255));
+        btnViewComplaint.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnViewComplaint.setText("View Complaint Status");
         btnViewComplaint.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,45 +74,32 @@ public class VictimWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel1.setText("<html>There are three major forms of harassment: Verbal, Non- verbal and Physical.<br><b>Verbal Harassment</b><ul><li>Sexual or suggestive comments</li><li>Sexual propositions</li><li>Offensive jokes repeatedly prodding about someone's personal life</li><li>threats or insults</li><li> Inappropriate language at workplace</li></ul><b>Non- Verbal harassment</b><br><ul><li>Suggestive gazes or sneers</li><li>Following someone</li><li>Offensive bodily gestures</li></ul><b> Physical harassment</b><ul><li>Gratuitous physical contact against someone's will(punching, brushing up against or hugging)</li><li>Sexual assault(i.e attempting to touch someone's breasts or genitals)</li><li>Pushing, shiving or jostling</li></ul></html>");
-        jLabel1.setToolTipText("");
-        jLabel1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblHeading, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(324, 324, 324)
+                        .addComponent(lblHeading, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnViewComplaint)
-                            .addComponent(btnFileComplaint, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 110, Short.MAX_VALUE))))
+                        .addGap(374, 374, 374)
+                        .addComponent(btnFileComplaint, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(113, 113, 113)
+                        .addComponent(btnViewComplaint)))
+                .addContainerGap(807, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblHeading, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addComponent(btnFileComplaint)
-                .addGap(18, 18, 18)
-                .addComponent(btnViewComplaint)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 356, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(102, 102, 102)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnViewComplaint, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnFileComplaint, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(803, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -132,7 +121,6 @@ public class VictimWorkAreaJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnFileComplaint;
     private javax.swing.JButton btnViewComplaint;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblHeading;
     // End of variables declaration//GEN-END:variables
 }
