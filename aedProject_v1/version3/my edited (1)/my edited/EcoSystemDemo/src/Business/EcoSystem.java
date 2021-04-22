@@ -117,4 +117,13 @@ public class EcoSystem extends Organization{
         }
         return true;
     }
+    public Network getNetwork()
+    {
+        for(Network net : getNetworkList())
+        {
+            if(net.getName().equals("Safe"))
+                return net;
+        }
+        return null;
+    }
 }

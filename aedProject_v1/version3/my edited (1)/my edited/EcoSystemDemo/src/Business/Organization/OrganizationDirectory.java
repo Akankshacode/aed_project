@@ -59,4 +59,13 @@ public class OrganizationDirectory {
         }
         return organization;
     }
+    public Organization getVicO()
+    {
+        for(Organization o:organizationList)
+        {
+            if(o.getOrganizationID()==5)
+                return o;
+        }
+        return null;
+    }
 }

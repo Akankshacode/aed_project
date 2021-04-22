@@ -21,7 +21,7 @@ import ui.VictimRole.VictimInitialJpanel;
 public class VictimRole extends Role{
     public VictimRole()
     {
-        
+        super();
     }
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {

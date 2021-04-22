@@ -52,4 +52,13 @@ public class EnterpriseDirectory {
     
         return enterprise;
     }
+    public Enterprise  getNEnterprise()
+    {
+        for(Enterprise e: enterpriseList)
+        {
+            if(e.getEnterpriseType().equals((Enterprise.EnterpriseType.NGO) ))
+                return e;
+        }
+        return null;
+    }
 }
