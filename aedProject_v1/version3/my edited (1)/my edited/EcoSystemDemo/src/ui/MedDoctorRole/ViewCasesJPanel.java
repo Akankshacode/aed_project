@@ -14,8 +14,12 @@ import Business.Organization.DoctorOrganization;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Component;
-import javamail.javaMailPatient;
-import javamail.javamailUtil;
+import java.util.Properties;
+import javax.mail.MessagingException;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -70,17 +74,70 @@ public class ViewCasesJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) tabAppointment.getModel();
         model.setRowCount(0);
         if (hcd != null) {
-        for (Case c : hcd.getCaseList()) {
-            if (c.getDstatus().equals("AppointmentWIthDoctor")) {
-                Object[] row = new Object[4];
-                row[0] = c;
-                row[1] = c.getVictimName();
-                row[2] = c.getDocAppointment();
-                row[3] = c.getDstatus();
+            for (Case c : hcd.getCaseList()) {
+                if (c.getDstatus().equals("AppointmentWIthDoctor")) {
+                    Object[] row = new Object[4];
+                    row[0] = c;
+                    row[1] = c.getVictimName();
+                    row[2] = c.getDocAppointment();
+                    row[3] = c.getDstatus();
 
-                model.addRow(row);
+                    model.addRow(row);
+                }
             }
         }
+    }
+
+    public static void sendTextMessage(String contact) {
+        // Recipient's email ID needs to be mentioned.
+        String to = contact;
+        System.out.println(contact);
+        String from = "healthfirst202004@gmail.com";
+        String pass = "Anushi@123";
+        // Assuming you are sending email from localhost
+        // String host = "192.168.0.16";
+        // Get system properties
+        Properties properties = System.getProperties();
+        String host = "smtp.gmail.com";
+        properties.put("mail.smtp.starttls.enable", "true");
+        properties.put("mail.smtp.ssl.trust", host);
+        properties.put("mail.smtp.user", from);
+        // properties.put("mail.smtp.password", pass);
+        properties.put("mail.smtp.port", "587");
+        properties.put("mail.smtp.auth", "true");
+        // Setup mail server
+        // properties.setProperty("mail.smtp.host", host);
+        //  properties.put("mail.smtp.starttls.enable", "true");
+        // Get the default Session object.
+        Session session = Session.getDefaultInstance(properties);
+        //       final PasswordAuthentication auth = new PasswordAuthentication(from, pass);
+//Session session = Session.getDefaultInstance(properties, new Authenticator() {
+//    @Override
+//    protected PasswordAuthentication getPasswordAuthentication() { return auth; }
+//});
+//Session session = Session.getInstance(properties);
+        try {
+            // Create a default MimeMessage object.
+            MimeMessage message = new MimeMessage(session);
+
+            // Set From: header field of the header.
+            message.setFrom(new InternetAddress(from));
+
+            // Set To: header field of the header.
+            message.addRecipient(javax.mail.Message.RecipientType.TO, new InternetAddress("6177510819@tmomail.net"));
+
+            // Set Subject: header field
+            message.setSubject("Doctor's appointment scheduled by NGO Sakhee");
+            message.setText("Your appointment with the doctor is scheduled. Please contact the hospital for more details");
+            // Send message
+            Transport transport = session.getTransport("smtp");
+            transport.connect(host, from, pass);
+            transport.sendMessage(message, message.getAllRecipients());
+            transport.close();
+            System.out.println("Sent message successfully....");
+        } catch (MessagingException mex) {
+            mex.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Invalid email id");
         }
     }
 
@@ -282,28 +339,30 @@ public class ViewCasesJPanel extends javax.swing.JPanel {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         int selectedRow = tabCase.getSelectedRow();
-System.out.println("STATUS OF APPOINTMENT ="+userAccount.getEmployee().getFlag());
+        System.out.println("STATUS OF APPOINTMENT =" + userAccount.getEmployee().getFlag());
 
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(null, "Please Select a case", "Warining", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        if(!userAccount.getEmployee().getFlag()==true)
-        {
-          JOptionPane.showMessageDialog(null, "Appointment with another patient  for now ", "Warining", JOptionPane.WARNING_MESSAGE);
-            return;  
+        if (!userAccount.getEmployee().getFlag() == true) {
+            JOptionPane.showMessageDialog(null, "Appointment with another patient  for now ", "Warining", JOptionPane.WARNING_MESSAGE);
+            return;
         }
-        
+
         Case c = (Case) tabCase.getValueAt(selectedRow, 0);
-        
-   String AppointmentDate= jDateChooser1.getCalendar().getTime()+"";
-     //   String AppointmentDate = txtDate.getText();
+
+        String AppointmentDate = jDateChooser1.getCalendar().getTime() + "";
+        //   String AppointmentDate = txtDate.getText();
         c.setDocAppointment(AppointmentDate);
         c.setDstatus("AppointmentWIthDoctor");
         userAccount.getEmployee().setFlag(false);
 
         populateTable();
         populateApptTable();
+        String phone = userAccount.getEmployee().getPhone();
+        sendTextMessage(phone);
+        JOptionPane.showMessageDialog(null, "Appointment Scheduled Successfully!");
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
