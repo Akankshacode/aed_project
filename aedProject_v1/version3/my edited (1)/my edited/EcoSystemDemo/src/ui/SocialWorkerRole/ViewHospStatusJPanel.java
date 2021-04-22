@@ -62,7 +62,7 @@ public class ViewHospStatusJPanel extends javax.swing.JPanel {
         lblSymtomAsaResult = new javax.swing.JLabel();
         lblRecommendedTherapy = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(204, 255, 204));
 
         lblHeading.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblHeading.setText("Hospital REPORT");

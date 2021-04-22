@@ -94,7 +94,7 @@ public class ViewLawStatsJPanel extends javax.swing.JPanel {
         lblPossibilityOfParole = new javax.swing.JLabel();
         lblRestrainingOrder = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(204, 255, 204));
 
         lblHeading.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblHeading.setText("Lawyer Report");

@@ -13,6 +13,7 @@ import Business.UserAccount.UserAccount;
 import Business.WorkQueue.LabTestWorkRequest;
 import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
+import java.awt.Color;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -41,6 +42,7 @@ public class LawyerWorkAreaJPanel extends javax.swing.JPanel {
         this.system=system;
         valueLabel.setText(enterprise.getName());
         populateTable();
+        workRequestJTable.getTableHeader().setForeground(Color.blue);
     }
 
     
@@ -79,7 +81,7 @@ public class LawyerWorkAreaJPanel extends javax.swing.JPanel {
         btnHandle = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(204, 255, 204));
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         enterpriseLabel.setForeground(new java.awt.Color(54, 33, 89));
@@ -115,6 +117,8 @@ public class LawyerWorkAreaJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        workRequestJTable.setSelectionBackground(new java.awt.Color(153, 153, 255));
+        workRequestJTable.setSelectionForeground(new java.awt.Color(255, 0, 0));
         jScrollPane1.setViewportView(workRequestJTable);
 
         btnRefresh.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N

@@ -9,8 +9,11 @@ import Business.Case.Case;
 import Business.Case.CaseDirectory;
 import Business.EcoSystem;
 import Business.UserAccount.UserAccount;
+import com.github.javafaker.Faker;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Component;
+import java.util.Random;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -33,6 +36,7 @@ public class ManageCasesJPanel extends javax.swing.JPanel {
         this.userProcessContainer=userProcessContainer;
         this.business=business;
         this.userAccount=userAccount;
+        tblCases.getTableHeader().setForeground(Color.blue);
         populateTable();
          cd=business.getCaseDir();
         
@@ -41,6 +45,8 @@ public class ManageCasesJPanel extends javax.swing.JPanel {
     public void populateTable(){
          DefaultTableModel model = (DefaultTableModel) tblCases.getModel();
         model.setRowCount(0);
+        Faker faker = new Faker();
+        Random rnd = new Random();
         for (Case c : business.getCaseDir().getCaseList()) {
             if(!c.getStatus().equals("Case sent"))
             {
@@ -52,6 +58,78 @@ public class ManageCasesJPanel extends javax.swing.JPanel {
                  row[4] = c.getStatus(); 
                 model.addRow(row);
             }
+        }
+        for(int i=1; i<6; i++){
+            Object row[] = new Object[5];
+            
+            int caseid = rnd.nextInt(1050-1011)+1011;
+    
+            row[0] = caseid;
+            row[1] = faker.name().fullName() ;
+            row[2] = "Sexual Assault";
+            row[3] = faker.name().fullName();
+            row[4] = "Incomplete";
+            model.addRow(row);
+        }
+        for(int i=1; i<6; i++){
+            Object row[] = new Object[5];
+            
+            int caseid = rnd.nextInt(1050-1016)+1016;
+    
+            row[0] = caseid;
+            row[1] = faker.name().fullName() ;
+            row[2] = "Verbal Abuse";
+            row[3] = faker.name().fullName();
+            row[4] = "Complete";
+            model.addRow(row);
+        }
+        for(int i=1; i<10; i++){
+            Object row[] = new Object[5];
+            
+            int caseid = rnd.nextInt(1050-1021)+1021;
+    
+            row[0] = caseid;
+            row[1] = faker.name().fullName() ;
+            row[2] = "Non-Verbal Abuse";
+            row[3] = faker.name().fullName();
+            row[4] = "Complete";
+            model.addRow(row);
+        }
+        for(int i=1; i<6; i++){
+            Object row[] = new Object[5];
+            
+            int caseid = rnd.nextInt(1050-1011)+1011;
+    
+            row[0] = caseid;
+            row[1] = faker.name().fullName() ;
+            row[2] = "Sexual Assault";
+            row[3] = faker.name().fullName();
+            row[4] = "Incomplete";
+            model.addRow(row);
+        }
+        for(int i=1; i<3; i++){
+            Object row[] = new Object[5];
+            
+            int caseid = rnd.nextInt(1050-1016)+1016;
+    
+            row[0] = caseid;
+            row[1] = faker.name().fullName() ;
+            row[2] = "Verbal Abuse";
+            row[3] = faker.name().fullName();
+            row[4] = "Complete";
+            model.addRow(row);
+        }
+        for(int i=1; i<6; i++){
+            Object row[] = new Object[5];
+            
+            int caseid = rnd.nextInt(1050-1021)+1021;
+    
+            row[0] = caseid;
+            row[1] = faker.name().fullName() ;
+            row[2] = "Non-Verbal Abuse";
+            row[3] = faker.name().fullName();
+            row[4] = "Incomplete";
+            model.addRow(row);
         }
     }
     
@@ -71,7 +149,7 @@ public class ManageCasesJPanel extends javax.swing.JPanel {
         backJButton = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(204, 255, 204));
 
         tblCases.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -84,6 +162,8 @@ public class ManageCasesJPanel extends javax.swing.JPanel {
                 "CaseID", "VictimName", "Issue", "Social Worker", "Status"
             }
         ));
+        tblCases.setSelectionBackground(new java.awt.Color(153, 153, 255));
+        tblCases.setSelectionForeground(new java.awt.Color(255, 0, 0));
         jScrollPane1.setViewportView(tblCases);
 
         btnGenerateReport.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -145,17 +225,21 @@ public class ManageCasesJPanel extends javax.swing.JPanel {
 
     private void btnGenerateReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerateReportActionPerformed
         int selectedRow = tblCases.getSelectedRow();
-          
+        try { 
         if(selectedRow < 0) {
             JOptionPane.showMessageDialog(null,"Please Select a case", "warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         Case ca = (Case) tblCases.getValueAt(selectedRow, 0);
-            CreateReportJPanel createReport = new CreateReportJPanel(userProcessContainer,business,userAccount,ca);
+        
+         CreateReportJPanel createReport = new CreateReportJPanel(userProcessContainer,business,userAccount,ca);
         userProcessContainer.add("CreateReportJPanel",createReport);
         CardLayout layout=(CardLayout)userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-        
+        }
+        catch(Exception e){
+                System.out.print("");
+                }
     }//GEN-LAST:event_btnGenerateReportActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed

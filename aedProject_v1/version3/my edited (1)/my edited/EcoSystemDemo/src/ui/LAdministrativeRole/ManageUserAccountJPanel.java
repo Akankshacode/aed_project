@@ -10,6 +10,7 @@ import Business.Organization.Organization;
 import Business.Role.Role;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
+import java.awt.Color;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -29,7 +30,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         initComponents();
         this.enterprise = enterprise;
         this.container = container;
-
+userJTable.getTableHeader().setForeground(Color.blue);
         popOrganizationComboBox();
        // employeeJComboBox.removeAllItems();
         popData();
@@ -98,7 +99,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         roleJComboBox = new javax.swing.JComboBox();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(204, 255, 204));
 
         createUserJButton.setBackground(new java.awt.Color(255, 255, 255));
         createUserJButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -138,6 +139,8 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        userJTable.setSelectionBackground(new java.awt.Color(153, 153, 255));
+        userJTable.setSelectionForeground(new java.awt.Color(255, 0, 0));
         jScrollPane1.setViewportView(userJTable);
         if (userJTable.getColumnModel().getColumnCount() > 0) {
             userJTable.getColumnModel().getColumn(0).setResizable(false);

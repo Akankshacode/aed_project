@@ -72,7 +72,7 @@ public class CreateReportJPanel extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         lblDate = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(204, 255, 204));
 
         jLabel1.setText("Observations");
 

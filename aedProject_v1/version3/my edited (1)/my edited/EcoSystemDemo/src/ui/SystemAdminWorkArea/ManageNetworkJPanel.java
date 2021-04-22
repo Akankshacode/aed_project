@@ -7,6 +7,7 @@ package ui.SystemAdminWorkArea;
 import Business.EcoSystem;
 import Business.Network.Network;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Component;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -29,7 +30,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
 
         this.userProcessContainer = userProcessContainer;
         this.system = system;
-
+networkJTable.getTableHeader().setForeground(Color.blue);
         populateNetworkTable();
     }
 
@@ -60,7 +61,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         txtNetworkName = new javax.swing.JTextField();
         btnBack = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(204, 255, 204));
         setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         setMaximumSize(new java.awt.Dimension(2147483647, 2147483647));
         setMinimumSize(new java.awt.Dimension(3, 7));
@@ -93,6 +94,8 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        networkJTable.setSelectionBackground(new java.awt.Color(153, 153, 255));
+        networkJTable.setSelectionForeground(new java.awt.Color(255, 0, 0));
         jScrollPane1.setViewportView(networkJTable);
         if (networkJTable.getColumnModel().getColumnCount() > 0) {
             networkJTable.getColumnModel().getColumn(0).setResizable(false);

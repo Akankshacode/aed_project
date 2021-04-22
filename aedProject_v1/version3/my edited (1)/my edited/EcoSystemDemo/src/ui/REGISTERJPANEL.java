@@ -59,7 +59,7 @@ public REGISTERJPANEL(JPanel container,EcoSystem system) {
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(204, 255, 204));
 
         lblEmail.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblEmail.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);

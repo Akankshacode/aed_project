@@ -56,7 +56,7 @@ public class HospitalReportsJPanel extends javax.swing.JPanel {
         linePanel = new javax.swing.JPanel();
         piePanel = new javax.swing.JPanel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(204, 255, 204));
 
         jLabel4.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);

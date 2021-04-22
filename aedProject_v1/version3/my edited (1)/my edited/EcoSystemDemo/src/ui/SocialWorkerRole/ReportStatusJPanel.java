@@ -9,6 +9,7 @@ import Business.Case.Case;
 import Business.EcoSystem;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -32,6 +33,7 @@ public class ReportStatusJPanel extends javax.swing.JPanel {
         this.userProcessContainer = userProcessContainer;
         this.business = business;
         this.userAccount = userAccount;
+        tblReports.getTableHeader().setForeground(Color.blue);
         populateTable();
     }
 
@@ -68,7 +70,7 @@ public class ReportStatusJPanel extends javax.swing.JPanel {
         btnViewPoliceStatus = new javax.swing.JButton();
         backJButton = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(204, 255, 204));
 
         lblHeading.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblHeading.setText("List of reports");
@@ -84,6 +86,8 @@ public class ReportStatusJPanel extends javax.swing.JPanel {
                 "Case ID", "Observations", "Description", "Issue"
             }
         ));
+        tblReports.setSelectionBackground(new java.awt.Color(153, 153, 255));
+        tblReports.setSelectionForeground(new java.awt.Color(255, 0, 0));
         jScrollPane1.setViewportView(tblReports);
 
         btnViewHospStatus.setBackground(new java.awt.Color(255, 255, 255));

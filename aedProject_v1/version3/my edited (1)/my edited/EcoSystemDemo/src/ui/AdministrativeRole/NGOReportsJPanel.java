@@ -52,7 +52,7 @@ public class NGOReportsJPanel extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(204, 255, 204));
 
         btnSocialWorker.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         btnSocialWorker.setText("View");

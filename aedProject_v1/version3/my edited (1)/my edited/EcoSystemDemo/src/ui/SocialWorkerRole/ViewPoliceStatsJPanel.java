@@ -68,9 +68,9 @@ public class ViewPoliceStatsJPanel extends javax.swing.JPanel {
         lblDateOfCrime = new javax.swing.JLabel();
         lblStatus = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(204, 255, 204));
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(204, 255, 204));
 
         lblHeading.setFont(new java.awt.Font("Lucida Grande", 0, 36)); // NOI18N
         lblHeading.setText("Police Report");

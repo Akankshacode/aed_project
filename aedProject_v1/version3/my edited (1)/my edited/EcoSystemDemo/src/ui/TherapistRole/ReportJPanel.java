@@ -64,7 +64,7 @@ public class ReportJPanel extends javax.swing.JPanel {
 
         jLabel2.setText("jLabel2");
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(204, 255, 204));
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         jLabel1.setText("CREATE REPORT");

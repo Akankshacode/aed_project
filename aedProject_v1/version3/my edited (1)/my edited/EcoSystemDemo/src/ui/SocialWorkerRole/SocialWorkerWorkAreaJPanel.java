@@ -48,7 +48,7 @@ public class SocialWorkerWorkAreaJPanel extends javax.swing.JPanel {
         btnSendReports = new javax.swing.JButton();
         btnReportStatus = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(204, 255, 204));
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         jLabel1.setText("Social Worker");

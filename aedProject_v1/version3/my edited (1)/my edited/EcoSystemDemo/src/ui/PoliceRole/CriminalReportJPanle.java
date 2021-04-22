@@ -12,6 +12,7 @@ import Business.Enterprise.Enterprise;
 import Business.Organization.DoctorOrganization;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -41,6 +42,7 @@ public class CriminalReportJPanle extends javax.swing.JPanel {
         this.system=system;
         pcd=system.getPoliceCaseDirectory();
         populateTable();
+        PoliceTab.getTableHeader().setForeground(Color.blue);
     }
    public void populateTable()
    {
@@ -94,7 +96,7 @@ public class CriminalReportJPanle extends javax.swing.JPanel {
         jButton3 = new javax.swing.JButton();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
 
-        setBackground(new java.awt.Color(255, 204, 204));
+        setBackground(new java.awt.Color(204, 255, 204));
 
         jScrollPane1.setBackground(new java.awt.Color(255, 204, 204));
 
@@ -109,6 +111,8 @@ public class CriminalReportJPanle extends javax.swing.JPanel {
                 "CourtCaseID ", "Criminal Name", "Sentence"
             }
         ));
+        PoliceTab.setSelectionBackground(new java.awt.Color(153, 153, 255));
+        PoliceTab.setSelectionForeground(new java.awt.Color(255, 0, 0));
         jScrollPane1.setViewportView(PoliceTab);
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));

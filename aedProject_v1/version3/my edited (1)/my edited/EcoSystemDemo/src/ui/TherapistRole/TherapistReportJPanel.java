@@ -11,6 +11,7 @@ import Business.Enterprise.Enterprise;
 
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -38,6 +39,7 @@ public class TherapistReportJPanel extends javax.swing.JPanel {
         this.userProcessContainer = userProcessContainer;
         this.userAccount = account;
         this.system=system;
+        tabAppointment.getTableHeader().setForeground(Color.blue);
         populateTable();
     }
 
@@ -81,7 +83,7 @@ public class TherapistReportJPanel extends javax.swing.JPanel {
         txtSymtom = new javax.swing.JLabel();
         txtTherapy = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(204, 255, 204));
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
@@ -127,6 +129,8 @@ public class TherapistReportJPanel extends javax.swing.JPanel {
                 "Case Number", "Victim Name", "Appointment date", "Status"
             }
         ));
+        tabAppointment.setSelectionBackground(new java.awt.Color(153, 153, 255));
+        tabAppointment.setSelectionForeground(new java.awt.Color(255, 0, 0));
         jScrollPane1.setViewportView(tabAppointment);
 
         jButton4.setBackground(new java.awt.Color(255, 255, 255));
