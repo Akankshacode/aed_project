@@ -82,8 +82,8 @@ public class PrisonWorkAreaJPanel extends javax.swing.JPanel {
             row[0] = faker.name().fullName();
             row[1] = "Sexual Assault" ;
             
-            row[3] = "20 Year(s)";
-            row[4] = "No";
+            row[2] = "20 Year(s)";
+            row[3] = "No";
             model.addRow(row);
         }
         for(int i=1; i<5; i++){
@@ -108,7 +108,7 @@ public class PrisonWorkAreaJPanel extends javax.swing.JPanel {
             model.addRow(row);
         }
         for(int i=1; i<2; i++){
-            Object row[] = new Object[5];
+            Object row[] = new Object[4];
            
     
             row[0] = faker.name().fullName();
