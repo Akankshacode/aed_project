@@ -234,7 +234,7 @@ public class CourtWorkAreaJPanel extends javax.swing.JPanel {
          c.setPstatus("InPrison");
         PoliceCaseDirectory pcd= system.getPoliceCaseDirectory();
         pcd.AddCase(c);
-        JOptionPane.showMessageDialog(null, "Criminal is to be arrested");
+        JOptionPane.showMessageDialog(null, "Defendant needs to be arrested");
         
     }//GEN-LAST:event_jButton1ActionPerformed
 

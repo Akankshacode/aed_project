@@ -36,12 +36,14 @@ public class ViewLawStatsJPanel extends javax.swing.JPanel {
         this.userAccount = userAccount;
         lcd= business.getLcaseDir();
        
-       
-        System.out.println(ca.getCaseID()+"HERE IT IS");
-         ca=lcd.findById(caseId);
+                ca=lcd.findById(caseId);
+    
+
          if(ca!=null)
+         {
         populateData();
-        
+             System.out.println(ca.getCaseID()+"HERE IT IS");
+         }
     }
 
      private void populateData()

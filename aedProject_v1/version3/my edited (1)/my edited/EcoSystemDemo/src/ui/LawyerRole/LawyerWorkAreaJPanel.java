@@ -197,6 +197,12 @@ public class LawyerWorkAreaJPanel extends javax.swing.JPanel {
             return;
         }
         Case c=(Case) workRequestJTable.getValueAt(selectedRow, 0);
+        if(!c.getLawyerStatus().equals("Not Assigned"))
+        {
+            JOptionPane.showMessageDialog(null,"Case is being handled ", "Warining", JOptionPane.WARNING_MESSAGE);
+            return; 
+        }
+            
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         userProcessContainer.add("LawyerReportJPanel", new LawyerReportJPanel(userProcessContainer, userAccount, enterprise,c));
         layout.next(userProcessContainer);

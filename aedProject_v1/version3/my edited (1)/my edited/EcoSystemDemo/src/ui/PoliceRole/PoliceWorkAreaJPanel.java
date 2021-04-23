@@ -53,7 +53,7 @@ public class PoliceWorkAreaJPanel extends javax.swing.JPanel {
         jButton1.setBackground(new java.awt.Color(54, 33, 89));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("<html>CRIMINAL REPORT</html>");
+        jButton1.setText("<html><center>CRIMINAL REPORT</center></html>");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -63,7 +63,7 @@ public class PoliceWorkAreaJPanel extends javax.swing.JPanel {
         jButton2.setBackground(new java.awt.Color(54, 33, 89));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("<html>MANAGE CRIMINALS</html><html>");
+        jButton2.setText("<html><center>MANAGE CRIMINALS</center></html><html>");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
