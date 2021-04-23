@@ -96,6 +96,7 @@ private LawCaseDirectory ldir;
         tblReport.setSelectionBackground(new java.awt.Color(153, 153, 255));
         tblReport.setSelectionForeground(new java.awt.Color(255, 0, 0));
         jScrollPane1.setViewportView(tblReport);
+        tblReport.getAccessibleContext().setAccessibleDescription("");
 
         btnHospital.setBackground(new java.awt.Color(255, 255, 255));
         btnHospital.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N

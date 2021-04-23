@@ -32,7 +32,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
 
         this.userProcessContainer = userProcessContainer;
         this.system = system;
-networkJTable.getTableHeader().setForeground(Color.WHITE);
+
         populateNetworkTable();
         networkJTable.getTableHeader().setDefaultRenderer(new HeaderColor());
     }
@@ -41,11 +41,12 @@ networkJTable.getTableHeader().setForeground(Color.WHITE);
 
         public HeaderColor() {
             setOpaque(true);
+            
         }
 
         public Component getTableCellRendererComponent(JTable table, Object value, boolean selected, boolean focused, int row, int column) {
             super.getTableCellRendererComponent(table, value, selected, focused, row, column);
-           
+           networkJTable.getTableHeader().setForeground(Color.WHITE);
            setBackground(new java.awt.Color(0,102,102));
 //you can change the color that u want 
             return this;
