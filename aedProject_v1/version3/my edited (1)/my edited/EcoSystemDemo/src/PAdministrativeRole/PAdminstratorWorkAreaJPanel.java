@@ -25,7 +25,7 @@ public class PAdminstratorWorkAreaJPanel extends javax.swing.JPanel {
          initComponents();
         this.userProcessContainer = userProcessContainer;
         this.enterprise = enterprise;
-        valueLabel.setText(enterprise.getName());
+     
     }
 
     /**
@@ -39,77 +39,83 @@ public class PAdminstratorWorkAreaJPanel extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        enterpriseLabel = new javax.swing.JLabel();
-        valueLabel = new javax.swing.JLabel();
         manageEmployeeJButton = new javax.swing.JButton();
         manageOrganizationJButton = new javax.swing.JButton();
         userJButton = new javax.swing.JButton();
         btnreports = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(204, 255, 204));
+
+        jPanel1.setBackground(new java.awt.Color(204, 255, 204));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setText("My Work Area -Adminstrative Role");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, -1));
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel1.setText("POLICE Adminstrator");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 50, -1, -1));
 
-        enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        enterpriseLabel.setText("EnterPrise :");
-        jPanel1.add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 120, 30));
-
-        valueLabel.setText("<value>");
-        jPanel1.add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 130, -1));
-
-        manageEmployeeJButton.setText("Manage Employee");
+        manageEmployeeJButton.setBackground(new java.awt.Color(54, 33, 89));
+        manageEmployeeJButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        manageEmployeeJButton.setForeground(new java.awt.Color(255, 255, 255));
+        manageEmployeeJButton.setText("<html>Manage Employee</html>");
         manageEmployeeJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 manageEmployeeJButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(manageEmployeeJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, 150, -1));
+        jPanel1.add(manageEmployeeJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 330, 160, 140));
 
-        manageOrganizationJButton.setText("Manage Organization");
+        manageOrganizationJButton.setBackground(new java.awt.Color(54, 33, 89));
+        manageOrganizationJButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        manageOrganizationJButton.setForeground(new java.awt.Color(255, 255, 255));
+        manageOrganizationJButton.setText("<html>Manage Organization</html>");
         manageOrganizationJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 manageOrganizationJButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(manageOrganizationJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, -1, -1));
+        jPanel1.add(manageOrganizationJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, 160, 140));
 
-        userJButton.setText("Manage User");
+        userJButton.setBackground(new java.awt.Color(54, 33, 89));
+        userJButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        userJButton.setForeground(new java.awt.Color(255, 255, 255));
+        userJButton.setText("<html>Manage User</html>");
         userJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 userJButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(userJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 150, -1));
+        jPanel1.add(userJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 330, 160, 140));
 
-        btnreports.setText("View Reports");
+        btnreports.setBackground(new java.awt.Color(54, 33, 89));
+        btnreports.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnreports.setForeground(new java.awt.Color(255, 255, 255));
+        btnreports.setText("<html>View Reports</html>");
         btnreports.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnreportsActionPerformed(evt);
             }
         });
-        jPanel1.add(btnreports, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, -1, -1));
+        jPanel1.add(btnreports, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 330, 160, 140));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/images/alert-3.png"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 170, 150, 100));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 582, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 582, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1090, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 503, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 503, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 829, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -151,12 +157,11 @@ public class PAdminstratorWorkAreaJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnreports;
-    private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton manageEmployeeJButton;
     private javax.swing.JButton manageOrganizationJButton;
     private javax.swing.JButton userJButton;
-    private javax.swing.JLabel valueLabel;
     // End of variables declaration//GEN-END:variables
 }
