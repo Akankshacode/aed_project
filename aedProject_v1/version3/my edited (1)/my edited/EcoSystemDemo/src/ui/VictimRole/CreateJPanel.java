@@ -186,19 +186,19 @@ public class CreateJPanel extends javax.swing.JPanel {
        {
 
             JOptionPane.showMessageDialog(null, "Issue fied cannot be left empty");
-            txtIssue.setBackground(Color.RED);;
+    
             return;
        }
        if(culpritName.isEmpty())
        {
             JOptionPane.showMessageDialog(null, "CulpritName field cannot be left empty");
-            txtCulprit.setBackground(Color.RED);;
+         
             return;
        }
        if(description.isEmpty())
        {
           JOptionPane.showMessageDialog(null, "Description field cannot be left empty");
-          txtDescr.setBackground(Color.RED);;
+        
             return; 
        }
        

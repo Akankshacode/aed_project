@@ -9,6 +9,7 @@ import Business.Organization.Organization;
 import Business.Organization.OrganizationDirectory;
 import java.awt.CardLayout;
 import java.awt.Color;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -263,6 +264,44 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         String Address=txtAddres.getText();
         String Phone=txtPhn.getText();
         String Email= txtEmail.getText();
+        
+        
+        if(name.isEmpty())
+        {
+            JOptionPane.showMessageDialog(null, " Name field cannot be empty");
+            return;
+        }
+        if(!name.matches("^[a-zA-Z]+$"))
+        {
+            JOptionPane.showMessageDialog(null, " Name field cannot have integer values");
+            return;
+        }
+        
+         if(!Email.matches("^[a-zA-Z0-9]+@[a-zA-Z0-9]+.[a-zA-Z0-9]+$"))
+         {
+             JOptionPane.showMessageDialog(null, "Email Address must be in format of X@Y.Z");
+            return;
+         } 
+        if(Address.isEmpty())
+        {
+            JOptionPane.showMessageDialog(null, " Address field cannot be empty");
+            return;
+        }
+         
+          if(Phone.isEmpty())
+        {
+            JOptionPane.showMessageDialog(null, " Phone field cannot be empty");
+            return;
+        }
+           if(!Phone.matches("^[0-9]+$")) {
+            JOptionPane.showMessageDialog(null, "Phone Number must have digits only");
+            return;
+        } 
+          if(Phone.length() != 10) {
+            JOptionPane.showMessageDialog(null, "PhoneNumber must be of 10 digits");
+            return;
+        }
+        
         organization.getEmployeeDirectory().createEmployee(name,Address,Phone,Email);
         populateTable(organization);
         

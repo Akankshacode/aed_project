@@ -53,10 +53,8 @@
                           <Component id="organizationJComboBox" pref="196" max="32767" attributes="0"/>
                           <Component id="employeeJComboBox" alignment="0" max="32767" attributes="0"/>
                           <Component id="roleJComboBox" alignment="0" max="32767" attributes="0"/>
-                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="passwordJTextField" alignment="0" pref="188" max="32767" attributes="0"/>
-                              <Component id="nameJTextField" alignment="0" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="passwordJTextField" alignment="0" pref="188" max="32767" attributes="0"/>
+                          <Component id="nameJTextField" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>

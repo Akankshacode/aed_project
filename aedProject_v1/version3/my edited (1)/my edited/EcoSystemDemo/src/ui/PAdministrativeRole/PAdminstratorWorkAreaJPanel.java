@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package PAdministrativeRole;
+package ui.PAdministrativeRole;
 
 import Business.Enterprise.Enterprise;
 import java.awt.CardLayout;
@@ -45,14 +45,14 @@ public class PAdminstratorWorkAreaJPanel extends javax.swing.JPanel {
         btnreports = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(204, 255, 204));
+        setBackground(new java.awt.Color(153, 153, 153));
 
         jPanel1.setBackground(new java.awt.Color(204, 255, 204));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel1.setText("POLICE Adminstrator");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 50, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 50, -1, -1));
 
         manageEmployeeJButton.setBackground(new java.awt.Color(54, 33, 89));
         manageEmployeeJButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -63,7 +63,7 @@ public class PAdminstratorWorkAreaJPanel extends javax.swing.JPanel {
                 manageEmployeeJButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(manageEmployeeJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 330, 160, 140));
+        jPanel1.add(manageEmployeeJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 340, 160, 140));
 
         manageOrganizationJButton.setBackground(new java.awt.Color(54, 33, 89));
         manageOrganizationJButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -74,7 +74,7 @@ public class PAdminstratorWorkAreaJPanel extends javax.swing.JPanel {
                 manageOrganizationJButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(manageOrganizationJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, 160, 140));
+        jPanel1.add(manageOrganizationJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 340, 160, 140));
 
         userJButton.setBackground(new java.awt.Color(54, 33, 89));
         userJButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -85,7 +85,7 @@ public class PAdminstratorWorkAreaJPanel extends javax.swing.JPanel {
                 userJButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(userJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 330, 160, 140));
+        jPanel1.add(userJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 340, 160, 140));
 
         btnreports.setBackground(new java.awt.Color(54, 33, 89));
         btnreports.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -96,26 +96,20 @@ public class PAdminstratorWorkAreaJPanel extends javax.swing.JPanel {
                 btnreportsActionPerformed(evt);
             }
         });
-        jPanel1.add(btnreports, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 330, 160, 140));
+        jPanel1.add(btnreports, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 340, 160, 140));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/images/alert-3.png"))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 170, 150, 100));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 170, 150, 100));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1090, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1412, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 829, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1161, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 

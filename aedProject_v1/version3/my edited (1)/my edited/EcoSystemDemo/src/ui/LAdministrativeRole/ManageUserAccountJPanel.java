@@ -11,6 +11,7 @@ import Business.Role.Role;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Color;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -259,6 +260,23 @@ userJTable.getTableHeader().setForeground(Color.blue);
     private void createUserJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createUserJButtonActionPerformed
         String userName = nameJTextField.getText();
         String password = passwordJTextField.getText();
+        
+         if(userName.isEmpty())
+        {
+             JOptionPane.showMessageDialog(null, " Name field cannot be empty");
+            return;
+        }
+        if(password.isEmpty())
+        {
+            JOptionPane.showMessageDialog(null, " Password field cannot be empty");
+            return;
+        }
+        if(password.length() < 4)
+            {
+            JOptionPane.showMessageDialog(null, " Password must have atleast 4 characters");
+            return;
+        }
+        
         Organization organization = (Organization) organizationJComboBox.getSelectedItem();
         Employee employee = (Employee) employeeJComboBox.getSelectedItem();
         Role role = (Role) roleJComboBox.getSelectedItem();

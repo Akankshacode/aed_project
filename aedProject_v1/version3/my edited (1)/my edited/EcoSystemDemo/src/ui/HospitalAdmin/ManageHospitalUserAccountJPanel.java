@@ -11,6 +11,7 @@ import Business.Role.Role;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Color;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -251,7 +252,7 @@ public class ManageHospitalUserAccountJPanel extends javax.swing.JPanel {
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(createUserJButton)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -261,7 +262,21 @@ public class ManageHospitalUserAccountJPanel extends javax.swing.JPanel {
         Organization organization = (Organization) organizationJComboBox.getSelectedItem();
         Employee employee = (Employee) employeeJComboBox.getSelectedItem();
         Role role = (Role) roleJComboBox.getSelectedItem();
-        
+        if(userName.isEmpty())
+        {
+             JOptionPane.showMessageDialog(null, " Name field cannot be empty");
+            return;
+        }
+        if(password.isEmpty())
+        {
+            JOptionPane.showMessageDialog(null, " Password field cannot be empty");
+            return;
+        }
+        if(password.length() < 4)
+            {
+            JOptionPane.showMessageDialog(null, " Password must have atleast 4 characters");
+            return;
+        }
         organization.getUserAccountDirectory().createUserAccount(userName, password, employee, role);
         
         popData();

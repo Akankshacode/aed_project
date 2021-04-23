@@ -72,22 +72,28 @@ public class ViewComplaintJPanel extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(204, 255, 204));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
         jLabel1.setText("View Complaint");
 
-        lblDate.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblDate.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         lblDate.setText("Date");
 
-        lblIssue.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblIssue.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         lblIssue.setText("Issue");
 
-        lblCulpritName.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblCulpritName.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         lblCulpritName.setText("Culprit Name");
 
-        lblDescr.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblDescr.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         lblDescr.setText("Desciption");
 
-        lblDescr1.setText("<html></html<");
+        lblDate1.setText("-");
+
+        lblIssue1.setText("-");
+
+        lblCulprit1.setText("-");
+
+        lblDescr1.setText("<html>-</html<");
 
         backJButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         backJButton.setText("Back");
@@ -97,7 +103,7 @@ public class ViewComplaintJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jLabel2.setText("Status");
 
         lblStatus.setText("-");
@@ -108,19 +114,19 @@ public class ViewComplaintJPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(26, 26, 26)
-                .addComponent(backJButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 325, Short.MAX_VALUE)
+                .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 293, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(364, 364, 364))
             .addGroup(layout.createSequentialGroup()
-                .addGap(363, 363, 363)
+                .addGap(329, 329, 329)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lblIssue)
                     .addComponent(lblDate)
                     .addComponent(lblCulpritName)
                     .addComponent(lblDescr)
                     .addComponent(jLabel2))
-                .addGap(18, 18, 18)
+                .addGap(52, 52, 52)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblIssue1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblDate1, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -136,7 +142,7 @@ public class ViewComplaintJPanel extends javax.swing.JPanel {
                 .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(backJButton))
+                    .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(55, 55, 55)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(lblDate)
@@ -157,7 +163,7 @@ public class ViewComplaintJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(lblStatus))
-                .addContainerGap(437, Short.MAX_VALUE))
+                .addContainerGap(414, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

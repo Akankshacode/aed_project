@@ -277,7 +277,7 @@ public class REGISTERJPANEL extends javax.swing.JPanel {
         //Name validation
         flag=name.matches("^[a-zA-Z]+$");
          if(flag == false) {
-            JOptionPane.showMessageDialog(null, "First name cannot have integer values");
+            JOptionPane.showMessageDialog(null, "Name cannot have integer values");
             return;
         }
        flag = mail.matches("^[a-zA-Z0-9]+@[a-zA-Z0-9]+.[a-zA-Z0-9]+$");
@@ -286,15 +286,16 @@ public class REGISTERJPANEL extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Email Address must be in format of X@Y.Z");
             return;
         }
-        if(phoneNo.length() != 10) {
-            JOptionPane.showMessageDialog(null, "PhoneNumber must be of 10 digits");
-            return;
-        }
-        flag = phoneNo.matches("^[0-9]+$");
+      flag = phoneNo.matches("^[0-9]+$");
         if(!flag) {
             JOptionPane.showMessageDialog(null, "Phone Number must have digits only");
             return;
         }
+        if(phoneNo.length() != 10) {
+            JOptionPane.showMessageDialog(null, "PhoneNumber must be of 10 digits");
+            return;
+        }
+        
 
         //For sending text message
         if (serviceDropDown.getSelectedItem().equals("ATT")) {

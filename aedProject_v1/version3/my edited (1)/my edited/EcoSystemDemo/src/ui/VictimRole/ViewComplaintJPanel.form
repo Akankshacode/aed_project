@@ -23,13 +23,13 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-              <Component id="backJButton" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="325" max="32767" attributes="0"/>
+              <Component id="backJButton" min="-2" pref="109" max="-2" attributes="0"/>
+              <EmptySpace pref="293" max="32767" attributes="0"/>
               <Component id="jLabel1" min="-2" pref="282" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="364" max="-2" attributes="0"/>
           </Group>
           <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="363" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="329" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
                   <Component id="lblIssue" alignment="1" min="-2" max="-2" attributes="0"/>
                   <Component id="lblDate" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -37,7 +37,7 @@
                   <Component id="lblDescr" alignment="1" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel2" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="lblIssue1" min="-2" pref="192" max="-2" attributes="0"/>
                   <Component id="lblDate1" alignment="0" min="-2" pref="235" max="-2" attributes="0"/>
@@ -57,7 +57,7 @@
               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel1" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="backJButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="backJButton" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -84,7 +84,7 @@
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblStatus" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="437" max="32767" attributes="0"/>
+              <EmptySpace pref="414" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -93,7 +93,7 @@
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Tahoma" size="24" style="1"/>
+          <Font name="Tahoma" size="30" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="View Complaint"/>
       </Properties>
@@ -101,7 +101,7 @@
     <Component class="javax.swing.JLabel" name="lblDate">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Tahoma" size="14" style="0"/>
+          <Font name="Tahoma" size="15" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Date"/>
       </Properties>
@@ -109,7 +109,7 @@
     <Component class="javax.swing.JLabel" name="lblIssue">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Tahoma" size="14" style="0"/>
+          <Font name="Tahoma" size="15" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Issue"/>
       </Properties>
@@ -117,7 +117,7 @@
     <Component class="javax.swing.JLabel" name="lblCulpritName">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Tahoma" size="14" style="0"/>
+          <Font name="Tahoma" size="15" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Culprit Name"/>
       </Properties>
@@ -125,20 +125,29 @@
     <Component class="javax.swing.JLabel" name="lblDescr">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Tahoma" size="14" style="0"/>
+          <Font name="Tahoma" size="15" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Desciption"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblDate1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="-"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblIssue1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="-"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblCulprit1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="-"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblDescr1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;/html&lt;"/>
+        <Property name="text" type="java.lang.String" value="&lt;html&gt;-&lt;/html&lt;"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="backJButton">
@@ -155,7 +164,7 @@
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Tahoma" size="14" style="0"/>
+          <Font name="Tahoma" size="15" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Status"/>
       </Properties>

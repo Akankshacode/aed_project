@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package PAdministrativeRole;
+package ui.PAdministrativeRole;
 
 import ui.AdministrativeRole.*;
 import Business.Employee.Employee;
@@ -11,6 +11,7 @@ import Business.Organization.Organization;
 import Business.Role.Role;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -253,6 +254,22 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         Organization organization = (Organization) organizationJComboBox.getSelectedItem();
         Employee employee = (Employee) employeeJComboBox.getSelectedItem();
         Role role = (Role) roleJComboBox.getSelectedItem();
+        
+         if(userName.isEmpty())
+        {
+             JOptionPane.showMessageDialog(null, " Name field cannot be empty");
+            return;
+        }
+        if(password.isEmpty())
+        {
+            JOptionPane.showMessageDialog(null, " Password field cannot be empty");
+            return;
+        }
+        if(password.length() < 4)
+            {
+            JOptionPane.showMessageDialog(null, " Password must have atleast 4 characters");
+            return;
+        }
         
         organization.getUserAccountDirectory().createUserAccount(userName, password, employee, role);
         

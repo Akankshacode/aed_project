@@ -10,7 +10,7 @@ import Business.Enterprise.Enterprise;
 import Business.Organization.LawyerOrganization;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
-import PAdministrativeRole.PAdminstratorWorkAreaJPanel;
+import ui.PAdministrativeRole.PAdminstratorWorkAreaJPanel;
 import javax.swing.JPanel;
 import ui.PoliceRole.ManageCriminalJPanel;
 

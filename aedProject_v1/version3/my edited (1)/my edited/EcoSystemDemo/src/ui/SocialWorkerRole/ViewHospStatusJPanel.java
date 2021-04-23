@@ -64,20 +64,23 @@ public class ViewHospStatusJPanel extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(204, 255, 204));
 
-        lblHeading.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblHeading.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         lblHeading.setText("Hospital REPORT");
 
+        jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         jLabel1.setText("Notes");
 
         lblDoctorNotes.setText("-");
 
         lblPrescribedMedication.setText("-");
 
+        jLabel4.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         jLabel4.setText("Prescribed Medication");
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setText("Decsription of problem");
 
-        jLabel6.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         jLabel6.setText("THERAPIST");
 
         backJButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -88,11 +91,13 @@ public class ViewHospStatusJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         jLabel2.setText("DOCTOR");
 
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel7.setText("Symptom as a result");
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setText("Recommended Therapy");
 
         lblDescriptionofProblem.setText("-");
@@ -172,7 +177,7 @@ public class ViewHospStatusJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(lblRecommendedTherapy))
-                .addContainerGap(301, Short.MAX_VALUE))
+                .addContainerGap(285, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

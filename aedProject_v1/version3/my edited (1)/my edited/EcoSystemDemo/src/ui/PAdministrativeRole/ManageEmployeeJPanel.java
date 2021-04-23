@@ -2,13 +2,14 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package PAdministrativeRole;
+package ui.PAdministrativeRole;
 
 import ui.AdministrativeRole.*;
 import Business.Employee.Employee;
 import Business.Organization.Organization;
 import Business.Organization.OrganizationDirectory;
 import java.awt.CardLayout;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -231,7 +232,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
                         .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(25, 25, 25)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+                .addGap(47, 47, 47)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(organizationEmpJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -253,7 +254,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
                     .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
                 .addComponent(addJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(81, Short.MAX_VALUE))
+                .addContainerGap(101, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -264,6 +265,43 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         String phoneNo = txtPhone.getText();
         String address = txtAddress.getText();
         String mail = txtEmail.getText();
+        
+         if(name.isEmpty())
+        {
+            JOptionPane.showMessageDialog(null, " Name field cannot be empty");
+            return;
+        }
+        if(!name.matches("^[a-zA-Z]+$"))
+        {
+            JOptionPane.showMessageDialog(null, " Name field cannot have integer values");
+            return;
+        }
+        
+         if(!mail.matches("^[a-zA-Z0-9]+@[a-zA-Z0-9]+.[a-zA-Z0-9]+$"))
+         {
+             JOptionPane.showMessageDialog(null, "Email Address must be in format of X@Y.Z");
+            return;
+         } 
+        if(address.isEmpty())
+        {
+            JOptionPane.showMessageDialog(null, " Address field cannot be empty");
+            return;
+        }
+         
+          if(phoneNo.isEmpty())
+        {
+            JOptionPane.showMessageDialog(null, " Phone field cannot be empty");
+            return;
+        }
+           if(!phoneNo.matches("^[0-9]+$")) {
+            JOptionPane.showMessageDialog(null, "Phone Number must have digits only");
+            return;
+        } 
+          if(phoneNo.length() != 10) {
+            JOptionPane.showMessageDialog(null, "PhoneNumber must be of 10 digits");
+            return;
+        }
+        
         
         organization.getEmployeeDirectory().createEmployee(name,phoneNo,mail,address);
         populateTable(organization);
