@@ -16,8 +16,10 @@ import Business.Case.CaseDirectory;
 import Business.EcoSystem;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Component;
 import javamail.javamailUtil;
+import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import ui.SystemAdminWorkArea.SystemAdminWorkAreaJPanel;
@@ -180,6 +182,25 @@ public class CreateJPanel extends javax.swing.JPanel {
         String status ="Case InProgress";
         
        String name =account.getEmployee().getName();
+       if(issue.isEmpty())
+       {
+
+            JOptionPane.showMessageDialog(null, "Issue fied cannot be left empty");
+            txtIssue.setBackground(Color.RED);;
+            return;
+       }
+       if(culpritName.isEmpty())
+       {
+            JOptionPane.showMessageDialog(null, "CulpritName field cannot be left empty");
+            txtCulprit.setBackground(Color.RED);;
+            return;
+       }
+       if(description.isEmpty())
+       {
+          JOptionPane.showMessageDialog(null, "Description field cannot be left empty");
+          txtDescr.setBackground(Color.RED);;
+            return; 
+       }
        
       
       
@@ -189,6 +210,12 @@ public class CreateJPanel extends javax.swing.JPanel {
         JOptionPane.showMessageDialog(null, "Case Has Been Registered and an Email has been sent to your mailID");
         String email = account.getEmployee().getEmail();
         javamailUtil.sendMail(email);
+         txtIssue.setBackground(Color.WHITE);;
+         txtIssue.setText("");
+         txtCulprit.setBackground(Color.WHITE);;
+         txtCulprit.setText("");
+         txtDescr.setBackground(Color.WHITE);;
+         txtDescr.setText("");
     }//GEN-LAST:event_btnSubmitActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed

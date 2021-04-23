@@ -9,6 +9,7 @@ import Business.Case.Case;
 import Business.EcoSystem;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -203,13 +204,22 @@ public class CreateReportJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
-        JOptionPane.showMessageDialog(null,"Observations submitted");
-        String observation = txtObservation.getText();
+         String observation = txtObservation.getText();
+          if(observation.isEmpty())
+       {
+            JOptionPane.showMessageDialog(null, " Please fill in your observation  ");
+           
+            return;
+       }
+        
+       
         c.setSocialObservations(observation);
         c.setAssigned(true);
         c.setSocialStatus("Assigned");
         c.setStatus("WithSocialWorker");
        c.setSocialWorker(userAccount.getEmployee().getName());
+       JOptionPane.showMessageDialog(null,"Observations submitted");
+     
         
     }//GEN-LAST:event_btnSubmitActionPerformed
 

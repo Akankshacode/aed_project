@@ -167,8 +167,14 @@ private LawCaseDirectory ldir;
             JOptionPane.showMessageDialog(null, "Please Select a case", "warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
+        
         Case ca = (Case) tblReport.getValueAt(selectedRow, 0);
-       
+       if (ca.getHSend().equals("Sent")) {
+            JOptionPane.showMessageDialog(null, "Report Already Sent to Hospital", "warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+     
+           
       
         ca.setTherapist("Not Assigned");
           ca.setDoctor("Not Assigned");
@@ -176,6 +182,9 @@ private LawCaseDirectory ldir;
         ca.setTstatus("Fresh");
           ca.setHstatus("Fresh");
           ca.setStatus("ReportSent");
+          ca.setHSend("Sent");
+          ca.setLSend("Sent");
+          
         hdir.AddCase(ca);
         
         JOptionPane.showMessageDialog(null, "Report sent to Hospital");
@@ -191,7 +200,11 @@ private LawCaseDirectory ldir;
         }
         
         Case ca = (Case) tblReport.getValueAt(selectedRow, 0);
-       
+        
+        if(ca.getLSend().equals("Sent")){
+            JOptionPane.showMessageDialog(null, "Report Already Sent to LawFirm", "warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
           ca.setLawyerStatus("Not Assigned");
           ca.setLStatus("Fresh");
           ca.setCstatus("Fresh");

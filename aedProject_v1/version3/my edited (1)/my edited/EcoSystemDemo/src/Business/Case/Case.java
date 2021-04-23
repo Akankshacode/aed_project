@@ -24,6 +24,8 @@ public class Case {
     private String SocialStatus;
     private String SocialWorker;
    private boolean assigned;
+   private String HSend;
+   private String LSend;
 
 
 
@@ -74,6 +76,22 @@ private String Hstatus;
          private String CphoneNumber;
          private String CCrimeComitted;
           private String CDateOfCrime;
+
+    public String getHSend() {
+        return HSend;
+    }
+
+    public void setHSend(String HSend) {
+        this.HSend = HSend;
+    }
+
+    public String getLSend() {
+        return LSend;
+    }
+
+    public void setLSend(String LSend) {
+        this.LSend = LSend;
+    }
 
     public int getCaseID() {
         return caseID;

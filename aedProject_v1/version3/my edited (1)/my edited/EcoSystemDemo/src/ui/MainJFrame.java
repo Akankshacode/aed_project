@@ -185,6 +185,7 @@ public class MainJFrame extends javax.swing.JFrame {
         container.setLayout(new java.awt.CardLayout());
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/images/STOPIT3.png"))); // NOI18N
         jLabel5.setText("<HTML> &emsp WELCOME TO  SAFE HAVEN!<br> &emsp &emsp  HELP US HELP YOU!</HTML>");

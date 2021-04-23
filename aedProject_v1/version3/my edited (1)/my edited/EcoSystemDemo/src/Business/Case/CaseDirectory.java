@@ -39,6 +39,9 @@ public class CaseDirectory {
         c.setTherapist("NotAssigned");
         c.setDoctor("NotAssigned");
         c.setLawyer("NotAssigned");
+        c.setHSend("NotSent");
+        c.setLSend("NotSent");
+       
 
        
         caseList.add(c);

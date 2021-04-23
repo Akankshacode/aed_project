@@ -55,7 +55,6 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
 
         manageEmployeeJButton.setBackground(new java.awt.Color(255, 255, 255));
         manageEmployeeJButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        manageEmployeeJButton.setForeground(new java.awt.Color(255, 255, 255));
         manageEmployeeJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/images/employee.png"))); // NOI18N
         manageEmployeeJButton.setText("<html>Manage Employee<html>");
         manageEmployeeJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -67,7 +66,6 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
 
         manageOrganizationJButton.setBackground(new java.awt.Color(255, 255, 255));
         manageOrganizationJButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        manageOrganizationJButton.setForeground(new java.awt.Color(255, 255, 255));
         manageOrganizationJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/images/organization.png"))); // NOI18N
         manageOrganizationJButton.setText("Manage Organization");
         manageOrganizationJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -79,7 +77,6 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
 
         userJButton.setBackground(new java.awt.Color(255, 255, 255));
         userJButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        userJButton.setForeground(new java.awt.Color(255, 255, 255));
         userJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/images/user_folder.png"))); // NOI18N
         userJButton.setText("<html>Manage User</html>");
         userJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -91,7 +88,6 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
 
         btnReports.setBackground(new java.awt.Color(255, 255, 255));
         btnReports.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        btnReports.setForeground(new java.awt.Color(255, 255, 255));
         btnReports.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/images/graph_n.png"))); // NOI18N
         btnReports.setText("<html>View Reports<html>");
         btnReports.addActionListener(new java.awt.event.ActionListener() {

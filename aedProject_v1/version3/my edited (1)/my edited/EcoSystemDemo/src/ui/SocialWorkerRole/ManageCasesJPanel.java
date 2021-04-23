@@ -231,7 +231,12 @@ public class ManageCasesJPanel extends javax.swing.JPanel {
             return;
         }
         Case ca = (Case) tblCases.getValueAt(selectedRow, 0);
-        
+      if(!ca.getStatus().equals("Case InProgress"))
+          {
+            JOptionPane.showMessageDialog(null,"Report has already been generated", "warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+            
          CreateReportJPanel createReport = new CreateReportJPanel(userProcessContainer,business,userAccount,ca);
         userProcessContainer.add("CreateReportJPanel",createReport);
         CardLayout layout=(CardLayout)userProcessContainer.getLayout();
