@@ -11,11 +11,11 @@ import Business.Enterprise.Enterprise;
 import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.Organization.VictimOrganization;
-import Business.Role.Role;
 import Business.Role.VictimRole;
-import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
-import java.util.ArrayList;
+import java.util.Random;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -30,10 +30,26 @@ public class REGISTERJPANEL extends javax.swing.JPanel {
      */
     EcoSystem system;
     JPanel container;
-public REGISTERJPANEL(JPanel container,EcoSystem system) {
+
+    public REGISTERJPANEL(JPanel container, EcoSystem system) {
         initComponents();
-        this.system=system;
-        this.container=container;
+        this.system = system;
+        this.container = container;
+    }
+
+    public static char[] generatePassword(int length) {
+        String letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+        String numbers = "0123456789";
+        String spclChar = "!@#$%^&*";
+
+        String pwd = letters + numbers + spclChar;
+        Random r = new Random();
+        char[] newPass = new char[length];
+
+        for (int i = 0; i < length; i++) {
+            newPass[i] = pwd.charAt(r.nextInt(pwd.length()));
+        }
+        return newPass;
     }
 
     /**
@@ -60,6 +76,7 @@ public REGISTERJPANEL(JPanel container,EcoSystem system) {
         jLabel3 = new javax.swing.JLabel();
         serviceDropDown = new javax.swing.JComboBox<>();
         lblPhone1 = new javax.swing.JLabel();
+        pwdGenerate = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(204, 255, 204));
 
@@ -94,16 +111,17 @@ public REGISTERJPANEL(JPanel container,EcoSystem system) {
         lblAddress1.setText("Password");
 
         addJButton.setBackground(new java.awt.Color(255, 255, 255));
-        addJButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        addJButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         addJButton.setText("Register");
-        addJButton.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.ABOVE_BOTTOM, new java.awt.Font("Lucida Grande", 0, 13), new java.awt.Color(204, 204, 255))); // NOI18N
+        addJButton.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.ABOVE_BOTTOM, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(204, 204, 255))); // NOI18N
         addJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addJButtonActionPerformed(evt);
             }
         });
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/images/user.png"))); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/images/regis.png"))); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel3.setText("REGISTRATION");
@@ -118,6 +136,15 @@ public REGISTERJPANEL(JPanel container,EcoSystem system) {
         lblPhone1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblPhone1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblPhone1.setText("Service Provider");
+
+        pwdGenerate.setBackground(new java.awt.Color(255, 255, 255));
+        pwdGenerate.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        pwdGenerate.setText("Generate Password");
+        pwdGenerate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pwdGenerateActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -137,9 +164,9 @@ public REGISTERJPANEL(JPanel container,EcoSystem system) {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(200, 200, 200)
+                        .addGap(233, 233, 233)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(49, 49, 49)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -156,95 +183,142 @@ public REGISTERJPANEL(JPanel container,EcoSystem system) {
                                 .addGap(305, 305, 305)
                                 .addComponent(lblAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(24, 24, 24)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(nameJTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)
-                                .addComponent(txtPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)
-                                .addComponent(txtEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)
-                                .addComponent(addJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtPhone)
-                                .addComponent(serviceDropDown, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                .addContainerGap(490, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(txtAddress, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(nameJTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)
+                            .addComponent(txtPassword, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)
+                            .addComponent(txtEmail, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)
+                            .addComponent(txtPhone, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(serviceDropDown, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(pwdGenerate)))
+                .addContainerGap(348, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(465, 465, 465)
+                .addComponent(addJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(nameJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(30, 30, 30)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(serviceDropDown, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblPhone1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblAddress1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(addJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(309, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(nameJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(serviceDropDown, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblPhone1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblAddress1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pwdGenerate))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(addJButton)
+                .addContainerGap(369, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void addJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addJButtonActionPerformed
 
-        VictimOrganization vc =  new VictimOrganization();
+        VictimOrganization vc = new VictimOrganization();
+
+        //Validation if all the fields are empty
+        if (nameJTextField.getText().isEmpty() || txtPhone.getText().isEmpty() || txtAddress.getText().isEmpty()
+                || txtEmail.getText().isEmpty() || txtPassword.getText().isEmpty() || serviceDropDown.getSelectedItem().toString().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Fields cannot be left empty");
+            return;
+        }
         String name = nameJTextField.getText();
         String phoneNo = txtPhone.getText();
         String address = txtAddress.getText();
         String mail = txtEmail.getText();
-        String password=txtPassword.getText(); 
-        
-            if (serviceDropDown.getSelectedItem().equals("ATT")) {
-                phoneNo = txtPhone.getText() + "@txt.att.net";
-            } else if (serviceDropDown.getSelectedItem().equals("Verizon")) {
-                phoneNo = txtPhone.getText() + "@vmobl.com";
-            } else if (serviceDropDown.getSelectedItem().equals("Sprint")) {
-                phoneNo = txtPhone.getText() + "@messaging.sprintpcs.com";
-            } else if (serviceDropDown.getSelectedItem().equals("TMobile")) {
-                phoneNo = txtPhone.getText() + "@tmomail.net";
-            }
-        
-      Network net=system.getNetwork();
-      Enterprise ent=net.getEnterpriseDirectory().getNEnterprise();
-      Organization org= ent.getOrganizationDirectory().getVicO();
-       
-        Employee emp= org.getEmployeeDirectory().createEmployee(name,phoneNo,mail,address);
+        String password = txtPassword.getText();
+        String serviceProv = serviceDropDown.getSelectedItem().toString();
+
+        //Validations
+        boolean flag;
+
+
+        //Name validation
+        flag=name.matches("^[a-zA-Z]+$");
+         if(flag == false) {
+            JOptionPane.showMessageDialog(null, "First name cannot have integer values");
+            return;
+        }
+       flag = mail.matches("^[a-zA-Z0-9]+@[a-zA-Z0-9]+.[a-zA-Z0-9]+$");
+
+        if(!flag) {
+            JOptionPane.showMessageDialog(null, "Email Address must be in format of X@Y.Z");
+            return;
+        }
+        if(phoneNo.length() != 10) {
+            JOptionPane.showMessageDialog(null, "PhoneNumber must be of 10 digits");
+            return;
+        }
+        flag = phoneNo.matches("^[0-9]+$");
+        if(!flag) {
+            JOptionPane.showMessageDialog(null, "Phone Number must have digits only");
+            return;
+        }
+
+        //For sending text message
+        if (serviceDropDown.getSelectedItem().equals("ATT")) {
+            phoneNo = txtPhone.getText() + "@txt.att.net";
+        } else if (serviceDropDown.getSelectedItem().equals("Verizon")) {
+            phoneNo = txtPhone.getText() + "@vmobl.com";
+        } else if (serviceDropDown.getSelectedItem().equals("Sprint")) {
+            phoneNo = txtPhone.getText() + "@messaging.sprintpcs.com";
+        } else if (serviceDropDown.getSelectedItem().equals("TMobile")) {
+            phoneNo = txtPhone.getText() + "@tmomail.net";
+        }
+
+        Network net = system.getNetwork();
+        Enterprise ent = net.getEnterpriseDirectory().getNEnterprise();
+        Organization org = ent.getOrganizationDirectory().getVicO();
+
+        Employee emp = org.getEmployeeDirectory().createEmployee(name, phoneNo, mail, address);
         org.getUserAccountDirectory().createUserAccount(name, password, emp, new VictimRole());
-   
- JOptionPane.showMessageDialog(null, "Profile Has Been Created ");
- 
- COMPLETE_REGISTRATIONJPANEL cpr = new COMPLETE_REGISTRATIONJPANEL();
+
+        JOptionPane.showMessageDialog(null, "Profile Has Been Created ");
+
+        COMPLETE_REGISTRATIONJPANEL cpr = new COMPLETE_REGISTRATIONJPANEL();
         container.add("cpr", cpr);
 
-       CardLayout layout=(CardLayout)container.getLayout();
+        CardLayout layout = (CardLayout) container.getLayout();
         layout.next(container);
-        
- 
+
+
     }//GEN-LAST:event_addJButtonActionPerformed
 
     private void serviceDropDownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_serviceDropDownActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_serviceDropDownActionPerformed
+
+    private void pwdGenerateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pwdGenerateActionPerformed
+        txtPassword.setText(String.valueOf(generatePassword(8)));
+    }//GEN-LAST:event_pwdGenerateActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -258,6 +332,7 @@ public REGISTERJPANEL(JPanel container,EcoSystem system) {
     private javax.swing.JLabel lblPhone;
     private javax.swing.JLabel lblPhone1;
     private javax.swing.JTextField nameJTextField;
+    private javax.swing.JButton pwdGenerate;
     private javax.swing.JComboBox<String> serviceDropDown;
     private javax.swing.JTextField txtAddress;
     private javax.swing.JTextField txtEmail;

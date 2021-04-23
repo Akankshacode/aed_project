@@ -170,6 +170,10 @@ public class CreateJPanel extends javax.swing.JPanel {
        
        // String date =txtDate.getText();
         String date= jDateChooser1.getCalendar().getTime().toString();
+//        if(date.isEmpty() || date ==null){
+//            JOptionPane.showMessageDialog(null, "Please select an appointment date");
+//            return;
+//        }
         String issue = txtIssue.getText();
         String culpritName = txtCulprit.getText();
         String description = txtDescr.getText();

@@ -10,6 +10,8 @@ import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Component;
 import javax.swing.JPanel;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -30,8 +32,25 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
 
         this.userProcessContainer = userProcessContainer;
         this.system = system;
-networkJTable.getTableHeader().setForeground(Color.blue);
+networkJTable.getTableHeader().setForeground(Color.WHITE);
         populateNetworkTable();
+        networkJTable.getTableHeader().setDefaultRenderer(new HeaderColor());
+    }
+    //Adding method to change header of the table
+       public class HeaderColor extends DefaultTableCellRenderer {
+
+        public HeaderColor() {
+            setOpaque(true);
+        }
+
+        public Component getTableCellRendererComponent(JTable table, Object value, boolean selected, boolean focused, int row, int column) {
+            super.getTableCellRendererComponent(table, value, selected, focused, row, column);
+           
+           setBackground(new java.awt.Color(0,102,102));
+//you can change the color that u want 
+            return this;
+        }
+
     }
 
     private void populateNetworkTable() {
@@ -105,7 +124,7 @@ networkJTable.getTableHeader().setForeground(Color.blue);
         lblName.setText("Name:");
 
         btnSubmit.setBackground(new java.awt.Color(255, 255, 255));
-        btnSubmit.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnSubmit.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnSubmit.setText("Submit");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -163,7 +182,7 @@ networkJTable.getTableHeader().setForeground(Color.blue);
                     .addComponent(lblName))
                 .addGap(18, 18, 18)
                 .addComponent(btnSubmit)
-                .addContainerGap(1156, Short.MAX_VALUE))
+                .addContainerGap(1169, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

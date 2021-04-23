@@ -74,7 +74,7 @@ public class MainJFrame extends javax.swing.JFrame {
         jSplitPane1.setDividerSize(1);
         jSplitPane1.setPreferredSize(new java.awt.Dimension(1496, 237));
 
-        jPanel1.setBackground(new java.awt.Color(54, 33, 89));
+        jPanel1.setBackground(new java.awt.Color(0, 102, 102));
         jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel1.setFocusable(false);
 
@@ -109,12 +109,11 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/images/stopharassment1.gif"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/images/stopharassment (1).gif"))); // NOI18N
 
-        btnRegister.setBackground(new java.awt.Color(54, 33, 89));
+        btnRegister.setBackground(new java.awt.Color(0, 153, 153));
         btnRegister.setForeground(new java.awt.Color(255, 255, 255));
         btnRegister.setText("REGISTER");
-        btnRegister.setOpaque(true);
         btnRegister.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegisterActionPerformed(evt);
@@ -144,23 +143,20 @@ public class MainJFrame extends javax.swing.JFrame {
                         .addComponent(lblImage))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(loginJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(logoutJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(logoutJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(91, 91, 91)
-                        .addComponent(btnRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(userNameJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -170,28 +166,28 @@ public class MainJFrame extends javax.swing.JFrame {
                         .addComponent(jLabel1)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel2)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(loginJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(logoutJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(logoutJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
-                .addComponent(btnRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(80, 80, 80)
+                .addComponent(btnRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(89, 89, 89)
                 .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(2388, 2388, 2388)
-                .addComponent(loginJLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 868, Short.MAX_VALUE)
+                .addComponent(loginJLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(228, 228, 228))
         );
 
         jSplitPane1.setLeftComponent(jPanel1);
 
-        container.setBackground(new java.awt.Color(204, 255, 204));
+        container.setBackground(new java.awt.Color(0, 153, 153));
         container.setLayout(new java.awt.CardLayout());
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/images/STOPIT3.png"))); // NOI18N
-        jLabel5.setText("<HTML> &emsp WELCOME TO  SAFE HAVEN <br> &emsp &emsp  HELP US HELP YOU\t</HTML>");
+        jLabel5.setText("<HTML> &emsp WELCOME TO  SAFE HAVEN!<br> &emsp &emsp  HELP US HELP YOU!</HTML>");
         jLabel5.setPreferredSize(new java.awt.Dimension(2000, 116));
         jLabel5.setRequestFocusEnabled(false);
         container.add(jLabel5, "card2");
@@ -204,11 +200,20 @@ public class MainJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginJButtonActionPerformed
-        // Get user name
+        
+
+// Get user name
         String userName = userNameJTextField.getText();
         // Get Password
         char[] passwordCharArray = passwordField.getPassword();
         String password = String.valueOf(passwordCharArray);
+        if(userNameJTextField.getText().isEmpty() || String.valueOf(passwordCharArray).isEmpty()){
+            JOptionPane.showMessageDialog(null, "Please enter credentials");
+        } else if(userNameJTextField.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "Please enter valid Username");
+        } else if(String.valueOf(passwordCharArray).isEmpty()){
+            JOptionPane.showMessageDialog(null, "Please enter valid Password");
+        }
         
         //Step1: Check in the system admin user account directory if you have the user
         UserAccount userAccount=system.getUserAccountDirectory().authenticateUser(userName, password);

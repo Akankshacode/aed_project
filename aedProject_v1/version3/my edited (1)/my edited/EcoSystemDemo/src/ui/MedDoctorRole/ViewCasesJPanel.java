@@ -358,8 +358,12 @@ public class ViewCasesJPanel extends javax.swing.JPanel {
         }
 
         Case c = (Case) tabCase.getValueAt(selectedRow, 0);
-
+       
         String AppointmentDate = jDateChooser1.getCalendar().getTime() + "";
+//        if(AppointmentDate.isEmpty()){
+//            JOptionPane.showMessageDialog(null, "Please select an appointment date");
+//            return;
+//        }
         //   String AppointmentDate = txtDate.getText();
         c.setDocAppointment(AppointmentDate);
         c.setDstatus("AppointmentWIthDoctor");

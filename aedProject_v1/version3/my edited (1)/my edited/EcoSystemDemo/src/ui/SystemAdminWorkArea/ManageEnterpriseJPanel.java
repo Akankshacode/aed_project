@@ -12,7 +12,10 @@ import java.awt.Color;
 import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import ui.AdministrativeRole.ManageEmployeeJPanel;
 
 /**
  *
@@ -32,10 +35,26 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         this.system = system;
 
         populateTable();
-        enterpriseJTable.getTableHeader().setForeground(Color.blue);
+        enterpriseJTable.getTableHeader().setForeground(Color.WHITE);
+        enterpriseJTable.getTableHeader().setDefaultRenderer(new HeaderColor());
         populateComboBox();
     }
+     //Adding method to change header of the table
+       public class HeaderColor extends DefaultTableCellRenderer {
 
+        public HeaderColor() {
+            setOpaque(true);
+        }
+
+        public Component getTableCellRendererComponent(JTable table, Object value, boolean selected, boolean focused, int row, int column) {
+            super.getTableCellRendererComponent(table, value, selected, focused, row, column);
+           
+           setBackground(new java.awt.Color(0,102,102));
+//you can change the color that u want 
+            return this;
+        }
+
+    }
     private void populateTable() {
         DefaultTableModel model = (DefaultTableModel) enterpriseJTable.getModel();
 

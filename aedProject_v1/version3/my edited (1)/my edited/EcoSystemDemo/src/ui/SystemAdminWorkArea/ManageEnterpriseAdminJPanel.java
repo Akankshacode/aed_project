@@ -17,6 +17,8 @@ import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Component;
 import javax.swing.JPanel;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -37,9 +39,25 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         this.userProcessContainer = userProcessContainer;
         this.system = system;
 
-        enterpriseJTable.getTableHeader().setForeground(Color.blue);
+        enterpriseJTable.getTableHeader().setForeground(Color.WHITE);
+        enterpriseJTable.getTableHeader().setDefaultRenderer(new HeaderColor());
         populateTable();
         populateNetworkComboBox();
+    }
+    public class HeaderColor extends DefaultTableCellRenderer {
+
+        public HeaderColor() {
+            setOpaque(true);
+        }
+
+        public Component getTableCellRendererComponent(JTable table, Object value, boolean selected, boolean focused, int row, int column) {
+            super.getTableCellRendererComponent(table, value, selected, focused, row, column);
+           
+           setBackground(new java.awt.Color(0,102,102));
+//you can change the color that u want 
+            return this;
+        }
+
     }
 
     private void populateTable() {

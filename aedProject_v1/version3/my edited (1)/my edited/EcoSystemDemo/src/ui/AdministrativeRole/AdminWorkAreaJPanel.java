@@ -45,60 +45,65 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Welocome to  ");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 1170, -1));
+        jLabel1.setText("Welcome to ");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 960, -1));
 
         valueLabel.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         valueLabel.setForeground(new java.awt.Color(255, 0, 0));
         valueLabel.setText("<value>");
         add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 30, 310, 30));
 
-        manageEmployeeJButton.setBackground(new java.awt.Color(54, 33, 89));
+        manageEmployeeJButton.setBackground(new java.awt.Color(255, 255, 255));
         manageEmployeeJButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         manageEmployeeJButton.setForeground(new java.awt.Color(255, 255, 255));
+        manageEmployeeJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/images/employee.png"))); // NOI18N
         manageEmployeeJButton.setText("<html>Manage Employee<html>");
         manageEmployeeJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 manageEmployeeJButtonActionPerformed(evt);
             }
         });
-        add(manageEmployeeJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 280, 160, 140));
+        add(manageEmployeeJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 297, 300, -1));
 
-        manageOrganizationJButton.setBackground(new java.awt.Color(54, 33, 89));
+        manageOrganizationJButton.setBackground(new java.awt.Color(255, 255, 255));
         manageOrganizationJButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         manageOrganizationJButton.setForeground(new java.awt.Color(255, 255, 255));
-        manageOrganizationJButton.setText("<html>Manage Organization</html>");
+        manageOrganizationJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/images/organization.png"))); // NOI18N
+        manageOrganizationJButton.setText("Manage Organization");
         manageOrganizationJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 manageOrganizationJButtonActionPerformed(evt);
             }
         });
-        add(manageOrganizationJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 280, 160, 140));
+        add(manageOrganizationJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 297, 300, -1));
 
-        userJButton.setBackground(new java.awt.Color(54, 33, 89));
+        userJButton.setBackground(new java.awt.Color(255, 255, 255));
         userJButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         userJButton.setForeground(new java.awt.Color(255, 255, 255));
+        userJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/images/user_folder.png"))); // NOI18N
         userJButton.setText("<html>Manage User</html>");
         userJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 userJButtonActionPerformed(evt);
             }
         });
-        add(userJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 280, 160, 140));
+        add(userJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 420, 300, 70));
 
-        btnReports.setBackground(new java.awt.Color(54, 33, 89));
+        btnReports.setBackground(new java.awt.Color(255, 255, 255));
         btnReports.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnReports.setForeground(new java.awt.Color(255, 255, 255));
+        btnReports.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/images/graph_n.png"))); // NOI18N
         btnReports.setText("<html>View Reports<html>");
         btnReports.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnReportsActionPerformed(evt);
             }
         });
-        add(btnReports, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 280, 160, 140));
+        add(btnReports, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 420, 310, 70));
 
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/images/heart.png"))); // NOI18N
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 110, 210, 150));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 100, 210, 150));
     }// </editor-fold>//GEN-END:initComponents
 
     private void manageEmployeeJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageEmployeeJButtonActionPerformed

@@ -9,7 +9,10 @@ import Business.Organization.Organization;
 import Business.Organization.OrganizationDirectory;
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.Component;
 import javax.swing.JPanel;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -20,51 +23,70 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
 
     private OrganizationDirectory organizationDir;
     private JPanel userProcessContainer;
-    
+
     /**
      * Creates new form ManageOrganizationJPanel
      */
-    public ManageEmployeeJPanel(JPanel userProcessContainer,OrganizationDirectory organizationDir) {
+    public ManageEmployeeJPanel(JPanel userProcessContainer, OrganizationDirectory organizationDir) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.organizationDir = organizationDir;
-        
+
         populateOrganizationComboBox();
         populateOrganizationEmpComboBox();
-        organizationJTable.getTableHeader().setForeground(Color.blue);
+        organizationJTable.getTableHeader().setForeground(Color.WHITE);
+        organizationJTable.getTableHeader().setDefaultRenderer(new HeaderColor());
     }
-    
-    public void populateOrganizationComboBox(){
+
+    //Adding method to change header of the table
+    public class HeaderColor extends DefaultTableCellRenderer {
+
+        public HeaderColor() {
+            setOpaque(true);
+        }
+
+        public Component getTableCellRendererComponent(JTable table, Object value, boolean selected, boolean focused, int row, int column) {
+            super.getTableCellRendererComponent(table, value, selected, focused, row, column);
+
+            setBackground(new java.awt.Color(0, 102, 102));
+//you can change the color that u want 
+            return this;
+        }
+
+    }
+
+    public void populateOrganizationComboBox() {
         organizationJComboBox.removeAllItems();
-        
-        for (Organization organization : organizationDir.getOrganizationList()){
+
+        for (Organization organization : organizationDir.getOrganizationList()) {
             organizationJComboBox.addItem(organization);
         }
     }
-    
-    public void populateOrganizationEmpComboBox(){
+
+    public void populateOrganizationEmpComboBox() {
         organizationEmpJComboBox.removeAllItems();
-        
-        for (Organization organization : organizationDir.getOrganizationList()){
+
+        for (Organization organization : organizationDir.getOrganizationList()) {
             organizationEmpJComboBox.addItem(organization);
         }
     }
 
-    private void populateTable(Organization organization){
+    private void populateTable(Organization organization) {
         DefaultTableModel model = (DefaultTableModel) organizationJTable.getModel();
-        
+
         model.setRowCount(0);
-        
-        for (Employee employee : organization.getEmployeeDirectory().getEmployeeList()){
+
+        for (Employee employee : organization.getEmployeeDirectory().getEmployeeList()) {
             Object[] row = new Object[5];
             row[0] = employee.getId();
             row[1] = employee.getName();
-            row[2] = employee.getPhone().replaceAll("\\D+","");
+            row[2] = employee.getPhone().replaceAll("\\D+", "");
             row[3] = employee.getEmail();
             row[4] = employee.getAddress();
             model.addRow(row);
         }
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -292,29 +314,29 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void addJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addJButtonActionPerformed
-     
+
         Organization organization = (Organization) organizationEmpJComboBox.getSelectedItem();
         String name = nameJTextField.getText();
         String phoneNo = txtPhone.getText();
         String address = txtAddress.getText();
         String mail = txtEmail.getText();
         if (serviceDropDown.getSelectedItem().equals("ATT")) {
-                phoneNo = txtPhone.getText() + "@txt.att.net";
-            } else if (serviceDropDown.getSelectedItem().equals("Verizon")) {
-                phoneNo = txtPhone.getText() + "@vmobl.com";
-            } else if (serviceDropDown.getSelectedItem().equals("Sprint")) {
-                phoneNo = txtPhone.getText() + "@messaging.sprintpcs.com";
-            } else if (serviceDropDown.getSelectedItem().equals("TMobile")) {
-                phoneNo = txtPhone.getText() + "@tmomail.net";
-            }
-        organization.getEmployeeDirectory().createEmployee(name,phoneNo,mail,address);
+            phoneNo = txtPhone.getText() + "@txt.att.net";
+        } else if (serviceDropDown.getSelectedItem().equals("Verizon")) {
+            phoneNo = txtPhone.getText() + "@vmobl.com";
+        } else if (serviceDropDown.getSelectedItem().equals("Sprint")) {
+            phoneNo = txtPhone.getText() + "@messaging.sprintpcs.com";
+        } else if (serviceDropDown.getSelectedItem().equals("TMobile")) {
+            phoneNo = txtPhone.getText() + "@tmomail.net";
+        }
+        organization.getEmployeeDirectory().createEmployee(name, phoneNo, mail, address);
         populateTable(organization);
         nameJTextField.setText("");
         txtPhone.setText("");
         txtAddress.setText("");
         txtEmail.setText("");
-        
-        
+
+
     }//GEN-LAST:event_addJButtonActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
@@ -326,7 +348,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
 
     private void organizationJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_organizationJComboBoxActionPerformed
         Organization organization = (Organization) organizationJComboBox.getSelectedItem();
-        if (organization != null){
+        if (organization != null) {
             populateTable(organization);
         }
     }//GEN-LAST:event_organizationJComboBoxActionPerformed
