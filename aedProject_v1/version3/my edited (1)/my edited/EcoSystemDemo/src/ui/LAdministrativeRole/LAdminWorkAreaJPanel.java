@@ -85,7 +85,7 @@ public class LAdminWorkAreaJPanel extends javax.swing.JPanel {
         valueLabel.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         valueLabel.setForeground(new java.awt.Color(54, 33, 89));
         valueLabel.setText("<value>");
-        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 40, 230, -1));
+        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 40, 400, -1));
 
         btnReports.setBackground(new java.awt.Color(54, 33, 89));
         btnReports.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N

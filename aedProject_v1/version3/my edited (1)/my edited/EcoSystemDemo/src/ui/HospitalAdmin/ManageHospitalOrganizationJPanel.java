@@ -36,8 +36,12 @@ public class ManageHospitalOrganizationJPanel extends javax.swing.JPanel {
     
     private void populateCombo(){
         organizationJComboBox.removeAllItems();
-        for (Type type : Organization.Type.values()){
-            if (!type.getValue().equals(Type.Admin.getValue()))
+        
+            for (Type type : Organization.Type.values()){
+            if (!type.getValue().equals(Type.Admin.getValue()) && !type.getValue().equals(Type.HAdmin.getValue())&& !type.getValue().equals(Type.LAdmin.getValue())&& !type.getValue().equals(Type.PAdmin.getValue())
+                    && !type.getValue().equals(Type.SocialWorker.getValue()) && !type.getValue().equals(Type.Victim.getValue())
+                    && !type.getValue().equals(Type.Lawyer.getValue()) && !type.getValue().equals(Type.Court.getValue())&&!type.getValue().equals(Type.Police.getValue()) 
+                    && !type.getValue().equals(Type.Prison.getValue()) && !type.getValue().equals(Type.PAdmin.getValue()))
                 organizationJComboBox.addItem(type);
         }
     }
@@ -175,7 +179,7 @@ public class ManageHospitalOrganizationJPanel extends javax.swing.JPanel {
                     .addComponent(jLabel1))
                 .addGap(18, 18, 18)
                 .addComponent(addJButton)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(254, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

@@ -59,7 +59,7 @@ public class HospitalAdminWorkAreaJPanel extends javax.swing.JPanel {
                 userJButtonActionPerformed(evt);
             }
         });
-        add(userJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 280, 160, 140));
+        add(userJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 280, 160, 140));
 
         manageEmployeeJButton.setBackground(new java.awt.Color(54, 33, 89));
         manageEmployeeJButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -70,7 +70,7 @@ public class HospitalAdminWorkAreaJPanel extends javax.swing.JPanel {
                 manageEmployeeJButtonActionPerformed(evt);
             }
         });
-        add(manageEmployeeJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 280, 160, 140));
+        add(manageEmployeeJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 280, 160, 140));
 
         manageOrganizationJButton.setBackground(new java.awt.Color(54, 33, 89));
         manageOrganizationJButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -81,7 +81,7 @@ public class HospitalAdminWorkAreaJPanel extends javax.swing.JPanel {
                 manageOrganizationJButtonActionPerformed(evt);
             }
         });
-        add(manageOrganizationJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 280, 160, 140));
+        add(manageOrganizationJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 280, 160, 140));
 
         valueLabel.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         valueLabel.setForeground(new java.awt.Color(255, 0, 0));

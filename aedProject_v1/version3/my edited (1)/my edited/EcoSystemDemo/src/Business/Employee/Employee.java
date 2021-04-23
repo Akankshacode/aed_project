@@ -20,7 +20,7 @@ public class Employee {
 
     public Employee() {
         id = count;
-        count++;
+        ++count;
     }
 
     public boolean getFlag() {
