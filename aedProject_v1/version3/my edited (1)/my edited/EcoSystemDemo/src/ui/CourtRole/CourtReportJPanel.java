@@ -89,9 +89,11 @@ public class CourtReportJPanel extends javax.swing.JPanel {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("TRIAL");
 
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel9.setText("Evidence Presented :");
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setText("CaseID :");
 
@@ -102,12 +104,14 @@ public class CourtReportJPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setText("Issue :");
 
         btnSubmit.setBackground(new java.awt.Color(255, 255, 255));
         btnSubmit.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         btnSubmit.setText("Submit");
+        btnSubmit.setToolTipText("");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSubmitActionPerformed(evt);
@@ -120,37 +124,45 @@ public class CourtReportJPanel extends javax.swing.JPanel {
 
         lblIssue.setText("-");
 
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel4.setText("Defendant :");
 
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel6.setText("Law invoked:");
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel5.setText("Incident report :");
 
         lblIncidentReport.setText("-");
 
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel7.setText("Jury Decision :");
 
         txtJuryDecision.setBackground(new java.awt.Color(255, 255, 204));
 
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel8.setText("Judgement :");
 
         lblPlaintiff.setText("-");
 
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel10.setText("Plaintiff :");
 
         lblLawInvoked.setText("-");
 
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel11.setText("Sentence :");
 
         txtSentence.setBackground(new java.awt.Color(255, 255, 204));
 
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel12.setText("Possibility of Parole:");
 
@@ -165,6 +177,7 @@ public class CourtReportJPanel extends javax.swing.JPanel {
 
         txtRestrainingOrder1.setBackground(new java.awt.Color(255, 255, 204));
 
+        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel13.setText("Restraining Order :");
 
@@ -172,11 +185,11 @@ public class CourtReportJPanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnBack)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(16, 16, 16)
+                .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(310, 310, 310)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -213,7 +226,7 @@ public class CourtReportJPanel extends javax.swing.JPanel {
                             .addComponent(txtRestrainingOrder1, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtParole, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(91, Short.MAX_VALUE))))
+                        .addContainerGap(82, Short.MAX_VALUE))))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jLabel12, jLabel9});
@@ -221,10 +234,11 @@ public class CourtReportJPanel extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1)
-                .addGap(5, 5, 5)
-                .addComponent(btnBack)
-                .addGap(4, 4, 4)
+                .addGap(9, 9, 9)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(lblCaseID))
@@ -292,6 +306,51 @@ public class CourtReportJPanel extends javax.swing.JPanel {
         String sentence = txtSentence.getText();
         String Parole = txtParole.getText();
         String RestrainingOrder=txtRestrainingOrder1.getText();
+       
+        if(JuryDecision.isEmpty())
+       {
+            JOptionPane.showMessageDialog(null, " Please fill JuryDecision  ");
+           
+            return;
+       }
+           if(evidence.isEmpty())
+       {
+            JOptionPane.showMessageDialog(null, " Please fill evidence  ");
+           
+            return;
+       }
+        
+              if(judgement.isEmpty())
+       {
+            JOptionPane.showMessageDialog(null, " Please fill judgement  ");
+           
+            return;
+       }
+        
+                 if(sentence.isEmpty())
+       {
+            JOptionPane.showMessageDialog(null, " Please fill sentence  ");
+           
+            return;
+       }
+                     if(Parole.isEmpty())
+       {
+            JOptionPane.showMessageDialog(null, " Please fill Parole  ");
+           
+            return;
+       }
+                 
+                    if(RestrainingOrder.isEmpty())
+       {
+            JOptionPane.showMessageDialog(null, " Please fill RestrainingOrder  ");
+           
+            return;
+       }
+        
+        
+        
+        
+        
         ca.setDecision(JuryDecision);
         ca.setEvidence_Present(evidence);
         ca.setJudgement(judgement);

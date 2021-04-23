@@ -190,6 +190,22 @@ public class ReportJPanel extends javax.swing.JPanel {
          String Problem=txtProblem.getText();
         String Symptoms=txtResult.getText();
         String Therapy=txtTherapy.getText();
+        if(Problem.isEmpty())
+        {
+            JOptionPane.showMessageDialog(null, "Please provide the Problem", "Warining", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+         if(Symptoms.isEmpty())
+        {
+            JOptionPane.showMessageDialog(null, "Please provide the Symptoms", "Warining", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+         if(Therapy.isEmpty())
+        {
+            JOptionPane.showMessageDialog(null, "Please provide the Recommended Therapy", "Warining", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
         c.setTherapistSymptom(Symptoms);
         c.setTherapistTherapy(Therapy);
         c.setTherapistDescription(Problem);

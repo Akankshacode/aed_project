@@ -22,51 +22,50 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-              <Component id="btnBack" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel1" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                      <Component id="btnBack" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="251" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="jLabel7" linkSize="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel8" linkSize="3" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel9" linkSize="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="txtNextSteps" linkSize="1" max="32767" attributes="0"/>
-                                  <Component id="txtLawInvoked" linkSize="1" pref="190" max="32767" attributes="0"/>
-                                  <Component id="txtLawRequired" linkSize="1" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="txtComments" linkSize="1" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="btnGenerateReport" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <Component id="jLabel1" alignment="0" min="-2" pref="564" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Component id="jLabel3" alignment="1" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel2" alignment="1" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                      <Component id="lblCaseID" linkSize="1" pref="182" max="32767" attributes="0"/>
-                                      <Component id="lblIssue" linkSize="1" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Component id="lblIncidentReport" alignment="0" min="-2" pref="224" max="-2" attributes="0"/>
+                                  <Component id="lblIssue" linkSize="1" max="32767" attributes="0"/>
+                                  <Component id="lblIncidentReport" min="-2" pref="224" max="-2" attributes="0"/>
+                                  <Component id="lblCaseID" linkSize="1" pref="182" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace min="0" pref="445" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="233" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="jLabel7" linkSize="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel8" linkSize="3" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel9" linkSize="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="txtNextSteps" linkSize="1" max="32767" attributes="0"/>
+                          <Component id="txtLawInvoked" linkSize="1" pref="190" max="32767" attributes="0"/>
+                          <Component id="txtLawRequired" linkSize="1" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtComments" linkSize="1" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnGenerateReport" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace pref="262" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -74,24 +73,23 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnBack" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+              <Component id="btnBack" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel2" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblCaseID" linkSize="2" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="jLabel3" linkSize="4" max="32767" attributes="0"/>
-                  <Component id="lblIssue" linkSize="2" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel3" linkSize="4" alignment="3" max="32767" attributes="0"/>
+                  <Component id="lblIssue" linkSize="2" alignment="3" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel5" linkSize="4" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblIncidentReport" min="-2" pref="58" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel5" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblIncidentReport" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -115,7 +113,7 @@
               </Group>
               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               <Component id="btnGenerateReport" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="305" max="32767" attributes="0"/>
+              <EmptySpace pref="283" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -150,10 +148,13 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblCaseID">
       <Properties>
-        <Property name="text" type="java.lang.String" value=" "/>
+        <Property name="text" type="java.lang.String" value="-"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblIssue">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="-"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
@@ -241,7 +242,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblIncidentReport">
       <Properties>
-        <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;/html&gt;"/>
+        <Property name="text" type="java.lang.String" value="&lt;html&gt;-&lt;/html&gt;"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnBack">
