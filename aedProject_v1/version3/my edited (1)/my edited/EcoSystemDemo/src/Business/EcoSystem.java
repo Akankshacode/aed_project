@@ -121,7 +121,7 @@ public class EcoSystem extends Organization{
     {
         for(Network net : getNetworkList())
         {
-            if(net.getName().equals("Safe"))
+            if(net.getName().equals("Women Safety"))
                 return net;
         }
         return null;

@@ -63,7 +63,7 @@ public class OrganizationDirectory {
     {
         for(Organization o:organizationList)
         {
-            if(o.getOrganizationID()==5)
+            if(o.getOrganizationID()==0)
                 return o;
         }
         return null;

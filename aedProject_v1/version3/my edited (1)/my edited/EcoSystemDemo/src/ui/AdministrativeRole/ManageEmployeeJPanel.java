@@ -215,9 +215,6 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
                         .addGap(32, 32, 32)
                         .addComponent(backJButton))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(469, 469, 469)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(446, 446, 446)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel1)
@@ -247,8 +244,11 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
                                     .addComponent(addJButton)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                         .addComponent(txtAddress, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)
-                                        .addComponent(txtEmail, javax.swing.GroupLayout.Alignment.LEADING)))))))
-                .addContainerGap(547, Short.MAX_VALUE))
+                                        .addComponent(txtEmail, javax.swing.GroupLayout.Alignment.LEADING))))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(288, 288, 288)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 850, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(358, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -309,6 +309,11 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
             }
         organization.getEmployeeDirectory().createEmployee(name,phoneNo,mail,address);
         populateTable(organization);
+        nameJTextField.setText("");
+        txtPhone.setText("");
+        txtAddress.setText("");
+        txtEmail.setText("");
+        
         
     }//GEN-LAST:event_addJButtonActionPerformed
 
