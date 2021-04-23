@@ -61,12 +61,12 @@ public class PrisonWorkAreaJPanel extends javax.swing.JPanel {
                for (Case c : pcd.getCaseList()) 
         {
             if(c.getPstatus().equals("InPrison"))
-            { Object [] row = new Object[5];
+            { Object [] row = new Object[4];
                 row[0] = c.getCulpritName();
                 row[1] = c.getCCrimeComitted();
-                 row[2] = c.getCDateOfCrime();
-                   row[3] = c.getSentence();
-                     row[4] = c.getParole();
+               
+                   row[2] = c.getSentence();
+                     row[3] = c.getParole();
                  
                 
                 
@@ -77,140 +77,117 @@ public class PrisonWorkAreaJPanel extends javax.swing.JPanel {
         Random rnd = new Random();
        
         for(int i=1; i<3; i++){
-            Object row[] = new Object[5];
-            int month = rnd.nextInt(13-1)+1;
-            int day = rnd.nextInt(32-1)+1;
-            int year = rnd.nextInt(2021-2000)+2000;
+            Object row[] = new Object[4];
+          
             row[0] = faker.name().fullName();
             row[1] = "Sexual Assault" ;
-            row[2] = month + "/" +day +"/"+year;
+            
             row[3] = "20 Year(s)";
             row[4] = "No";
             model.addRow(row);
         }
         for(int i=1; i<5; i++){
-            Object row[] = new Object[5];
-            int month = rnd.nextInt(13-1)+1;
-            int day = rnd.nextInt(32-1)+1;
-            int year = rnd.nextInt(2021-2000)+2000;
+            Object row[] = new Object[4];
+          
     
             row[0] = faker.name().fullName();
             row[1] = "Verbal Abuse" ;
-            row[2] = month + "/" +day +"/"+year;
-            row[3] = "1 Year(s)";
-            row[4] = "Yes";
+         
+            row[2] = "1 Year(s)";
+            row[3] = "Yes";
             model.addRow(row);
         }
         for(int i=1; i<1; i++){
             Object row[] = new Object[5];
-            int month = rnd.nextInt(13-1)+1;
-            int day = rnd.nextInt(32-1)+1;
-            int year = rnd.nextInt(2021-2000)+2000;
+          
             row[0] = faker.name().fullName();
             row[1] = "Sexual Assault" ;
-            row[2] = month + "/" +day +"/"+year;
+            
             row[3] = "15 Year(s)";
             row[4] = "No";
             model.addRow(row);
         }
         for(int i=1; i<2; i++){
             Object row[] = new Object[5];
-            int month = rnd.nextInt(13-1)+1;
-            int day = rnd.nextInt(32-1)+1;
-            int year = rnd.nextInt(2021-2000)+2000;
+           
     
             row[0] = faker.name().fullName();
             row[1] = "Verbal Abuse" ;
-            row[2] = month + "/" +day +"/"+year;
-            row[3] = "1 Year(s)";
-            row[4] = "Yes";
+       
+            row[2] = "1 Year(s)";
+            row[3] = "Yes";
             model.addRow(row);
         }
         for(int i=1; i<3; i++){
-            Object row[] = new Object[5];
-            int month = rnd.nextInt(13-1)+1;
-            int day = rnd.nextInt(32-1)+1;
-            int year = rnd.nextInt(2021-2000)+2000;
+            Object row[] = new Object[4];
+        
             row[0] = faker.name().fullName();
             row[1] = "Sexual Assault" ;
-            row[2] = month + "/" +day +"/"+year;
-            row[3] = "7 Year(s)";
-            row[4] = "Yes";
+          
+            row[2] = "7 Year(s)";
+            row[3] = "Yes";
             model.addRow(row);
         }
         for(int i=1; i<10; i++){
-            Object row[] = new Object[5];
-            int month = rnd.nextInt(13-1)+1;
-            int day = rnd.nextInt(32-1)+1;
-            int year = rnd.nextInt(2021-2000)+2000;
+            Object row[] = new Object[4];
+          
     
             row[0] = faker.name().fullName();
             row[1] = "Verbal Abuse" ;
-            row[2] = month + "/" +day +"/"+year;
-            row[3] = "1 Year(s)";
-            row[4] = "Yes";
+       
+            row[2] = "1 Year(s)";
+            row[3] = "Yes";
             model.addRow(row);
         }
         for(int i=1; i<7; i++){
-            Object row[] = new Object[5];
-            int month = rnd.nextInt(13-1)+1;
-            int day = rnd.nextInt(32-1)+1;
-            int year = rnd.nextInt(2021-2000)+2000;
+            Object row[] = new Object[4];
+         
             row[0] = faker.name().fullName();
             row[1] = "Sexual Assault" ;
-            row[2] = month + "/" +day +"/"+year;
-            row[3] = "13 Year(s)";
-            row[4] = "No";
+            
+            row[2] = "13 Year(s)";
+            row[3] = "No";
             model.addRow(row);
         }
         for(int i=1; i<2; i++){
-            Object row[] = new Object[5];
-            int month = rnd.nextInt(13-1)+1;
-            int day = rnd.nextInt(32-1)+1;
-            int year = rnd.nextInt(2021-2000)+2000;
-    
+            Object row[] = new Object[4];
+      
             row[0] = faker.name().fullName();
             row[1] = "Verbal Abuse" ;
-            row[2] = month + "/" +day +"/"+year;
-            row[3] = "1 Year(s)";
-            row[4] = "Yes";
+         
+            row[2] = "1 Year(s)";
+            row[3] = "Yes";
             model.addRow(row);
         }
         for(int i=1; i<4; i++){
-            Object row[] = new Object[5];
-            int month = rnd.nextInt(13-1)+1;
-            int day = rnd.nextInt(32-1)+1;
-            int year = rnd.nextInt(2021-2000)+2000;
+            Object row[] = new Object[4];
+         
             row[0] = faker.name().fullName();
             row[1] = "Sexual Assault" ;
-            row[2] = month + "/" +day +"/"+year;
-            row[3] = "9 Year(s)";
-            row[4] = "No";
+       
+            row[2] = "9 Year(s)";
+            row[3] = "No";
             model.addRow(row);
         }
         for(int i=1; i<5; i++){
-            Object row[] = new Object[5];
-            int month = rnd.nextInt(13-1)+1;
-            int day = rnd.nextInt(32-1)+1;
-            int year = rnd.nextInt(2021-2000)+2000;
+            Object row[] = new Object[4];
+           
     
             row[0] = faker.name().fullName();
             row[1] = "Verbal Abuse" ;
-            row[2] = month + "/" +day +"/"+year;
-            row[3] = "1 Year(s)";
-            row[4] = "Yes";
+       
+            row[2] = "1 Year(s)";
+            row[3] = "Yes";
             model.addRow(row);
         }
         for(int i=1; i<8; i++){
-            Object row[] = new Object[5];
-            int month = rnd.nextInt(13-1)+1;
-            int day = rnd.nextInt(32-1)+1;
-            int year = rnd.nextInt(2021-2000)+2000;
+            Object row[] = new Object[4];
+     
             row[0] = faker.name().fullName();
             row[1] = "Sexual Assault" ;
-            row[2] = month + "/" +day +"/"+year;
-            row[3] = "3 Year(s)";
-            row[4] = "Yes";
+
+            row[2] = "3 Year(s)";
+            row[3] = "Yes";
             model.addRow(row);
         }
     }
