@@ -51,7 +51,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         valueLabel.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         valueLabel.setForeground(new java.awt.Color(255, 0, 0));
         valueLabel.setText("<value>");
-        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 30, 310, 30));
+        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 30, 310, 30));
 
         manageEmployeeJButton.setBackground(new java.awt.Color(54, 33, 89));
         manageEmployeeJButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -63,7 +63,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
                 manageEmployeeJButtonActionPerformed(evt);
             }
         });
-        add(manageEmployeeJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 297, 160, 140));
+        add(manageEmployeeJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 300, 180, 140));
 
         manageOrganizationJButton.setBackground(new java.awt.Color(54, 33, 89));
         manageOrganizationJButton.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
@@ -75,7 +75,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
                 manageOrganizationJButtonActionPerformed(evt);
             }
         });
-        add(manageOrganizationJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 300, 180, 140));
+        add(manageOrganizationJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 300, 180, 140));
 
         userJButton.setBackground(new java.awt.Color(54, 33, 89));
         userJButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -87,7 +87,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
                 userJButtonActionPerformed(evt);
             }
         });
-        add(userJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 460, 180, 140));
+        add(userJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 460, 180, 140));
 
         btnReports.setBackground(new java.awt.Color(54, 33, 89));
         btnReports.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -99,7 +99,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
                 btnReportsActionPerformed(evt);
             }
         });
-        add(btnReports, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 460, 160, 140));
+        add(btnReports, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 460, 180, 140));
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/images/heart.png"))); // NOI18N

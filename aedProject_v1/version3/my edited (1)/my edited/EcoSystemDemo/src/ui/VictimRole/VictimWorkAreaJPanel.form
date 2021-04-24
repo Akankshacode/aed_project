@@ -24,31 +24,31 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="324" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Component id="lblHeading" min="-2" pref="668" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
                       <Component id="btnFileComplaint" min="-2" pref="243" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
                       <Component id="btnViewComplaint" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="lblHeading" min="-2" pref="405" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="749" max="32767" attributes="0"/>
+              <EmptySpace pref="688" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
               <Component id="lblHeading" min="-2" pref="31" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnViewComplaint" alignment="3" min="-2" pref="108" max="-2" attributes="0"/>
                   <Component id="btnFileComplaint" alignment="3" min="-2" pref="108" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="798" max="32767" attributes="0"/>
+              <EmptySpace pref="803" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -60,7 +60,7 @@
           <Font name="Tahoma" size="36" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="Victim Work Area"/>
+        <Property name="text" type="java.lang.String" value="YOUR SAFETY IS OUR CONCERN"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnFileComplaint">

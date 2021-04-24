@@ -55,7 +55,7 @@ public class VictimWorkAreaJPanel extends javax.swing.JPanel {
 
         lblHeading.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         lblHeading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblHeading.setText("Victim Work Area");
+        lblHeading.setText("YOUR SAFETY IS OUR CONCERN");
 
         btnFileComplaint.setBackground(new java.awt.Color(54, 33, 89));
         btnFileComplaint.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -86,23 +86,23 @@ public class VictimWorkAreaJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(324, 324, 324)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblHeading, javax.swing.GroupLayout.PREFERRED_SIZE, 668, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnFileComplaint, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(105, 105, 105)
-                        .addComponent(btnViewComplaint))
-                    .addComponent(lblHeading, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(749, Short.MAX_VALUE))
+                        .addComponent(btnViewComplaint)))
+                .addContainerGap(688, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(49, 49, 49)
                 .addComponent(lblHeading, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(102, 102, 102)
+                .addGap(59, 59, 59)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnViewComplaint, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnFileComplaint, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(798, Short.MAX_VALUE))
+                .addContainerGap(803, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

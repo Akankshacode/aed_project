@@ -43,10 +43,10 @@
               <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" pref="33" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btnManageCases" alignment="3" min="-2" pref="140" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="btnReportStatus" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
                   <Component id="btnSendReports" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
+                  <Component id="btnManageCases" min="-2" pref="140" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="438" max="32767" attributes="0"/>
           </Group>
@@ -59,7 +59,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Lucida Grande" size="18" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Social Worker"/>
+        <Property name="text" type="java.lang.String" value="Welcome to SAFE HAVEN"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnManageCases">

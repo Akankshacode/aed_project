@@ -36,7 +36,7 @@ public class MedDoctorWorkAreaJPanel extends javax.swing.JPanel {
         this.organization=organization;
         this.enterprise=enterprise;
         this.system=system;
-        txtName.setText(account.getUsername());
+        txtName.setText(account.getEmployee().getName());
         userAccount=account;
         
     }

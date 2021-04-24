@@ -51,7 +51,7 @@ public class SocialWorkerWorkAreaJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(204, 255, 204));
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
-        jLabel1.setText("Social Worker");
+        jLabel1.setText("Welcome to SAFE HAVEN");
 
         btnManageCases.setBackground(new java.awt.Color(54, 33, 89));
         btnManageCases.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -108,10 +108,10 @@ public class SocialWorkerWorkAreaJPanel extends javax.swing.JPanel {
                 .addGap(59, 59, 59)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(90, 90, 90)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnManageCases, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnReportStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSendReports, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnSendReports, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnManageCases, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(438, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents

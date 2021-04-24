@@ -147,8 +147,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        organizationJTable.setSelectionBackground(new java.awt.Color(153, 153, 255));
-        organizationJTable.setSelectionForeground(new java.awt.Color(255, 0, 0));
+        organizationJTable.setSelectionBackground(new java.awt.Color(0, 51, 255));
         jScrollPane1.setViewportView(organizationJTable);
         if (organizationJTable.getColumnModel().getColumnCount() > 0) {
             organizationJTable.getColumnModel().getColumn(0).setResizable(false);

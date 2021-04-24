@@ -72,7 +72,7 @@ public class HospitalAdminWorkAreaJPanel extends javax.swing.JPanel {
                 manageEmployeeJButtonActionPerformed(evt);
             }
         });
-        add(manageEmployeeJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 280, 160, 140));
+        add(manageEmployeeJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 280, 180, 140));
 
         manageOrganizationJButton.setBackground(new java.awt.Color(54, 33, 89));
         manageOrganizationJButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -101,7 +101,7 @@ public class HospitalAdminWorkAreaJPanel extends javax.swing.JPanel {
                 btnReportsActionPerformed(evt);
             }
         });
-        add(btnReports, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 470, 160, 140));
+        add(btnReports, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 470, 180, 140));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/images/medicine.png"))); // NOI18N
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 90, 250, 160));

@@ -37,7 +37,7 @@ public class TherapistWorkAreaJPanel extends javax.swing.JPanel {
         this.system=business;
         userAccount=account;
         
-        txtName.setText(account.getUsername());
+        txtName.setText(account.getEmployee().getName());
     }
 
     /**

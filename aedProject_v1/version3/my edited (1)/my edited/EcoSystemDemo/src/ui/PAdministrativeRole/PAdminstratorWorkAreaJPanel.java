@@ -64,7 +64,7 @@ public class PAdminstratorWorkAreaJPanel extends javax.swing.JPanel {
                 manageEmployeeJButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(manageEmployeeJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 330, 160, 140));
+        jPanel1.add(manageEmployeeJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 330, 180, 140));
 
         manageOrganizationJButton.setBackground(new java.awt.Color(54, 33, 89));
         manageOrganizationJButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -100,7 +100,7 @@ public class PAdminstratorWorkAreaJPanel extends javax.swing.JPanel {
                 btnreportsActionPerformed(evt);
             }
         });
-        jPanel1.add(btnreports, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 540, 160, 140));
+        jPanel1.add(btnreports, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 540, 180, 140));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/images/alert-3.png"))); // NOI18N
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 170, 150, 100));

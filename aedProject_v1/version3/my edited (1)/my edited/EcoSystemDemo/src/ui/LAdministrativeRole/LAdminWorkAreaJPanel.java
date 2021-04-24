@@ -47,7 +47,7 @@ public class LAdminWorkAreaJPanel extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(54, 33, 89));
         jLabel1.setText("Welcome to");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 40, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 40, -1, -1));
 
         userJButton.setBackground(new java.awt.Color(54, 33, 89));
         userJButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -71,7 +71,7 @@ public class LAdminWorkAreaJPanel extends javax.swing.JPanel {
                 manageEmployeeJButtonActionPerformed(evt);
             }
         });
-        add(manageEmployeeJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 280, 160, 140));
+        add(manageEmployeeJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 280, 180, 140));
 
         manageOrganizationJButton.setBackground(new java.awt.Color(54, 33, 89));
         manageOrganizationJButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -88,7 +88,7 @@ public class LAdminWorkAreaJPanel extends javax.swing.JPanel {
         valueLabel.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         valueLabel.setForeground(new java.awt.Color(54, 33, 89));
         valueLabel.setText("<value>");
-        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 40, 400, -1));
+        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 40, 400, -1));
 
         btnReports.setBackground(new java.awt.Color(54, 33, 89));
         btnReports.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -100,10 +100,10 @@ public class LAdminWorkAreaJPanel extends javax.swing.JPanel {
                 btnReportsActionPerformed(evt);
             }
         });
-        add(btnReports, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 480, 160, 140));
+        add(btnReports, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 480, 180, 140));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/images/law.png"))); // NOI18N
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 120, 130, 140));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 120, 130, 140));
     }// </editor-fold>//GEN-END:initComponents
 
     private void userJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userJButtonActionPerformed
