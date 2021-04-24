@@ -403,6 +403,7 @@ public class ViewCasesJPanel extends javax.swing.JPanel {
 
         populateTable();
         populateApptTable();
+      
         String phone = userAccount.getEmployee().getPhone();
         System.out.println("Phone NUmber"+phone);
       //  sendTextMessage(phone);

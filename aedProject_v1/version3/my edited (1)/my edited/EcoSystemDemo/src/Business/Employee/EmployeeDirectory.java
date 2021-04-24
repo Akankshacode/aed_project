@@ -33,6 +33,16 @@ public class EmployeeDirectory {
         
         return employee;
     }
+    public Boolean findEmployee(String Name)
+    {
+        for(Employee emp:employeeList)
+        {
+            if(Name.equals(emp.getName()))
+                return true;
+        }
+    return false;
+    }
+    
        public void deleteEmployee(Employee employee){
               employeeList.remove(employee);
     }

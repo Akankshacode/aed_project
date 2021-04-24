@@ -360,6 +360,13 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         } else if (serviceDropDown.getSelectedItem().equals("TMobile")) {
             phoneNo = txtPhone.getText() + "@tmomail.net";
         }
+        
+        boolean find= organization.getEmployeeDirectory().findEmployee(name);
+        if(find==true)
+        {
+             JOptionPane.showMessageDialog(null, "Name already Exists");
+            return;
+        }
         organization.getEmployeeDirectory().createEmployee(name, phoneNo, mail, address);
         populateTable(organization);
         nameJTextField.setText("");

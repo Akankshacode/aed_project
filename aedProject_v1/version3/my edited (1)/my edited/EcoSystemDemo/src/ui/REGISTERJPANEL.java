@@ -313,6 +313,12 @@ public class REGISTERJPANEL extends javax.swing.JPanel {
         Enterprise ent = net.getEnterpriseDirectory().getNEnterprise();
         Organization org = ent.getOrganizationDirectory().getVicO();
 
+        boolean find= org.getEmployeeDirectory().findEmployee(name);
+        if(find==true)
+        {
+            JOptionPane.showMessageDialog(null, "Name already exists");
+            return;
+        }
         Employee emp = org.getEmployeeDirectory().createEmployee(name, phoneNo, mail, address);
         org.getUserAccountDirectory().createUserAccount(name, password, emp, new VictimRole());
 
