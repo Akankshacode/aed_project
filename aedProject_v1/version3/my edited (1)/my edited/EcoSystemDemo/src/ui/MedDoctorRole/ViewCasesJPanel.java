@@ -110,7 +110,7 @@ public class ViewCasesJPanel extends javax.swing.JPanel {
         }
     }
 
-    public static void sendTextMessage(String contact) {
+   /* public static void sendTextMessage(String contact) {
         // Recipient's email ID needs to be mentioned.
         String to = contact;
         System.out.println(contact);
@@ -161,7 +161,7 @@ public class ViewCasesJPanel extends javax.swing.JPanel {
             mex.printStackTrace();
             JOptionPane.showMessageDialog(null, "Invalid email id");
         }
-    }
+    }*/
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -404,7 +404,8 @@ public class ViewCasesJPanel extends javax.swing.JPanel {
         populateTable();
         populateApptTable();
         String phone = userAccount.getEmployee().getPhone();
-        sendTextMessage(phone);
+        System.out.println("Phone NUmber"+phone);
+      //  sendTextMessage(phone);
         JOptionPane.showMessageDialog(null, "Appointment Scheduled Successfully!");
 
     }//GEN-LAST:event_jButton1ActionPerformed

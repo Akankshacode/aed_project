@@ -74,12 +74,12 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
         
         for (Employee employee : organization.getEmployeeDirectory().getEmployeeList()){
-            Object[] row = new Object[5];
-            row[0] = employee.getId();
-            row[1] = employee.getName();
-            row[2] = employee.getPhone();
-            row[3] = employee.getEmail();
-            row[4] = employee.getAddress();
+            Object[] row = new Object[4];
+  
+            row[0] = employee.getName();
+            row[1] = employee.getPhone();
+            row[2] = employee.getEmail();
+            row[3] = employee.getAddress();
             model.addRow(row);
         }
     }
@@ -113,20 +113,20 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
 
         organizationJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "ID", "Name", "Phone", "Email", "Address"
+                "Name", "Phone", "Email", "Address"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, true, true, true
+                false, true, true, true
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -141,7 +141,6 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         jScrollPane1.setViewportView(organizationJTable);
         if (organizationJTable.getColumnModel().getColumnCount() > 0) {
             organizationJTable.getColumnModel().getColumn(0).setResizable(false);
-            organizationJTable.getColumnModel().getColumn(1).setResizable(false);
         }
 
         addJButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N

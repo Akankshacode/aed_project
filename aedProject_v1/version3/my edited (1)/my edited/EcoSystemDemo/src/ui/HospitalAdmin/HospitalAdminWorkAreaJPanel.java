@@ -48,7 +48,7 @@ public class HospitalAdminWorkAreaJPanel extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(255, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Welcome  to                          ");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 1040, 40));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 1040, 40));
 
         userJButton.setBackground(new java.awt.Color(54, 33, 89));
         userJButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
