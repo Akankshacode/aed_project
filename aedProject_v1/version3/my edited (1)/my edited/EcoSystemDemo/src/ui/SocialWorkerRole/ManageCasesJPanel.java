@@ -16,6 +16,8 @@ import java.awt.Component;
 import java.util.Random;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -37,9 +39,25 @@ public class ManageCasesJPanel extends javax.swing.JPanel {
         this.business=business;
         this.userAccount=userAccount;
         tblCases.getTableHeader().setForeground(Color.blue);
+        tblCases.getTableHeader().setDefaultRenderer(new HeaderColor());
         populateTable();
          cd=business.getCaseDir();
         
+    }
+      public class HeaderColor extends DefaultTableCellRenderer {
+
+        public HeaderColor() {
+            setOpaque(true);
+        }
+
+        public Component getTableCellRendererComponent(JTable table, Object value, boolean selected, boolean focused, int row, int column) {
+            super.getTableCellRendererComponent(table, value, selected, focused, row, column);
+           
+           setBackground(new java.awt.Color(51, 255, 153));
+//you can change the color that u want 
+            return this;
+        }
+
     }
     
     public void populateTable(){
@@ -162,8 +180,7 @@ public class ManageCasesJPanel extends javax.swing.JPanel {
                 "CaseID", "VictimName", "Issue", "Social Worker", "Status"
             }
         ));
-        tblCases.setSelectionBackground(new java.awt.Color(153, 153, 255));
-        tblCases.setSelectionForeground(new java.awt.Color(255, 0, 0));
+        tblCases.setSelectionBackground(new java.awt.Color(0, 51, 255));
         jScrollPane1.setViewportView(tblCases);
 
         btnGenerateReport.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -174,7 +191,8 @@ public class ManageCasesJPanel extends javax.swing.JPanel {
             }
         });
 
-        backJButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        backJButton.setBackground(new java.awt.Color(255, 255, 255));
+        backJButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         backJButton.setText("Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -205,21 +223,21 @@ public class ManageCasesJPanel extends javax.swing.JPanel {
                 .addGap(110, 110, 110))
             .addGroup(layout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnGenerateReport)
                     .addComponent(jButton1))
-                .addContainerGap(591, Short.MAX_VALUE))
+                .addContainerGap(611, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

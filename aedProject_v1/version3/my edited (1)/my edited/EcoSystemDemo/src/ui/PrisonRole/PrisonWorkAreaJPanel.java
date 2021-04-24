@@ -13,10 +13,12 @@ import Business.Organization.PrisonOrganization;
 import Business.UserAccount.UserAccount;
 import com.github.javafaker.Faker;
 import java.awt.Color;
+import java.awt.Component;
 import java.util.Random;
 import javax.swing.JPanel;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.JTableHeader;
 
 /**
  *
@@ -43,9 +45,25 @@ public class PrisonWorkAreaJPanel extends javax.swing.JPanel {
                 pcd=system.getPoliceCaseDirectory();
          
          PrisonTab.getTableHeader().setForeground(Color.blue);
+         PrisonTab.getTableHeader().setDefaultRenderer(new HeaderColor());
         populateTable();
         
        
+    }
+      public class HeaderColor extends DefaultTableCellRenderer {
+
+        public HeaderColor() {
+            setOpaque(true);
+        }
+
+        public Component getTableCellRendererComponent(JTable table, Object value, boolean selected, boolean focused, int row, int column) {
+            super.getTableCellRendererComponent(table, value, selected, focused, row, column);
+           
+           setBackground(new java.awt.Color(51, 255, 153));
+//you can change the color that u want 
+            return this;
+        }
+
     }
 
     public void populateTable()
@@ -230,8 +248,7 @@ public class PrisonWorkAreaJPanel extends javax.swing.JPanel {
                 "Prisoner", "Crime comitted", "Date of Arrest", "Sentence", "Parole"
             }
         ));
-        PrisonTab.setSelectionBackground(new java.awt.Color(153, 153, 255));
-        PrisonTab.setSelectionForeground(new java.awt.Color(255, 0, 0));
+        PrisonTab.setSelectionBackground(new java.awt.Color(0, 51, 255));
         PrisonTab.setShowHorizontalLines(false);
         jScrollPane1.setViewportView(PrisonTab);
 

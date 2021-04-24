@@ -15,6 +15,8 @@ import java.awt.Color;
 import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -40,6 +42,22 @@ private LawCaseDirectory ldir;
         ldir=business.getLcaseDir();
         populateTable();
         tblReport.getTableHeader().setForeground(Color.blue);
+        tblReport.getTableHeader().setDefaultRenderer(new HeaderColor());
+    }
+      public class HeaderColor extends DefaultTableCellRenderer {
+
+        public HeaderColor() {
+            setOpaque(true);
+        }
+
+        public Component getTableCellRendererComponent(JTable table, Object value, boolean selected, boolean focused, int row, int column) {
+            super.getTableCellRendererComponent(table, value, selected, focused, row, column);
+           
+           setBackground(new java.awt.Color(51, 255, 153));
+//you can change the color that u want 
+            return this;
+        }
+
     }
 
     public void populateTable() {
@@ -93,14 +111,14 @@ private LawCaseDirectory ldir;
                 "Case ID", "Victim Name", "Observations", "Status"
             }
         ));
-        tblReport.setSelectionBackground(new java.awt.Color(153, 153, 255));
-        tblReport.setSelectionForeground(new java.awt.Color(255, 0, 0));
+        tblReport.setSelectionBackground(new java.awt.Color(0, 51, 255));
         jScrollPane1.setViewportView(tblReport);
         tblReport.getAccessibleContext().setAccessibleDescription("");
 
         btnHospital.setBackground(new java.awt.Color(54, 33, 89));
         btnHospital.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnHospital.setForeground(new java.awt.Color(255, 255, 255));
+        btnHospital.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/images/send_hospital.png"))); // NOI18N
         btnHospital.setText("<html><center>Send Report to Hospital</center></html>");
         btnHospital.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,6 +129,7 @@ private LawCaseDirectory ldir;
         btnLawfirm.setBackground(new java.awt.Color(54, 33, 89));
         btnLawfirm.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnLawfirm.setForeground(new java.awt.Color(255, 255, 255));
+        btnLawfirm.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/images/send_law.png"))); // NOI18N
         btnLawfirm.setText("<html>Send Report to Lawfirm</center></html>");
         btnLawfirm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -118,7 +137,8 @@ private LawCaseDirectory ldir;
             }
         });
 
-        backJButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        backJButton.setBackground(new java.awt.Color(255, 255, 255));
+        backJButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         backJButton.setText("Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -137,14 +157,14 @@ private LawCaseDirectory ldir;
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 986, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(backJButton)
+                                .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(395, 395, 395)
                                 .addComponent(lblHeading, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(165, 165, 165)
-                        .addComponent(btnHospital, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(293, 293, 293)
-                        .addComponent(btnLawfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(121, 121, 121)
+                        .addComponent(btnHospital, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(245, 245, 245)
+                        .addComponent(btnLawfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(332, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -153,14 +173,14 @@ private LawCaseDirectory ldir;
                 .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lblHeading, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(49, 49, 49)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnHospital, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnLawfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(336, Short.MAX_VALUE))
+                    .addComponent(btnLawfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnHospital, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(363, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

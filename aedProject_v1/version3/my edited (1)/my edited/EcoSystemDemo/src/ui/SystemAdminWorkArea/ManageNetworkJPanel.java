@@ -34,6 +34,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         this.system = system;
 
         populateNetworkTable();
+        networkJTable.getTableHeader().setForeground(Color.WHITE);
         networkJTable.getTableHeader().setDefaultRenderer(new HeaderColor());
     }
     //Adding method to change header of the table
@@ -47,7 +48,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         public Component getTableCellRendererComponent(JTable table, Object value, boolean selected, boolean focused, int row, int column) {
             super.getTableCellRendererComponent(table, value, selected, focused, row, column);
            networkJTable.getTableHeader().setForeground(Color.WHITE);
-           setBackground(new java.awt.Color(0,102,102));
+           setBackground(new java.awt.Color(51, 255, 153));
 //you can change the color that u want 
             return this;
         }
@@ -114,8 +115,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        networkJTable.setSelectionBackground(new java.awt.Color(153, 153, 255));
-        networkJTable.setSelectionForeground(new java.awt.Color(255, 0, 0));
+        networkJTable.setSelectionBackground(new java.awt.Color(0, 51, 255));
         jScrollPane1.setViewportView(networkJTable);
         if (networkJTable.getColumnModel().getColumnCount() > 0) {
             networkJTable.getColumnModel().getColumn(0).setResizable(false);
@@ -137,7 +137,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         txtNetworkName.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
 
         btnBack.setBackground(new java.awt.Color(255, 255, 255));
-        btnBack.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnBack.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnBack.setText("Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -153,7 +153,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(32, 32, 32)
-                        .addComponent(btnBack))
+                        .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(355, 355, 355)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -174,7 +174,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(17, 17, 17)
-                .addComponent(btnBack)
+                .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(48, 48, 48)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37)
@@ -183,7 +183,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
                     .addComponent(lblName))
                 .addGap(18, 18, 18)
                 .addComponent(btnSubmit)
-                .addContainerGap(1169, Short.MAX_VALUE))
+                .addContainerGap(1157, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

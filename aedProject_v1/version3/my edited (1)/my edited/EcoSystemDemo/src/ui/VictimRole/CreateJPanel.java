@@ -72,12 +72,16 @@ public class CreateJPanel extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         jLabel1.setText("Register Complaint");
 
+        lblDate.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblDate.setText("Date");
 
+        lblIssue.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblIssue.setText("Issue");
 
+        lblCulpritName.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblCulpritName.setText("Culprit Name");
 
+        lblDescr.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblDescr.setText("Desciption");
 
         txtIssue.setBackground(new java.awt.Color(255, 255, 204));
@@ -97,7 +101,7 @@ public class CreateJPanel extends javax.swing.JPanel {
         });
 
         backJButton.setBackground(new java.awt.Color(255, 255, 255));
-        backJButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        backJButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         backJButton.setText(" Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -130,17 +134,17 @@ public class CreateJPanel extends javax.swing.JPanel {
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(21, 21, 21)
-                        .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(455, 455, 455)
                         .addComponent(btnSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(300, Short.MAX_VALUE))
+                .addContainerGap(273, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(57, 57, 57)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20)
@@ -164,7 +168,7 @@ public class CreateJPanel extends javax.swing.JPanel {
                         .addComponent(txtDescr, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(84, 84, 84)
                 .addComponent(btnSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(514, Short.MAX_VALUE))
+                .addContainerGap(528, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -172,16 +176,16 @@ public class CreateJPanel extends javax.swing.JPanel {
        
        // String date =txtDate.getText();
         String date= jDateChooser1.getCalendar().getTime().toString();
-//        if(date.isEmpty() || date ==null){
-//            JOptionPane.showMessageDialog(null, "Please select an appointment date");
-//            return;
-//        }
+       
         String issue = txtIssue.getText();
         String culpritName = txtCulprit.getText();
         String description = txtDescr.getText();
         String status ="Case InProgress";
-        
+        System.out.println("Date" + jDateChooser1.getCalendar().getTime());
        String name =account.getEmployee().getName();
+       if(issue==null || culpritName==null || description==null || status==null || date.length()<2){
+           JOptionPane.showMessageDialog(null, "Please fill data in all fields");
+       }
        if(issue.isEmpty())
        {
 

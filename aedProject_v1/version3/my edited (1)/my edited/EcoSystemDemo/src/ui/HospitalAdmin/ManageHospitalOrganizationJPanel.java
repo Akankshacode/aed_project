@@ -9,7 +9,10 @@ import Business.Organization.Organization.Type;
 import Business.Organization.OrganizationDirectory;
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.Component;
 import javax.swing.JPanel;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -20,45 +23,64 @@ public class ManageHospitalOrganizationJPanel extends javax.swing.JPanel {
 
     private OrganizationDirectory directory;
     private JPanel userProcessContainer;
-    
+
     /**
      * Creates new form ManageOrganizationJPanel
      */
-    public ManageHospitalOrganizationJPanel(JPanel userProcessContainer,OrganizationDirectory directory) {
+    public ManageHospitalOrganizationJPanel(JPanel userProcessContainer, OrganizationDirectory directory) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.directory = directory;
-        
+
         populateTable();
         populateCombo();
         organizationJTable.getTableHeader().setForeground(Color.blue);
+        organizationJTable.getTableHeader().setDefaultRenderer(new HeaderColor());
     }
-    
-    private void populateCombo(){
+
+    public class HeaderColor extends DefaultTableCellRenderer {
+
+        public HeaderColor() {
+            setOpaque(true);
+        }
+
+        public Component getTableCellRendererComponent(JTable table, Object value, boolean selected, boolean focused, int row, int column) {
+            super.getTableCellRendererComponent(table, value, selected, focused, row, column);
+
+            setBackground(new java.awt.Color(51, 255, 153));
+//you can change the color that u want 
+            return this;
+        }
+
+    }
+
+    private void populateCombo() {
         organizationJComboBox.removeAllItems();
-        
-            for (Type type : Organization.Type.values()){
-            if (!type.getValue().equals(Type.Admin.getValue()) && !type.getValue().equals(Type.HAdmin.getValue())&& !type.getValue().equals(Type.LAdmin.getValue())&& !type.getValue().equals(Type.PAdmin.getValue())
+
+        for (Type type : Organization.Type.values()) {
+            if (!type.getValue().equals(Type.Admin.getValue()) && !type.getValue().equals(Type.HAdmin.getValue()) && !type.getValue().equals(Type.LAdmin.getValue()) && !type.getValue().equals(Type.PAdmin.getValue())
                     && !type.getValue().equals(Type.SocialWorker.getValue()) && !type.getValue().equals(Type.Victim.getValue())
-                    && !type.getValue().equals(Type.Lawyer.getValue()) && !type.getValue().equals(Type.Court.getValue())&&!type.getValue().equals(Type.Police.getValue()) 
-                    && !type.getValue().equals(Type.Prison.getValue()) && !type.getValue().equals(Type.PAdmin.getValue()))
+                    && !type.getValue().equals(Type.Lawyer.getValue()) && !type.getValue().equals(Type.Court.getValue()) && !type.getValue().equals(Type.Police.getValue())
+                    && !type.getValue().equals(Type.Prison.getValue()) && !type.getValue().equals(Type.PAdmin.getValue())) {
                 organizationJComboBox.addItem(type);
+            }
         }
     }
 
-    private void populateTable(){
+    private void populateTable() {
         DefaultTableModel model = (DefaultTableModel) organizationJTable.getModel();
-        
+
         model.setRowCount(0);
-        
-        for (Organization organization : directory.getOrganizationList()){
+
+        for (Organization organization : directory.getOrganizationList()) {
             Object[] row = new Object[2];
             row[0] = organization.getOrganizationID();
             row[1] = organization.getName();
-            
+
             model.addRow(row);
         }
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -106,8 +128,7 @@ public class ManageHospitalOrganizationJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        organizationJTable.setSelectionBackground(new java.awt.Color(153, 153, 255));
-        organizationJTable.setSelectionForeground(new java.awt.Color(255, 0, 0));
+        organizationJTable.setSelectionBackground(new java.awt.Color(0, 51, 255));
         jScrollPane1.setViewportView(organizationJTable);
         if (organizationJTable.getColumnModel().getColumnCount() > 0) {
             organizationJTable.getColumnModel().getColumn(0).setResizable(false);
@@ -134,7 +155,7 @@ public class ManageHospitalOrganizationJPanel extends javax.swing.JPanel {
         jLabel1.setText("Organization Type ");
 
         backJButton.setBackground(new java.awt.Color(255, 255, 255));
-        backJButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        backJButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         backJButton.setText("Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -149,9 +170,6 @@ public class ManageHospitalOrganizationJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(backJButton))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(301, 301, 301)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
@@ -163,14 +181,17 @@ public class ManageHospitalOrganizationJPanel extends javax.swing.JPanel {
                                 .addComponent(organizationJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(151, 151, 151)
-                                .addComponent(addJButton)))))
+                                .addComponent(addJButton))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(715, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(26, 26, 26)
-                .addComponent(backJButton)
+                .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -179,7 +200,7 @@ public class ManageHospitalOrganizationJPanel extends javax.swing.JPanel {
                     .addComponent(jLabel1))
                 .addGap(18, 18, 18)
                 .addComponent(addJButton)
-                .addContainerGap(254, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

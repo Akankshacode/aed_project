@@ -102,8 +102,9 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Welcome System Admin!");
 
-        btnManageNetwork.setBackground(new java.awt.Color(255, 255, 255));
-        btnManageNetwork.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnManageNetwork.setBackground(new java.awt.Color(54, 33, 89));
+        btnManageNetwork.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnManageNetwork.setForeground(new java.awt.Color(255, 255, 255));
         btnManageNetwork.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/images/network.png"))); // NOI18N
         btnManageNetwork.setText("Manage Network");
         btnManageNetwork.addActionListener(new java.awt.event.ActionListener() {
@@ -112,8 +113,9 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnManageEnterprise.setBackground(new java.awt.Color(255, 255, 255));
-        btnManageEnterprise.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnManageEnterprise.setBackground(new java.awt.Color(54, 33, 89));
+        btnManageEnterprise.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnManageEnterprise.setForeground(new java.awt.Color(255, 255, 255));
         btnManageEnterprise.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/images/enterprise.png"))); // NOI18N
         btnManageEnterprise.setText("Manage Enterprise");
         btnManageEnterprise.addActionListener(new java.awt.event.ActionListener() {
@@ -122,8 +124,9 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnManageAdmin.setBackground(new java.awt.Color(255, 255, 255));
-        btnManageAdmin.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnManageAdmin.setBackground(new java.awt.Color(54, 33, 89));
+        btnManageAdmin.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnManageAdmin.setForeground(new java.awt.Color(255, 255, 255));
         btnManageAdmin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/images/ent_admin.png"))); // NOI18N
         btnManageAdmin.setText("Manage Enterprise Admin");
         btnManageAdmin.addActionListener(new java.awt.event.ActionListener() {
@@ -148,7 +151,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(287, 287, 287)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(511, Short.MAX_VALUE))
+                .addContainerGap(637, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

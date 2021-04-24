@@ -56,6 +56,7 @@ public class SocialWorkerWorkAreaJPanel extends javax.swing.JPanel {
         btnManageCases.setBackground(new java.awt.Color(54, 33, 89));
         btnManageCases.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnManageCases.setForeground(new java.awt.Color(255, 255, 255));
+        btnManageCases.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/images/manage_cases.png"))); // NOI18N
         btnManageCases.setText("<html><center>Manage Cases</center></html>");
         btnManageCases.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -66,6 +67,7 @@ public class SocialWorkerWorkAreaJPanel extends javax.swing.JPanel {
         btnSendReports.setBackground(new java.awt.Color(54, 33, 89));
         btnSendReports.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnSendReports.setForeground(new java.awt.Color(255, 255, 255));
+        btnSendReports.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/images/send_report.png"))); // NOI18N
         btnSendReports.setText("<html><center>Send reports</center></html>");
         btnSendReports.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,6 +78,7 @@ public class SocialWorkerWorkAreaJPanel extends javax.swing.JPanel {
         btnReportStatus.setBackground(new java.awt.Color(54, 33, 89));
         btnReportStatus.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnReportStatus.setForeground(new java.awt.Color(255, 255, 255));
+        btnReportStatus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/images/check_status.png"))); // NOI18N
         btnReportStatus.setText("<html><center>Check Report Status</center></html>");
         btnReportStatus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -106,10 +109,10 @@ public class SocialWorkerWorkAreaJPanel extends javax.swing.JPanel {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(90, 90, 90)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSendReports, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnManageCases, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnReportStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnManageCases, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(437, Short.MAX_VALUE))
+                    .addComponent(btnSendReports, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(438, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

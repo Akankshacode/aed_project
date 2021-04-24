@@ -11,12 +11,13 @@ import Business.Enterprise.Enterprise;
 
 import Business.Organization.TherapistOrganization;
 import Business.UserAccount.UserAccount;
-import com.toedter.calendar.JCalendar;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
 
@@ -41,10 +42,26 @@ public class TherapistAppointmentsJPanel extends javax.swing.JPanel {
         this.system=system;
         TabAssignedCases.getTableHeader().setForeground(Color.blue);
         tabAppointments.getTableHeader().setForeground(Color.blue);
+        TabAssignedCases.getTableHeader().setDefaultRenderer(new HeaderColor());
+        tabAppointments.getTableHeader().setDefaultRenderer(new HeaderColor());
         populateTable();
         populateApptTable();
     }
-    
+      public class HeaderColor extends DefaultTableCellRenderer {
+
+        public HeaderColor() {
+            setOpaque(true);
+        }
+
+        public Component getTableCellRendererComponent(JTable table, Object value, boolean selected, boolean focused, int row, int column) {
+            super.getTableCellRendererComponent(table, value, selected, focused, row, column);
+           
+           setBackground(new java.awt.Color(51, 255, 153));
+//you can change the color that u want 
+            return this;
+        }
+
+    }
      public void populateTable() {
          DefaultTableModel model = (DefaultTableModel) TabAssignedCases.getModel();
         model.setRowCount(0);
@@ -174,11 +191,11 @@ public class TherapistAppointmentsJPanel extends javax.swing.JPanel {
                 "Case No", "Patient Name", "Issue", "Status"
             }
         ));
-        TabAssignedCases.setSelectionBackground(new java.awt.Color(153, 153, 255));
-        TabAssignedCases.setSelectionForeground(new java.awt.Color(255, 0, 0));
+        TabAssignedCases.setSelectionBackground(new java.awt.Color(0, 51, 255));
         jScrollPane1.setViewportView(TabAssignedCases);
 
-        jButton3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButton3.setBackground(new java.awt.Color(255, 255, 255));
+        jButton3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton3.setText("Back");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -200,7 +217,7 @@ public class TherapistAppointmentsJPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(200, Short.MAX_VALUE)
@@ -240,7 +257,7 @@ public class TherapistAppointmentsJPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -268,7 +285,7 @@ public class TherapistAppointmentsJPanel extends javax.swing.JPanel {
                     .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(252, Short.MAX_VALUE))
+                .addContainerGap(258, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

@@ -15,7 +15,7 @@ public class Employee {
     private String email;
     private String address;
     private int id;
-    private static int count = 1;
+    private static int count = 0;
      private boolean flag =true;
 
     public Employee() {

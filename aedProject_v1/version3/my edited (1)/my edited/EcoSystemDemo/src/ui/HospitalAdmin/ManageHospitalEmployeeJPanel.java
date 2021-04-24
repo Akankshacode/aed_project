@@ -10,9 +10,13 @@ import Business.Organization.Organization;
 import Business.Organization.OrganizationDirectory;
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import ui.CourtRole.CourtWorkAreaJPanel;
 
 /**
  *
@@ -22,48 +26,66 @@ public class ManageHospitalEmployeeJPanel extends javax.swing.JPanel {
 
     private OrganizationDirectory organizationDir;
     private JPanel userProcessContainer;
-    
+
     /**
      * Creates new form ManageOrganizationJPanel
      */
-    public ManageHospitalEmployeeJPanel(JPanel userProcessContainer,OrganizationDirectory organizationDir) {
+    public ManageHospitalEmployeeJPanel(JPanel userProcessContainer, OrganizationDirectory organizationDir) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.organizationDir = organizationDir;
-        
+
         populateOrganizationComboBox();
         populateOrganizationEmpComboBox();
         organizationJTable.getTableHeader().setForeground(Color.blue);
+        organizationJTable.getTableHeader().setDefaultRenderer(new HeaderColor());
     }
-    
-    public void populateOrganizationComboBox(){
+
+    public class HeaderColor extends DefaultTableCellRenderer {
+
+        public HeaderColor() {
+            setOpaque(true);
+        }
+
+        public Component getTableCellRendererComponent(JTable table, Object value, boolean selected, boolean focused, int row, int column) {
+            super.getTableCellRendererComponent(table, value, selected, focused, row, column);
+
+            setBackground(new java.awt.Color(51, 255, 153));
+//you can change the color that u want 
+            return this;
+        }
+
+    }
+
+    public void populateOrganizationComboBox() {
         organizationJComboBox.removeAllItems();
-        
-        for (Organization organization : organizationDir.getOrganizationList()){
+
+        for (Organization organization : organizationDir.getOrganizationList()) {
             organizationJComboBox.addItem(organization);
         }
     }
-    
-    public void populateOrganizationEmpComboBox(){
+
+    public void populateOrganizationEmpComboBox() {
         organizationEmpJComboBox.removeAllItems();
-        
-        for (Organization organization : organizationDir.getOrganizationList()){
+
+        for (Organization organization : organizationDir.getOrganizationList()) {
             organizationEmpJComboBox.addItem(organization);
         }
     }
 
-    private void populateTable(Organization organization){
+    private void populateTable(Organization organization) {
         DefaultTableModel model = (DefaultTableModel) organizationJTable.getModel();
-        
+
         model.setRowCount(0);
-        
-        for (Employee employee : organization.getEmployeeDirectory().getEmployeeList()){
+
+        for (Employee employee : organization.getEmployeeDirectory().getEmployeeList()) {
             Object[] row = new Object[2];
             row[0] = employee.getId();
             row[1] = employee.getName();
             model.addRow(row);
         }
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -124,8 +146,7 @@ public class ManageHospitalEmployeeJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        organizationJTable.setSelectionBackground(new java.awt.Color(153, 153, 255));
-        organizationJTable.setSelectionForeground(new java.awt.Color(255, 0, 0));
+        organizationJTable.setSelectionBackground(new java.awt.Color(0, 51, 255));
         jScrollPane1.setViewportView(organizationJTable);
         if (organizationJTable.getColumnModel().getColumnCount() > 0) {
             organizationJTable.getColumnModel().getColumn(0).setResizable(false);
@@ -150,7 +171,8 @@ public class ManageHospitalEmployeeJPanel extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("Organization");
 
-        backJButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        backJButton.setBackground(new java.awt.Color(255, 255, 255));
+        backJButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         backJButton.setText("Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -229,25 +251,26 @@ public class ManageHospitalEmployeeJPanel extends javax.swing.JPanel {
                                     .addComponent(txtName)
                                     .addComponent(organizationEmpJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(364, 364, 364)
+                        .addGap(23, 23, 23)
+                        .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(353, 353, 353)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addGap(18, 18, 18)
                                 .addComponent(organizationJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(546, Short.MAX_VALUE))
+                .addContainerGap(563, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(43, 43, 43)
+                .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(organizationJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addGap(30, 30, 30)
+                    .addComponent(jLabel1)
+                    .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -272,68 +295,57 @@ public class ManageHospitalEmployeeJPanel extends javax.swing.JPanel {
                 .addGap(34, 34, 34)
                 .addComponent(addJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void addJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addJButtonActionPerformed
-        
-        Organization organization = (Organization) organizationEmpJComboBox.getSelectedItem(); 
+
+        Organization organization = (Organization) organizationEmpJComboBox.getSelectedItem();
         String name = txtName.getText();
-        String Address=txtAddres1.getText();
-        String Phone=txtPhn.getText();
-        String Email=txtEmail.getText();
-        if(name.isEmpty())
-        {
+        String Address = txtAddres1.getText();
+        String Phone = txtPhn.getText();
+        String Email = txtEmail.getText();
+        if (name.isEmpty()) {
             JOptionPane.showMessageDialog(null, " Name field cannot be empty");
             return;
         }
-        if(!name.matches("^[a-zA-Z]+$"))
-        {
+        if (!name.matches("^[a-zA-Z]+$")) {
             JOptionPane.showMessageDialog(null, " Name field cannot have integer values");
             return;
         }
-        
-         if(!Email.matches("^[a-zA-Z0-9]+@[a-zA-Z0-9]+.[a-zA-Z0-9]+$"))
-         {
-             JOptionPane.showMessageDialog(null, "Email Address must be in format of X@Y.Z");
+
+        if (!Email.matches("^[a-zA-Z0-9]+@[a-zA-Z0-9]+.[a-zA-Z0-9]+$")) {
+            JOptionPane.showMessageDialog(null, "Email Address must be in format of X@Y.Z");
             return;
-         } 
-        if(Address.isEmpty())
-        {
+        }
+        if (Address.isEmpty()) {
             JOptionPane.showMessageDialog(null, " Address field cannot be empty");
             return;
         }
-         
-          if(Phone.isEmpty())
-        {
+
+        if (Phone.isEmpty()) {
             JOptionPane.showMessageDialog(null, " Phone field cannot be empty");
             return;
         }
-          if(!Phone.matches("^[0-9]+$")) {
+        if (!Phone.matches("^[0-9]+$")) {
             JOptionPane.showMessageDialog(null, "Phone Number must have digits only");
             return;
-        } 
-          
-          if(Phone.length() != 10) {
+        }
+
+        if (Phone.length() != 10) {
             JOptionPane.showMessageDialog(null, "PhoneNumber must be of 10 digits");
             return;
         }
-         
-         
-        
-     Employee emp =   organization.getEmployeeDirectory().createEmployee(name,Phone,Email,Address);
-      // Role role = new DoctorRole();
-      //organization.getUserAccountDirectory().createUserAccount(userName, password, employee, role);
+
+        Employee emp = organization.getEmployeeDirectory().createEmployee(name, Phone, Email, Address);
+        // Role role = new DoctorRole();
+        //organization.getUserAccountDirectory().createUserAccount(userName, password, employee, role);
         populateTable(organization);
         txtName.setText("");
         txtEmail.setText("");
         txtName.setText("");
         txtAddres1.setText("");
-        
+
     }//GEN-LAST:event_addJButtonActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
@@ -345,7 +357,7 @@ public class ManageHospitalEmployeeJPanel extends javax.swing.JPanel {
 
     private void organizationJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_organizationJComboBoxActionPerformed
         Organization organization = (Organization) organizationJComboBox.getSelectedItem();
-        if (organization != null){
+        if (organization != null) {
             populateTable(organization);
         }
     }//GEN-LAST:event_organizationJComboBoxActionPerformed

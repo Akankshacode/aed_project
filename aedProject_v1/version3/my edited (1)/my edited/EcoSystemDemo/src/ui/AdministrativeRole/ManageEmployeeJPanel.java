@@ -49,7 +49,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         public Component getTableCellRendererComponent(JTable table, Object value, boolean selected, boolean focused, int row, int column) {
             super.getTableCellRendererComponent(table, value, selected, focused, row, column);
 
-            setBackground(new java.awt.Color(0, 102, 102));
+            setBackground(new java.awt.Color(51, 255, 153));
 //you can change the color that u want 
             return this;
         }
@@ -175,7 +175,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         jLabel1.setText("Organization");
 
         backJButton.setBackground(new java.awt.Color(255, 255, 255));
-        backJButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        backJButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         backJButton.setText("Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -236,7 +236,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(32, 32, 32)
-                        .addComponent(backJButton))
+                        .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(446, 446, 446)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -278,7 +278,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(backJButton)
+                .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(organizationJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -291,7 +291,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(nameJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nameJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -322,6 +322,37 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         String phoneNo = txtPhone.getText();
         String address = txtAddress.getText();
         String mail = txtEmail.getText();
+
+        if (name.isEmpty()) {
+            JOptionPane.showMessageDialog(null, " Name field cannot be empty");
+            return;
+        }
+        if (!name.matches("^[a-zA-Z]+$")) {
+            JOptionPane.showMessageDialog(null, " Name field cannot have integer values");
+            return;
+        }
+
+        if (!mail.matches("^[a-zA-Z0-9.]+@[a-zA-Z0-9]+.[a-zA-Z0-9]+$")) {
+            JOptionPane.showMessageDialog(null, "Email Address must be in format of X@Y.Z");
+            return;
+        }
+        if (address.isEmpty()) {
+            JOptionPane.showMessageDialog(null, " Address field cannot be empty");
+            return;
+        }
+
+        if (phoneNo.isEmpty()) {
+            JOptionPane.showMessageDialog(null, " Phone field cannot be empty");
+            return;
+        }
+        if (!phoneNo.matches("^[0-9]+$")) {
+            JOptionPane.showMessageDialog(null, "Phone Number must have digits only");
+            return;
+        }
+        if (phoneNo.length() != 10) {
+            JOptionPane.showMessageDialog(null, "PhoneNumber must be of 10 digits");
+            return;
+        }
         if (serviceDropDown.getSelectedItem().equals("ATT")) {
             phoneNo = txtPhone.getText() + "@txt.att.net";
         } else if (serviceDropDown.getSelectedItem().equals("Verizon")) {
@@ -331,43 +362,6 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         } else if (serviceDropDown.getSelectedItem().equals("TMobile")) {
             phoneNo = txtPhone.getText() + "@tmomail.net";
         }
-        
-        if(name.isEmpty())
-        {
-            JOptionPane.showMessageDialog(null, " Name field cannot be empty");
-            return;
-        }
-        if(!name.matches("^[a-zA-Z]+$"))
-        {
-            JOptionPane.showMessageDialog(null, " Name field cannot have integer values");
-            return;
-        }
-        
-         if(!mail.matches("^[a-zA-Z0-9]+@[a-zA-Z0-9]+.[a-zA-Z0-9]+$"))
-         {
-             JOptionPane.showMessageDialog(null, "Email Address must be in format of X@Y.Z");
-            return;
-         } 
-        if(address.isEmpty())
-        {
-            JOptionPane.showMessageDialog(null, " Address field cannot be empty");
-            return;
-        }
-         
-          if(phoneNo.isEmpty())
-        {
-            JOptionPane.showMessageDialog(null, " Phone field cannot be empty");
-            return;
-        }
-          if(!phoneNo.matches("^[0-9]+$")) {
-            JOptionPane.showMessageDialog(null, "Phone Number must have digits only");
-            return;
-        }  
-          if(phoneNo.length() != 10) {
-            JOptionPane.showMessageDialog(null, "PhoneNumber must be of 10 digits");
-            return;
-        }
-          
         organization.getEmployeeDirectory().createEmployee(name, phoneNo, mail, address);
         populateTable(organization);
         nameJTextField.setText("");

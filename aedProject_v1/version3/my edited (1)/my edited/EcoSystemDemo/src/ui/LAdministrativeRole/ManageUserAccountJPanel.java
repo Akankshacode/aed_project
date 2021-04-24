@@ -11,8 +11,11 @@ import Business.Role.Role;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -31,10 +34,27 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         initComponents();
         this.enterprise = enterprise;
         this.container = container;
-userJTable.getTableHeader().setForeground(Color.blue);
+        userJTable.getTableHeader().setForeground(Color.blue);
+        userJTable.getTableHeader().setDefaultRenderer(new HeaderColor());
         popOrganizationComboBox();
-       // employeeJComboBox.removeAllItems();
+        // employeeJComboBox.removeAllItems();
         popData();
+    }
+
+    public class HeaderColor extends DefaultTableCellRenderer {
+
+        public HeaderColor() {
+            setOpaque(true);
+        }
+
+        public Component getTableCellRendererComponent(JTable table, Object value, boolean selected, boolean focused, int row, int column) {
+            super.getTableCellRendererComponent(table, value, selected, focused, row, column);
+
+            setBackground(new java.awt.Color(51, 255, 153));
+//you can change the color that u want 
+            return this;
+        }
+
     }
 
     public void popOrganizationComboBox() {
@@ -44,18 +64,18 @@ userJTable.getTableHeader().setForeground(Color.blue);
             organizationJComboBox.addItem(organization);
         }
     }
-    
-    public void populateEmployeeComboBox(Organization organization){
+
+    public void populateEmployeeComboBox(Organization organization) {
         employeeJComboBox.removeAllItems();
-        
-        for (Employee employee : organization.getEmployeeDirectory().getEmployeeList()){
+
+        for (Employee employee : organization.getEmployeeDirectory().getEmployeeList()) {
             employeeJComboBox.addItem(employee);
         }
     }
-    
-    private void populateRoleComboBox(Organization organization){
+
+    private void populateRoleComboBox(Organization organization) {
         roleJComboBox.removeAllItems();
-        for (Role role : organization.getSupportedRole()){
+        for (Role role : organization.getSupportedRole()) {
             roleJComboBox.addItem(role);
         }
     }
@@ -140,8 +160,7 @@ userJTable.getTableHeader().setForeground(Color.blue);
                 return canEdit [columnIndex];
             }
         });
-        userJTable.setSelectionBackground(new java.awt.Color(153, 153, 255));
-        userJTable.setSelectionForeground(new java.awt.Color(255, 0, 0));
+        userJTable.setSelectionBackground(new java.awt.Color(0, 51, 255));
         jScrollPane1.setViewportView(userJTable);
         if (userJTable.getColumnModel().getColumnCount() > 0) {
             userJTable.getColumnModel().getColumn(0).setResizable(false);
@@ -158,7 +177,8 @@ userJTable.getTableHeader().setForeground(Color.blue);
 
         employeeJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        backjButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        backjButton1.setBackground(new java.awt.Color(255, 255, 255));
+        backjButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         backjButton1.setText("Back");
         backjButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -189,7 +209,7 @@ userJTable.getTableHeader().setForeground(Color.blue);
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(24, 24, 24)
-                        .addComponent(backjButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(backjButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(66, 66, 66)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
@@ -230,7 +250,7 @@ userJTable.getTableHeader().setForeground(Color.blue);
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(20, 20, 20)
-                        .addComponent(backjButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(backjButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
@@ -260,29 +280,26 @@ userJTable.getTableHeader().setForeground(Color.blue);
     private void createUserJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createUserJButtonActionPerformed
         String userName = nameJTextField.getText();
         String password = passwordJTextField.getText();
-        
-         if(userName.isEmpty())
-        {
-             JOptionPane.showMessageDialog(null, " Name field cannot be empty");
+
+        if (userName.isEmpty()) {
+            JOptionPane.showMessageDialog(null, " Name field cannot be empty");
             return;
         }
-        if(password.isEmpty())
-        {
+        if (password.isEmpty()) {
             JOptionPane.showMessageDialog(null, " Password field cannot be empty");
             return;
         }
-        if(password.length() < 4)
-            {
+        if (password.length() < 4) {
             JOptionPane.showMessageDialog(null, " Password must have atleast 4 characters");
             return;
         }
-        
+
         Organization organization = (Organization) organizationJComboBox.getSelectedItem();
         Employee employee = (Employee) employeeJComboBox.getSelectedItem();
         Role role = (Role) roleJComboBox.getSelectedItem();
-        
+
         organization.getUserAccountDirectory().createUserAccount(userName, password, employee, role);
-        
+
         popData();
     }//GEN-LAST:event_createUserJButtonActionPerformed
 
@@ -295,7 +312,7 @@ userJTable.getTableHeader().setForeground(Color.blue);
 
     private void organizationJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_organizationJComboBoxActionPerformed
         Organization organization = (Organization) organizationJComboBox.getSelectedItem();
-        if (organization != null){
+        if (organization != null) {
             populateEmployeeComboBox(organization);
             populateRoleComboBox(organization);
         }

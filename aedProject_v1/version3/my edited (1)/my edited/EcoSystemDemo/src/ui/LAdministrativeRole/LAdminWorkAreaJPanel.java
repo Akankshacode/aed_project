@@ -50,37 +50,40 @@ public class LAdminWorkAreaJPanel extends javax.swing.JPanel {
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 40, -1, -1));
 
         userJButton.setBackground(new java.awt.Color(54, 33, 89));
-        userJButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        userJButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         userJButton.setForeground(new java.awt.Color(255, 255, 255));
+        userJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/images/user_folder.png"))); // NOI18N
         userJButton.setText("<html>Manage User</html>");
         userJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 userJButtonActionPerformed(evt);
             }
         });
-        add(userJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 290, 160, 140));
+        add(userJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 480, 170, 140));
 
         manageEmployeeJButton.setBackground(new java.awt.Color(54, 33, 89));
-        manageEmployeeJButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        manageEmployeeJButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         manageEmployeeJButton.setForeground(new java.awt.Color(255, 255, 255));
+        manageEmployeeJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/images/employee.png"))); // NOI18N
         manageEmployeeJButton.setText("<html>Manage Employee</html>");
         manageEmployeeJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 manageEmployeeJButtonActionPerformed(evt);
             }
         });
-        add(manageEmployeeJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 290, 160, 140));
+        add(manageEmployeeJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 280, 160, 140));
 
         manageOrganizationJButton.setBackground(new java.awt.Color(54, 33, 89));
-        manageOrganizationJButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        manageOrganizationJButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         manageOrganizationJButton.setForeground(new java.awt.Color(255, 255, 255));
+        manageOrganizationJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/images/organization.png"))); // NOI18N
         manageOrganizationJButton.setText("<html>Manage Organization</html>");
         manageOrganizationJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 manageOrganizationJButtonActionPerformed(evt);
             }
         });
-        add(manageOrganizationJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, 160, 140));
+        add(manageOrganizationJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 280, 180, 140));
 
         valueLabel.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         valueLabel.setForeground(new java.awt.Color(54, 33, 89));
@@ -88,15 +91,16 @@ public class LAdminWorkAreaJPanel extends javax.swing.JPanel {
         add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 40, 400, -1));
 
         btnReports.setBackground(new java.awt.Color(54, 33, 89));
-        btnReports.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnReports.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnReports.setForeground(new java.awt.Color(255, 255, 255));
+        btnReports.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/images/graph_n.png"))); // NOI18N
         btnReports.setText("<html>View Reports<ht<html>");
         btnReports.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnReportsActionPerformed(evt);
             }
         });
-        add(btnReports, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 290, 160, 140));
+        add(btnReports, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 480, 160, 140));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/images/law.png"))); // NOI18N
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 120, 130, 140));

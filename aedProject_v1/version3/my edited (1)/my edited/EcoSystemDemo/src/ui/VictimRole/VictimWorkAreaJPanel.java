@@ -57,7 +57,10 @@ public class VictimWorkAreaJPanel extends javax.swing.JPanel {
         lblHeading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblHeading.setText("Victim Work Area");
 
+        btnFileComplaint.setBackground(new java.awt.Color(54, 33, 89));
         btnFileComplaint.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnFileComplaint.setForeground(new java.awt.Color(255, 255, 255));
+        btnFileComplaint.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/images/file.png"))); // NOI18N
         btnFileComplaint.setText("File Complaint");
         btnFileComplaint.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -65,8 +68,10 @@ public class VictimWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnViewComplaint.setBackground(new java.awt.Color(255, 255, 255));
+        btnViewComplaint.setBackground(new java.awt.Color(54, 33, 89));
         btnViewComplaint.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnViewComplaint.setForeground(new java.awt.Color(255, 255, 255));
+        btnViewComplaint.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/images/file_preview.png"))); // NOI18N
         btnViewComplaint.setText("View Complaint Status");
         btnViewComplaint.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -79,16 +84,14 @@ public class VictimWorkAreaJPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(324, 324, 324)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(324, 324, 324)
-                        .addComponent(lblHeading, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(374, 374, 374)
-                        .addComponent(btnFileComplaint, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(113, 113, 113)
-                        .addComponent(btnViewComplaint)))
-                .addContainerGap(807, Short.MAX_VALUE))
+                        .addComponent(btnFileComplaint, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(105, 105, 105)
+                        .addComponent(btnViewComplaint))
+                    .addComponent(lblHeading, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(749, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -99,7 +102,7 @@ public class VictimWorkAreaJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnViewComplaint, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnFileComplaint, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(803, Short.MAX_VALUE))
+                .addContainerGap(798, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

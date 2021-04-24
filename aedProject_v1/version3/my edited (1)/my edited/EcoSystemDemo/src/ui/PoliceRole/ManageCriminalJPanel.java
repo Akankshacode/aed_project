@@ -9,8 +9,6 @@ import Business.Case.Case;
 import Business.Case.PoliceCaseDirectory;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
-import Business.Organization.DoctorOrganization;
-import Business.Organization.Organization;
 import Business.Organization.PoliceOrganization;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
@@ -18,6 +16,8 @@ import java.awt.Color;
 import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -43,7 +43,23 @@ public class ManageCriminalJPanel extends javax.swing.JPanel {
         this.system=business;
         pcd=system.getPoliceCaseDirectory();
         CulpritTab.getTableHeader().setForeground(Color.blue);
+        CulpritTab.getTableHeader().setDefaultRenderer(new HeaderColor());
         populateTable();
+    }
+      public class HeaderColor extends DefaultTableCellRenderer {
+
+        public HeaderColor() {
+            setOpaque(true);
+        }
+
+        public Component getTableCellRendererComponent(JTable table, Object value, boolean selected, boolean focused, int row, int column) {
+            super.getTableCellRendererComponent(table, value, selected, focused, row, column);
+           
+           setBackground(new java.awt.Color(51, 255, 153));
+//you can change the color that u want 
+            return this;
+        }
+
     }
 
     public void populateTable()
@@ -100,8 +116,7 @@ public class ManageCriminalJPanel extends javax.swing.JPanel {
                 "Case Id", "Name", "Crime committed", "Date of Crime", "Phone Number", "Address", "Status"
             }
         ));
-        CulpritTab.setSelectionBackground(new java.awt.Color(153, 153, 255));
-        CulpritTab.setSelectionForeground(new java.awt.Color(255, 0, 0));
+        CulpritTab.setSelectionBackground(new java.awt.Color(0, 51, 255));
         jScrollPane1.setViewportView(CulpritTab);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -123,8 +138,9 @@ public class ManageCriminalJPanel extends javax.swing.JPanel {
             }
         });
 
-        jButton3.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        jButton3.setText("BACK");
+        jButton3.setBackground(new java.awt.Color(255, 255, 255));
+        jButton3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton3.setText("Back");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -150,14 +166,14 @@ public class ManageCriminalJPanel extends javax.swing.JPanel {
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 954, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(23, 23, 23)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(298, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(63, 63, 63)
                 .addComponent(jLabel1)
                 .addGap(38, 38, 38)
@@ -166,7 +182,7 @@ public class ManageCriminalJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(575, Short.MAX_VALUE))
+                .addContainerGap(583, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
